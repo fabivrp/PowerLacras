@@ -3,7 +3,7 @@
 
 class Casillero
 {
-protected:
+public:
     char tipo_casilla;
     
 public:
