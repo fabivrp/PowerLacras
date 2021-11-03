@@ -39,6 +39,7 @@ struct Edificio{
 int main()
 {
 
+/* MATRIZ DINÁMICA 
     
     int numero_fil = 3, numero_col = 3;
     Casillero**  mapa = new Casillero* [numero_fil];
@@ -51,15 +52,14 @@ int main()
 
     cout << "tipo casilla: " << mapa[0][0].tipo_casilla << endl;
 
-/* MATRIZ DINÁMICA 
 */
     return 0;
 }
 
 
-
 /*
-void llenar_matriz(Edificio edificios[MAX_EDIFICIOS], int &tope){
+
+void leer_matriz(Edificio edificios[MAX_EDIFICIOS], int &tope){
     Edificio edificio;
     string cantidad_construida;
     string cantidad_permitida;

@@ -7,7 +7,7 @@ public:
     char tipo_casilla;
     
 public:
-    Casillero(char tipo_casilla);
+    Casillero(char tipo_casilla = *"T");
     //~Casillero();
     //virtual void mostrar() = 0;
     

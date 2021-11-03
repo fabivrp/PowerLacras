@@ -6,10 +6,16 @@
 class Matriz : public Casillero {
 
 
-public:
-    Matriz(int pidra,int madera, int metal, int cant_max_construidos);
-    int cuanto_produce();
-    //~mina();
+private:
+
+int filas, columnas;
+Casillero*** matriz;
+
+public: 
+
+Matriz(int filas, int columnas);
+bool llenar_matriz(Casillero* casilla);
+void mostrar();
 };
 
 
