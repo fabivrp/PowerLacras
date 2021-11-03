@@ -11,6 +11,4 @@ public:
     //~mina();
 };
 
-Mira lo que se avecina a la vuelta de la esquina, viene diego rumbeando
-
 #endif //H_P_ASERRADERO_H
