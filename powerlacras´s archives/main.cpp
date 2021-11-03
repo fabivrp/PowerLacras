@@ -26,7 +26,15 @@ int main()
         Casilleroc* casilla = new Casilleroc('M');
          mapa[0][0] = casilla;
     }
+/* MATRIZ DINÁMICA 
+    int numero_fil = 3, numero_col = 3;
+    Casillero**  mapa_ = new Casillero* [numero_fil];
 
+    for (int i = 0; i < numero_fil; i++){
+        mapa[i] = new Casillero [numero_col];
+    }
+
+*/
     return 0;
 }
 
