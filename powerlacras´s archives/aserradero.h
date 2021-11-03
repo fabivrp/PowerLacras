@@ -9,6 +9,7 @@ public:
     Aserradero(int pidra,int madera, int metal, int cant_max_construidos);
     int cuanto_produce();
     //~mina();
+    
 };
 
 #endif //H_P_ASERRADERO_H
