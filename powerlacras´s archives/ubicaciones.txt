@@ -1,0 +1,6 @@
+fabrica (2,0)
+aserradero (2,2)
+planta_electrica (2,7)
+mina (2,9)
+escuela (7,5)
+obelisco (8,5)
