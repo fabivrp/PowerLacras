@@ -23,5 +23,6 @@ public:
     //~edificios();
 };
 
+//Prueba
 
 #endif //H_P_EDIFICIOS_H
