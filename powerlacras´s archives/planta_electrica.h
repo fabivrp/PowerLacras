@@ -6,7 +6,7 @@ class Planta_electrica : public Edificios {
 
 
 public:
-    Planta_electrica(int pidra,int madera, int metal, int cant_max_construidos);
+    Planta_electrica(string nombre ,int pidra,int madera, int metal, int cant_max_construidos);
     int cuanto_produce();
     //~mina();
 };

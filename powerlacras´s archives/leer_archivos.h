@@ -18,6 +18,7 @@ public:
     bool hay_archivo();
 
 
+   /* string leer_hasta_espacio(ifstream & archivo,bool *si_leyo);*/
     string leer_hasta_espacio(ifstream & archivo);
     
     

@@ -5,6 +5,7 @@
 #include "leer_archivos.h"
 #include "mapa.h"
 #include "parser.h"
+#include "parsere.h"
 #include <fstream>
 
 
@@ -15,19 +16,48 @@ using namespace std;
 int main(){
 
     Leer_archivos archivo = Leer_archivos("mapa_vacio.txt");
+    Leer_archivos archivoe = Leer_archivos("edificios.txt");
     if (!archivo.hay_archivo()) return 0;
+    if (!archivoe.hay_archivo()) return 0;
 
 
 
     ifstream archivot("mapa_vacio.txt");
-    int fil = stoi(archivo.leer_hasta_espacio(archivot));
-    int col = stoi( archivo.leer_hasta_espacio(archivot));
-    Mapa *mapa = new Mapa(fil,col);
+    ifstream archivow("edificios.txt");
+    bool si_leyo = true;
+    string leido;
+    int hola;
+    Edificios *edificios[6];
+    //archivoe.leer_hasta_espacio(archivow,&si_leyo);
+    //hola = stoi(archivoe.leer_hasta_espacio(archivow,&si_leyo));
+    //cout << hola << endl;
+    for(int i = 0 ; i < 6 ; i++){
+        Parsere parsere = Parsere(archivoe.leer_hasta_espacio(archivow));
+        edificios[i] = parsere.procesar_entrada(archivow);
+    }
+    
+    for(int i = 0 ; i < 6 ; i++){
+        delete edificios[i];
+    }
+    //delete [] edificios;
+    /*do {
+         edificios = new Mina(archivoe.leer_hasta_espacio(archivow,&si_leyo),stoi(archivoe.leer_hasta_espacio(archivow,&si_leyo)),stoi(archivoe.leer_hasta_espacio(archivow,&si_leyo)),stoi(archivoe.leer_hasta_espacio(archivow,&si_leyo)),stoi(archivoe.leer_hasta_espacio(archivow,&si_leyo)));
+         cout << "pirmera " << endl ;
+     } while(si_leyo);
+    
+    cout << edificios->cuanto_produce() << endl;*/
+
+
+
+
+    //int fil = stoi(archivo.leer_hasta_espacio(archivot));
+    //int col = stoi( archivo.leer_hasta_espacio(archivot));
+    //Mapa *mapa = new Mapa(fil,col);
     //Casillero *vector_of_pointers = new int[(fil*col)];
     //Casillero **arreglo = new Casillero*[(fil*col)];
-    int tam_m = fil * col;
+    //int tam_m = fil * col;
     int contador = 0;
-    for(int i = 0 ; i < fil ; i++ ){
+    /*for(int i = 0 ; i < fil ; i++ ){
         for (int j = 0 ; j < col ; j++){
             string letra = archivo.leer_hasta_espacio(archivot);
             Casillero *casilla;

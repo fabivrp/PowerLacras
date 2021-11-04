@@ -6,7 +6,7 @@ class Mina : public Edificios {
 
 
 public:
-    Mina(int pidra,int madera, int metal, int cant_max_construidos);
+    Mina(string nombre ,int piedra,int madera, int metal, int cant_max_construidos);
     int cuanto_produce();
     //~mina();
 };

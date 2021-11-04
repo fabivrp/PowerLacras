@@ -6,7 +6,7 @@ class Obelisco : public Edificios {
 
 
 public:
-    Obelisco(int pidra,int madera, int metal, int cant_max_construidos);
+    Obelisco(string nombre ,int pidra,int madera, int metal, int cant_max_construidos);
     int cuanto_produce();
     //~mina();
 };

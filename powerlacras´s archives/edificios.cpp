@@ -1,7 +1,8 @@
 #include "edificios.h"
 
 
-Edificios :: Edificios(int piedra,int madera, int metal, int cant_max_construidos ){
+Edificios :: Edificios(string nombre ,int piedra,int madera, int metal, int cant_max_construidos ){
+    this->nomrbe_edificio = nombre;
     this->piedra = piedra;
     this->madera = madera;
     this->metal = metal;

@@ -6,7 +6,7 @@ class Aserradero : public Edificios {
 
 
 public:
-    Aserradero(int pidra,int madera, int metal, int cant_max_construidos);
+    Aserradero(string nombre ,int pidra,int madera, int metal, int cant_max_construidos);
     int cuanto_produce();
     //~mina();
     

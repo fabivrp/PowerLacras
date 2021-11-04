@@ -6,7 +6,7 @@ class Escuela : public Edificios {
 
 
 public:
-    Escuela(int pidra,int madera, int metal, int cant_max_construidos);
+    Escuela(string nombre ,int pidra,int madera, int metal, int cant_max_construidos);
     int cuanto_produce();
     //~mina();
 };
