@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include "casillero.h"
+#include "material.h"
 
 using namespace std;
 
@@ -10,7 +11,7 @@ const int MAX_NOMBRE = 50;
 const int MAX_EDIFICIOS = 100;
 const int MAX_MATERIALES = 100;
 const int CANTTIDAD_MINIMA_DEMOLICION = 1;
-const char* TRANSITABLE = "T";
+
 
 
 const string PATH_ARCHIVO_EDIFICIOS = "edificios.txt";
@@ -21,12 +22,12 @@ const string PATH_UBICACIONES = "ubicaciones.txt";
 const string METAL = "Metal";
 const string PIEDRA = "Piedra";
 const string MADERA = "Madera";
-
+/*
 struct Material{
     string tipo;
     int cantidad;
 };
-
+*/
 struct Edificio{
     string nombre;
     int piedra;
@@ -38,21 +39,16 @@ struct Edificio{
 
 int main()
 {
+    char tipo;
+    tipo = 'S';
+    int num = 6;
+    Material* material = new Material(tipo, num);
 
-/* MATRIZ DINÁMICA 
-    
-    int numero_fil = 3, numero_col = 3;
-    Casillero**  mapa = new Casillero* [numero_fil];
+    material->mostrar();
+    material->agregar_al_stock(5);
+    material->disminuir_stock(5);
+    material->mostrar();
 
-    for (int i = 0; i < numero_fil; i++){
-        mapa[i] = new Casillero(*TRANSITABLE) [numero_col];
-    }
-
-    mapa[0][0].tipo_casilla = *TRANSITABLE;
-
-    cout << "tipo casilla: " << mapa[0][0].tipo_casilla << endl;
-
-*/
     return 0;
 }
 
@@ -93,5 +89,19 @@ void leer_matriz(Edificio edificios[MAX_EDIFICIOS], int &tope){
     elementos.close();
 }
 
+
+
+/* MATRIZ DINÁMICA 
+    
+    int numero_fil = 3, numero_col = 3;
+    Casillero**  mapa = new Casillero* [numero_fil];
+
+    for (int i = 0; i < numero_fil; i++){
+        mapa[i] = new Casillero(TRANSITABLE) [numero_col];
+    }
+
+    mapa[0][0].tipo_casilla = TRANSITABLE;
+
+    cout << "tipo casilla: " << mapa[0][0].tipo_casilla << endl;
 
 */

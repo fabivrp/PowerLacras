@@ -3,10 +3,9 @@
 #include "casilleroc.h"
 
 
+//CREO QUE LA CLASE TENDRIA QUE SER EN SINGULAR  LIKE ---> -EDIFICIO. 
 
-
-class Edificios : public Casilleroc
-{
+class Edificios{
 protected:
     int cant_max_construidos;
     int piedra;

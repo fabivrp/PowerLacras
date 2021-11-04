@@ -1,7 +1,7 @@
 #include "edificios.h"
 
 
-Edificios :: Edificios(int piedra,int madera, int metal, int cant_max_construidos ) : Casilleroc(tipo_casilla){
+Edificios :: Edificios(int piedra,int madera, int metal, int cant_max_construidos ){
     this->piedra = piedra;
     this->madera = madera;
     this->metal = metal;
