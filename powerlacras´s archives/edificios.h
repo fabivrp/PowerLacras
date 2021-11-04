@@ -1,11 +1,16 @@
 #ifndef H_P_EDIFICIOS_H
 #define H_P_EDIFICIOS_H
-#include "casilleroc.h"
 
 
 //CREO QUE LA CLASE TENDRIA QUE SER EN SINGULAR  LIKE ---> -EDIFICIO. 
 
+<<<<<<< HEAD
+
 class Edificios{
+
+=======
+class Edificios{
+>>>>>>> 06835690e2c7e365e072c3c65fe382e91864995e
 protected:
     int cant_max_construidos;
     int piedra;

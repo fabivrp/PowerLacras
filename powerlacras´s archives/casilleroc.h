@@ -2,25 +2,16 @@
 #define H_P_CASILLEROC_H
 
 #include "casillero.h"
+#include <iostream>
+using namespace std;
 
-/*class CasilleroC : public Casillero
-{
+class Casilleroc: public Casillero{
 
 public:
-    CasilleroC(char tipo_casilla);
-    void mostrar();
-    //~CasilleroC();
-};*/
-
-
-
-
-class Casilleroc: public Casillero
-{
-public:
-    //Camion(float cilindrada, float combustible, float kilometraje);
+    
     Casilleroc (char tipo_casilla);
-    //void mostrar();
+    void mostrar();
+   
 };
 
 #endif //H_P_CASILLEROC_H
