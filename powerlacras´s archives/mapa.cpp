@@ -36,8 +36,15 @@ bool Mapa::llenar_mapa(Casillero* casilla,  int fila, int columna){
 }
 
 
-void Mapa :: mostrar(int fila, int columna){
-     mapa[fila][columna]->mostrar();
+void Mapa :: mostrar(){
+    for(int i = 0 ; i < this->filas ; i++){
+        for(int j = 0; j < this->columnas ; j++){
+            mapa[i][j]->mostrar();
+            cout << " ";
+        }
+        cout << endl;
+    }
+     
     
 }
 Mapa ::~Mapa(){

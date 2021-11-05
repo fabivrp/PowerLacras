@@ -24,8 +24,6 @@ Edificios* Parsere :: procesar_entrada(ifstream & archivow){
     }
     else if (this->entrada == "aserradero"){
         edificios = new Aserradero(this->entrada,stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,'\n')));
-
-        cout << "ya sali" << endl ;
     }
     else if (this->entrada == "obelisco"){
         edificios = new Obelisco(this->entrada,stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,'\n')));

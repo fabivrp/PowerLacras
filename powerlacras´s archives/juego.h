@@ -9,15 +9,15 @@
 #include "parsere.h"
 #include "ubicaciones.h"
 #include "cargar_archivos.h"
+//#include "vector.h"
 #include <fstream>
 
 class Juego
 {
 private:
-    Edificios *edificios;
-    Ubicaciones* ubicaciones;
+    Vector <Edificios> vector_edificios;
+    Vector <Ubicaciones> vector_ubicaciones;
     Mapa *mapa;
-    Mapa* cargar_mapa();
 
 public:
     //Juego(/* args */);

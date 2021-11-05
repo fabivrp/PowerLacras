@@ -11,7 +11,7 @@ Material::Material(char tipo, int stock){
 
 
 void Material::mostrar(){
-    cout << "Tipo de material en la casila: " << this -> tipo << "Cantidad disponible: " << this -> stock << endl;  
+    cout << "Tipo de material en la casila: " << this -> tipo << " Cantidad disponible: " << this -> stock << endl;  
 }
 
 void Material::disminuir_stock(int decremento){

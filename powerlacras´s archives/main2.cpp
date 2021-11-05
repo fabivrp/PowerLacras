@@ -51,17 +51,25 @@ int main()
     
 
    Material* material = new Material(tipo, num);
+   Material* material2 = new Material('q', 489484);
+   Material* material3 = new Material('t', 5);
 
     Vector <Material> vec;
 
     vec.anadir_elemento(material);
-    vec.anadir_elemento(material);
-    vec.anadir_elemento(material);
+    vec.anadir_elemento(material2);
+    vec.anadir_elemento(material3);
+     //delete material;
+     //delete material2;
+     //delete material3;
     
 
+    Material *materialx = vec.devolver_info(1);
+    
+    materialx->mostrar();
+
    cout << "esto mide "<<vec.tamanio()<< endl;
- 
-     
+    
    
    
 
