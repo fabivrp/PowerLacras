@@ -6,6 +6,7 @@
 #include "parser.h"
 #include "parsere.h"
 #include "ubicaciones.h"
+#include "juego.h"
 #include <fstream>
 
 
@@ -14,10 +15,15 @@
 using namespace std;
 
 int main(){
+    Juego juego;
 
-    Leer_archivos archivo = Leer_archivos("mapa_vacio.txt");
-    Leer_archivos archivoe = Leer_archivos("edificios.txt");
-    Leer_archivos archivou = Leer_archivos("ubicaciones.txt");
+    if (juego.cargar_archivos()){
+       cout << "si cargoooooooooooooooooooo" << endl;
+    }
+
+   /* Leer_archivos archivo = Leer_archivos("mapa_vacio.txt");
+    
+    
     if (!archivo.hay_archivo()) return 0;
     if (!archivoe.hay_archivo()) return 0;
 
@@ -56,7 +62,7 @@ for(int i = 0 ; i < contador ; i++ ){
 
 
     
-    Edificios *edificios[6];
+    Edificios *edificios[6];*/
     //archivoe.leer_hasta_espacio(archivow,&si_leyo);
     //hola = stoi(archivoe.leer_hasta_espacio(archivow,&si_leyo));
     //cout << hola << endl;
