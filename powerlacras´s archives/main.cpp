@@ -1,11 +1,11 @@
 #include <iostream>
-//#include "casillero.h"
+#include "casillero.h"
 #include "edificios.h"
-#include "mina.h"
 #include "leer_archivos.h"
 #include "mapa.h"
 #include "parser.h"
 #include "parsere.h"
+#include "ubicaciones.h"
 #include <fstream>
 
 
@@ -17,6 +17,7 @@ int main(){
 
     Leer_archivos archivo = Leer_archivos("mapa_vacio.txt");
     Leer_archivos archivoe = Leer_archivos("edificios.txt");
+    Leer_archivos archivou = Leer_archivos("ubicaciones.txt");
     if (!archivo.hay_archivo()) return 0;
     if (!archivoe.hay_archivo()) return 0;
 
@@ -24,21 +25,51 @@ int main(){
 
     ifstream archivot("mapa_vacio.txt");
     ifstream archivow("edificios.txt");
+    ifstream archivouu("ubicaciones.txt");
     bool si_leyo = true;
     string leido;
-    int hola;
+    
+    Ubicaciones* ubi[15];
+    int contador = 0;
+    for(int i = 0 ;!archivouu.eof();i++ ){
+    string nombre;
+    int fil , col;
+    
+    nombre = archivou.leer_hasta_espacio(archivouu,' ');
+    archivou.leer_hasta_espacio(archivouu,'(');
+    fil = stoi(archivou.leer_hasta_espacio(archivouu,','));
+    col = stoi(archivou.leer_hasta_espacio(archivouu,')'));
+    archivoe.leer_hasta_espacio(archivouu,'\n');
+    ubi[i] = new Ubicaciones(nombre,fil,col); 
+    contador++; 
+    }
+for(int i = 0 ; i < contador ; i++ ){
+    cout << ubi[i]->devolver_nombre() << " ";
+    cout << ubi[i]->devolver_fil() << " ";
+    cout << ubi[i]->devolver_col() << endl;
+}
+
+    for(int i = 0 ; i < 6 ; i++){
+        delete ubi[i];
+    }
+    //delete [] ubi;
+
+
+    
     Edificios *edificios[6];
     //archivoe.leer_hasta_espacio(archivow,&si_leyo);
     //hola = stoi(archivoe.leer_hasta_espacio(archivow,&si_leyo));
     //cout << hola << endl;
-    for(int i = 0 ; i < 6 ; i++){
-        Parsere parsere = Parsere(archivoe.leer_hasta_espacio(archivow));
+    
+    
+    /*for(int i = 0 ; i < 6 ; i++){
+        Parsere parsere = Parsere(archivoe.leer_hasta_espacio(archivow,' '));
         edificios[i] = parsere.procesar_entrada(archivow);
     }
     
     for(int i = 0 ; i < 6 ; i++){
         delete edificios[i];
-    }
+    }*/
     //delete [] edificios;
     /*do {
          edificios = new Mina(archivoe.leer_hasta_espacio(archivow,&si_leyo),stoi(archivoe.leer_hasta_espacio(archivow,&si_leyo)),stoi(archivoe.leer_hasta_espacio(archivow,&si_leyo)),stoi(archivoe.leer_hasta_espacio(archivow,&si_leyo)),stoi(archivoe.leer_hasta_espacio(archivow,&si_leyo)));
@@ -49,17 +80,21 @@ int main(){
 
 
 
-
-    //int fil = stoi(archivo.leer_hasta_espacio(archivot));
-    //int col = stoi( archivo.leer_hasta_espacio(archivot));
-    //Mapa *mapa = new Mapa(fil,col);
+/*
+    int fil = stoi(archivo.leer_hasta_espacio(archivot,' '));
+    int col = stoi( archivo.leer_hasta_espacio(archivot,' '));
+    Mapa *mapa = new Mapa(fil,col);
     //Casillero *vector_of_pointers = new int[(fil*col)];
     //Casillero **arreglo = new Casillero*[(fil*col)];
-    //int tam_m = fil * col;
+    int tam_m = fil * col;
     int contador = 0;
-    /*for(int i = 0 ; i < fil ; i++ ){
+    for(int i = 0 ; i < fil ; i++ ){
+    //char deli =' ';
         for (int j = 0 ; j < col ; j++){
-            string letra = archivo.leer_hasta_espacio(archivot);
+            if(j+1 == col){
+                //deli = '\n';
+            }
+            string letra = archivo.leer_hasta_espacio(archivot,' ');
             Casillero *casilla;
             Parser parser = Parser(letra[0]);
             casilla = parser.procesar_entrada();
@@ -85,7 +120,7 @@ int main(){
 //delete [] vector_of_pointers;
 //delete [] arreglo;
 //delete q;
-delete mapa;
+delete mapa;*/
     //q->mostrar();
     //x->llenar_mapa(q,0,0);
     //x->mostrar(0,0);

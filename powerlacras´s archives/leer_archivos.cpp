@@ -25,9 +25,11 @@ bool Leer_archivos::hay_archivo(){
     return leido;
 }*/
 
-string Leer_archivos :: leer_hasta_espacio(ifstream & archivo){
+string Leer_archivos :: leer_hasta_espacio(ifstream & archivo, char delimitador){
     string leido;
-    archivo >> leido;
+    
+    //archivo >> leido;
+    getline(archivo,leido, delimitador);
     return leido;
 }
 

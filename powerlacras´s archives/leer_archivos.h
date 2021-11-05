@@ -19,7 +19,7 @@ public:
 
 
    /* string leer_hasta_espacio(ifstream & archivo,bool *si_leyo);*/
-    string leer_hasta_espacio(ifstream & archivo);
+    string leer_hasta_espacio(ifstream & archivo,char delimitador);
     
     
     

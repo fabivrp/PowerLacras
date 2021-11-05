@@ -17,23 +17,25 @@ Edificios* Parsere :: procesar_entrada(ifstream & archivow){
     Leer_archivos archivoe = Leer_archivos("edificios.txt");
 
     if(this->entrada == "mina"){
-        edificios = new Mina(this->entrada,stoi(archivoe.leer_hasta_espacio(archivow)),stoi(archivoe.leer_hasta_espacio(archivow)),stoi(archivoe.leer_hasta_espacio(archivow)),stoi(archivoe.leer_hasta_espacio(archivow)));
+        edificios = new Mina(this->entrada,stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,'\n')));
     }
     else if (this->entrada == "fabrica"){
-        edificios = new Fabrica(this->entrada,stoi(archivoe.leer_hasta_espacio(archivow)),stoi(archivoe.leer_hasta_espacio(archivow)),stoi(archivoe.leer_hasta_espacio(archivow)),stoi(archivoe.leer_hasta_espacio(archivow)));
+        edificios = new Fabrica(this->entrada,stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,'\n')));
     }
     else if (this->entrada == "aserradero"){
-        edificios = new Aserradero(this->entrada,stoi(archivoe.leer_hasta_espacio(archivow)),stoi(archivoe.leer_hasta_espacio(archivow)),stoi(archivoe.leer_hasta_espacio(archivow)),stoi(archivoe.leer_hasta_espacio(archivow)));
+        edificios = new Aserradero(this->entrada,stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,'\n')));
+
+        cout << "ya sali" << endl ;
     }
     else if (this->entrada == "obelisco"){
-        edificios = new Obelisco(this->entrada,stoi(archivoe.leer_hasta_espacio(archivow)),stoi(archivoe.leer_hasta_espacio(archivow)),stoi(archivoe.leer_hasta_espacio(archivow)),stoi(archivoe.leer_hasta_espacio(archivow)));
+        edificios = new Obelisco(this->entrada,stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,'\n')));
     }
     else if (this->entrada == "escuela"){
-        edificios = new Escuela(this->entrada,stoi(archivoe.leer_hasta_espacio(archivow)),stoi(archivoe.leer_hasta_espacio(archivow)),stoi(archivoe.leer_hasta_espacio(archivow)),stoi(archivoe.leer_hasta_espacio(archivow)));
+        edificios = new Escuela(this->entrada,stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,'\n')));
     }
     else if (this->entrada =="planta"){
-        archivoe.leer_hasta_espacio(archivow);
-        edificios = new Planta_electrica(this->entrada,stoi(archivoe.leer_hasta_espacio(archivow)),stoi(archivoe.leer_hasta_espacio(archivow)),stoi(archivoe.leer_hasta_espacio(archivow)),stoi(archivoe.leer_hasta_espacio(archivow)));
+        archivoe.leer_hasta_espacio(archivow,' ');
+        edificios = new Planta_electrica(this->entrada,stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,' ')),stoi(archivoe.leer_hasta_espacio(archivow,'\n')));
     }
     else{
         cout << "no esta" << endl;
