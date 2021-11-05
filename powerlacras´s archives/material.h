@@ -1,6 +1,7 @@
 #ifndef H_P_MATERIAL_H
 #define H_P_MATERIAL_H
-#include "casilleroc.h"
+
+#include "vector.h"
 #include <string>
 
 

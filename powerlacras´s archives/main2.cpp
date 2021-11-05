@@ -3,6 +3,7 @@
 #include <string>
 
 #include "material.h"
+#include "vector.h"
 
 using namespace std;
 
@@ -42,9 +43,33 @@ int main()
     char tipo;
     string cantidad;
     tipo = 'S';
-    int num = 6;
+   int num = 6;
 
-    Material* material = new Material(tipo, num);
+    
+
+    
+    
+
+   Material* material = new Material(tipo, num);
+
+    Vector <Material> vec;
+
+    vec.anadir_elemento(material);
+    vec.anadir_elemento(material);
+    vec.anadir_elemento(material);
+    
+
+   cout << "esto mide "<<vec.tamanio()<< endl;
+ 
+     
+   
+   
+
+    return 0;
+}
+
+
+/*
 
     material->mostrar();
     material->agregar_al_stock(5);
@@ -67,12 +92,6 @@ int main()
     }
 
     elementos.close();
-    return 0;
-}
-
-
-/*
-
 void leer_matriz(Edificio edificios[MAX_EDIFICIOS], int &tope){
     Edificio edificio;
     string cantidad_construida;
