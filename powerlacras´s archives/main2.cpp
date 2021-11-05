@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "casillero.h"
+
 #include "material.h"
 
 using namespace std;
@@ -23,11 +23,11 @@ const string METAL = "Metal";
 const string PIEDRA = "Piedra";
 const string MADERA = "Madera";
 /*
-struct Material{
+*/
+struct Materiales{
     string tipo;
     int cantidad;
 };
-*/
 struct Edificio{
     string nombre;
     int piedra;
@@ -40,15 +40,33 @@ struct Edificio{
 int main()
 {
     char tipo;
+    string cantidad;
     tipo = 'S';
     int num = 6;
+
     Material* material = new Material(tipo, num);
 
     material->mostrar();
     material->agregar_al_stock(5);
+    material->mostrar();
     material->disminuir_stock(5);
     material->mostrar();
+     Materiales mat;
+    ifstream elementos(PATH_ARCHIVO_MATERIALES);
 
+    if (!elementos.is_open()){
+        perror("NO SE ENCONTRO EL ARCHIVO SOLICITADO");
+    }
+    else{
+        while (elementos >> mat.tipo){
+            elementos >> cantidad;
+
+            mat.cantidad = stoi(cantidad);
+
+        }
+    }
+
+    elementos.close();
     return 0;
 }
 
