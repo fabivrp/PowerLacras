@@ -1,6 +1,8 @@
 #ifndef H_P_CASILLERO_H
 #define H_P_CASILLERO_H
 
+#include "colors.h"
+
 class Casillero
 {
 public:

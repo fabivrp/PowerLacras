@@ -1,6 +1,10 @@
 #include "casilleroc.h"
 
 
+const char DISPONIBLE = 'C';
+const char MADERA = 'W';
+const char PIEDRA = 'S';
+const char METAL = 'I';
 
 /*CasilleroC :: CasilleroC(char tipo_casilla) : Casillero(tipo_casilla)
 {
@@ -19,6 +23,25 @@ Casilleroc::Casilleroc(char tipo_casilla) : Casillero(tipo_casilla)
 }*/
 //CasilleroC::~CasilleroC()
 void Casilleroc :: mostrar(){
-    cout << this->tipo_casilla;
+     switch(this -> tipo_casilla){
+
+        case DISPONIBLE:
+
+            cout << BGND_LIGHT_GRAY_246 << " " << END_COLOR;
+            break;
+
+        case MADERA:
+            
+            cout << BGND_BROWN_94 << this -> tipo_casilla << END_COLOR;
+            break;
+
+        case METAL:
+            cout << BGND_ORANGE_214 << this -> tipo_casilla << END_COLOR;
+            break;
+
+        case PIEDRA:
+            cout << BGND_LIGHT_AQUA_43 << this -> tipo_casilla << END_COLOR;
+            break;
+    }
 }
 
