@@ -34,6 +34,11 @@ bool Mapa::llenar_mapa(Casillero* casilla,  int fila, int columna){
         return true;
 
 }
+void Mapa::actualizar_mapa(Casillero* casilla,  int fila, int columna){
+        delete mapa[fila][columna];
+        mapa[fila][columna] = casilla;
+
+}
 
 
 void Mapa :: mostrar(){

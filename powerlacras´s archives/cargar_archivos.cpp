@@ -80,6 +80,7 @@ Vector <Ubicaciones> Cargar_archivos :: cargar_ubicaciones(bool *si_hay_archivo)
         ifstream archivo_ubicaciones("ubicaciones.txt");
         while (!archivo_ubicaciones.eof()){
             string nombre = archivo.leer_hasta_espacio(archivo_ubicaciones,' ');
+            if(nombre == "planta") archivo.leer_hasta_espacio(archivo_ubicaciones,' ');
             archivo.leer_hasta_espacio(archivo_ubicaciones,'(');
             int fil = stoi(archivo.leer_hasta_espacio(archivo_ubicaciones,','));
             int col = stoi(archivo.leer_hasta_espacio(archivo_ubicaciones,')'));
