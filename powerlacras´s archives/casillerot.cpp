@@ -1,7 +1,7 @@
 #include "casillerot.h"
 
 const char PLANTA_ELECTRICA = 'P';
-const char DISPONIBLE = 'T';
+const char DISPONIBLE = 'C';
 const char ASERRADERO = 'A';
 const char OBELISCO = 'O';
 const char FABRICA = 'F';
@@ -19,7 +19,7 @@ void Casillerot :: mostrar(){
 
     switch(this -> tipo_casilla){
         case DISPONIBLE:
-            cout << BGND_GREEN_34 << " " << END_COLOR;
+            cout << BGND_GREEN_34 << "   " << END_COLOR;
 
             break;
         case PLANTA_ELECTRICA:
@@ -47,4 +47,7 @@ void Casillerot :: mostrar(){
 
             break;
     }
+/*
+    cout << BGND_LIGHT_BLUE_33 << this -> tipo_casilla << END_COLOR;
+    */
 }

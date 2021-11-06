@@ -1,9 +1,17 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <iostream>
+#include "casillero.h"
+#include "edificios.h"
+#include "leer_archivos.h"
+#include "mapa.h"
+#include "parser.h"
+#include "parsere.h"
+#include "ubicaciones.h"
+#include "juego.h"
+#include <fstream>
 
-#include "material.h"
-#include "vector.h"
 
 using namespace std;
 
@@ -46,30 +54,12 @@ int main()
    int num = 6;
 
     
-
+int* t;
     
     
-
-   Material* material = new Material(tipo, num);
-   Material* material2 = new Material('q', 489484);
-   Material* material3 = new Material('t', 5);
-
-    Vector <Material> vec;
-
-    vec.anadir_elemento(material);
-    vec.anadir_elemento(material2);
-    vec.anadir_elemento(material3);
-     //delete material;
-     //delete material2;
-     //delete material3;
-    
-
-    Material *materialx = vec.devolver_info(1);
-    
-    materialx->mostrar();
-
-   cout << "esto mide "<<vec.tamanio()<< endl;
-    
+Cargar_archivos y;
+  Mapa* mapa = y.cargar_mapa(t);
+  mapa->mostrar();
    
    
 

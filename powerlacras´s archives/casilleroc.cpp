@@ -23,25 +23,24 @@ Casilleroc::Casilleroc(char tipo_casilla) : Casillero(tipo_casilla)
 }*/
 //CasilleroC::~CasilleroC()
 void Casilleroc :: mostrar(){
-     switch(this -> tipo_casilla){
-
-        case DISPONIBLE:
-
-            cout << BGND_LIGHT_GRAY_246 << " " << END_COLOR;
-            break;
-
-        case MADERA:
+      
+        if (this -> tipo_casilla == DISPONIBLE)
+            cout << BGND_LIGHT_GRAY_246 << "   " << END_COLOR;
+        
+        if (this -> tipo_casilla == MADERA)
+            cout << BGND_BROWN_94  << " " << MADERA << " " << END_COLOR;
+        
+        if (this -> tipo_casilla == METAL)
+            cout << BGND_ORANGE_214 << " " << METAL << " " << END_COLOR;
+         
+        if (this -> tipo_casilla == PIEDRA)
+            cout << BGND_LIGHT_AQUA_43<< " " << PIEDRA << " " << END_COLOR;
+      
             
-            cout << BGND_BROWN_94 << this -> tipo_casilla << END_COLOR;
-            break;
-
-        case METAL:
-            cout << BGND_ORANGE_214 << this -> tipo_casilla << END_COLOR;
-            break;
-
-        case PIEDRA:
-            cout << BGND_LIGHT_AQUA_43 << this -> tipo_casilla << END_COLOR;
-            break;
-    }
+    
+      /*
+    cout << BGND_LIGHT_AQUA_43<<" " << this -> tipo_casilla << " "<<  END_COLOR;
+    cout << BGND_LIGHT_BLUE_33 << this -> tipo_casilla << END_COLOR;
+    */
 }
 
