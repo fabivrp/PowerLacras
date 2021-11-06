@@ -6,7 +6,7 @@ Casilleroi::Casilleroi(char tipo_casilla) : Casillero(tipo_casilla) {
 }
 
 void Casilleroi :: mostrar(){
-   cout << BGND_LIGHT_BLUE_33 << "   " << END_COLOR;
+   cout << BGND_LIGHT_BLUE_33 << " "<< this-> tipo_casilla<<" " << END_COLOR;
 }
 
 

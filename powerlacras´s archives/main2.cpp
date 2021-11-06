@@ -59,6 +59,7 @@ int* t;
     
 Cargar_archivos y;
   Mapa* mapa = y.cargar_mapa(t);
+  
   mapa->mostrar();
    
    
