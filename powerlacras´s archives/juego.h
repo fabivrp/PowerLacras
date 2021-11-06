@@ -10,6 +10,8 @@
 #include "ubicaciones.h"
 #include "cargar_archivos.h"
 #include "material.h"
+#include "casillero.h"
+#include "casilleroc.h"
 //#include "vector.h"
 #include <fstream>
 
@@ -20,7 +22,7 @@ private:
     Vector <Ubicaciones> vector_ubicaciones;
     Vector <Material> vector_materiales;
     Mapa *mapa;
-    int devolver_ubicacion();
+    int devolver_pos_vector(string nombre_a_buscar);
 
 public:
     //Juego(/* args */);

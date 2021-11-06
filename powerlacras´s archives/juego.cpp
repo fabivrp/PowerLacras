@@ -53,7 +53,7 @@ void Juego :: agregar_ubicaciones(){
         int col = ubicacion->devolver_col();
         Edificios *edificio = vector_edificios.devolver_info(devolver_pos_vector(nombre_edificio));
         edificio->aumentar_construidos();
-        mapa->actualizar_mapa()
+        Casilleroc *casilla = new Casilleroc(edificio->devolver_simbolo());
+        mapa->actualizar_mapa(casilla,fil,col);
         }
-
     }
