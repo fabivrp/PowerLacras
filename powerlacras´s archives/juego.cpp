@@ -37,6 +37,7 @@ int Juego :: devolver_pos_vector(string nombre_a_buscar) {
 }
 
 void Juego :: agregar_ubicaciones(){
+        mapa->mostrar();
     for(int i = 0 ; i < this->vector_ubicaciones.tamanio() ; i++){
         Ubicaciones *ubicacion = vector_ubicaciones.devolver_info(i);
         string nombre_edificio = ubicacion->devolver_nombre();
@@ -46,8 +47,9 @@ void Juego :: agregar_ubicaciones(){
         edificio->aumentar_construidos();
         Casilleroc *casilla = new Casilleroc(edificio->devolver_simbolo());
         mapa->actualizar_mapa(casilla,fil,col);
-        mapa->mostrar();
     }
+    cout << endl;
+        mapa->mostrar();
 }
 
 

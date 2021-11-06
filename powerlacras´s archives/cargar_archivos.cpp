@@ -11,20 +11,20 @@ Cargar_archivos::~Cargar_archivos()
 }
 
 Mapa* Cargar_archivos :: cargar_mapa(int *cont_archivos){
-    Leer_archivos archivo = Leer_archivos("mapa_vacio.txt");
+    Leer_archivos archivo = Leer_archivos("mapa.txt");
     Mapa* mapa = nullptr;
     if (archivo.hay_archivo()){
-        ifstream archivo_mapa("mapa_vacio.txt");
+        ifstream archivo_mapa("mapa.txt");
         int fil = stoi(archivo.leer_hasta_espacio(archivo_mapa,' '));
-        int col = stoi( archivo.leer_hasta_espacio(archivo_mapa,' '));
+        int col = stoi( archivo.leer_hasta_espacio(archivo_mapa,'\n'));
         mapa = new Mapa(fil,col);
         for(int i = 0 ; i < fil ; i++ ){
-            //char deli =' ';
+            char deli =' ';
             for (int j = 0 ; j < col ; j++){
                 if(j+1 == col){
-                    //deli = '\n';
+                    deli = '\n';
                 }
-                string letra = archivo.leer_hasta_espacio(archivo_mapa,' ');
+                string letra = archivo.leer_hasta_espacio(archivo_mapa,deli);
                 Casillero *casilla;
                 Parser parser = Parser(letra[0]);
                 casilla = parser.procesar_entrada();
