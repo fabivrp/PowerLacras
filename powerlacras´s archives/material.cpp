@@ -1,10 +1,6 @@
 #include "material.h"
-#include <string>
-#include <iostream>
 
-using namespace std;
-
-Material::Material(char tipo, int stock){
+Material::Material(string tipo, int stock){
     this -> tipo = tipo;
     this -> stock = stock;
 }

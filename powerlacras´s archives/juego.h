@@ -9,6 +9,7 @@
 #include "parsere.h"
 #include "ubicaciones.h"
 #include "cargar_archivos.h"
+#include "material.h"
 //#include "vector.h"
 #include <fstream>
 
@@ -17,7 +18,9 @@ class Juego
 private:
     Vector <Edificios> vector_edificios;
     Vector <Ubicaciones> vector_ubicaciones;
+    Vector <Material> vector_materiales;
     Mapa *mapa;
+    int devolver_ubicacion();
 
 public:
     //Juego(/* args */);

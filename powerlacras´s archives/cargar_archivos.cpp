@@ -10,7 +10,7 @@ Cargar_archivos::~Cargar_archivos()
 {
 }
 
-Mapa* Cargar_archivos :: cargar_mapa(){
+Mapa* Cargar_archivos :: cargar_mapa(bool *si_hay_archivo){
     Leer_archivos archivo = Leer_archivos("mapa_vacio.txt");
     Mapa* mapa = nullptr;
     if (archivo.hay_archivo()){
@@ -33,10 +33,13 @@ Mapa* Cargar_archivos :: cargar_mapa(){
         }
         archivo_mapa.close();
     }
+    else{
+        *si_hay_archivo = false;
+    }
     return mapa;
 }
 
-/*Edificios* Cargar_archivos :: cargar_edificios(){
+/*Edificios* Cargar_archivos :: cargar_edificios(bool *si_hay_archivo){
     Leer_archivos archivo = Leer_archivos("edificios.txt");
     Edificios* edificios;
     if (archivo.hay_archivo()){
@@ -50,37 +53,64 @@ Mapa* Cargar_archivos :: cargar_mapa(){
     return edificios;
 }*/
 
-Vector <Edificios> Cargar_archivos :: cargar_edificios(){
+Vector <Edificios> Cargar_archivos :: cargar_edificios(bool *si_hay_archivo){
     Leer_archivos archivo = Leer_archivos("edificios.txt");
     Edificios* edificio;
     Vector <Edificios> vector;
     if (archivo.hay_archivo()){
         ifstream archivo_edificios("edificios.txt");
-        for(int i = 0 ; !archivo_edificios.eof() ; i++){
+        while (!archivo_edificios.eof()){
             Parsere parsere = Parsere(archivo.leer_hasta_espacio(archivo_edificios,' '));
             edificio = parsere.procesar_entrada(archivo_edificios);
             vector.anadir_elemento(edificio);
         } 
         archivo_edificios.close();  
     }
+    else{
+        *si_hay_archivo = false;
+    }
     return vector;
 }
 
-/*Vector <Ubicaciones> Cargar_archivos :: cargar_ubicaciones(){
+Vector <Ubicaciones> Cargar_archivos :: cargar_ubicaciones(bool *si_hay_archivo){
     Leer_archivos archivo = Leer_archivos("ubicaciones.txt");
     Ubicaciones* ubicaciones;
+    Vector <Ubicaciones> vector;
     if(archivo.hay_archivo()){
         ifstream archivo_ubicaciones("ubicaciones.txt");
-        for(int i = 0 ;!archivo_ubicaciones.eof();i++ ){
+        while (!archivo_ubicaciones.eof()){
             string nombre = archivo.leer_hasta_espacio(archivo_ubicaciones,' ');
             archivo.leer_hasta_espacio(archivo_ubicaciones,'(');
             int fil = stoi(archivo.leer_hasta_espacio(archivo_ubicaciones,','));
             int col = stoi(archivo.leer_hasta_espacio(archivo_ubicaciones,')'));
             archivo.leer_hasta_espacio(archivo_ubicaciones,'\n');
-            //ubicaciones[i] = new Ubicaciones(nombre,fil,col); 
+            ubicaciones = new Ubicaciones(nombre,fil,col);
+            vector.anadir_elemento(ubicaciones);
         }
         archivo_ubicaciones.close();
     }
-    return ubicaciones;
-}*/
+    else{
+        *si_hay_archivo = false;
+    }
+    return vector;
+}
+
+Vector <Material> Cargar_archivos :: cargar_materiales(bool *si_hay_archivo){
+    Leer_archivos archivo = Leer_archivos("materiales.txt");
+    Material* material;
+    Vector <Material> vector;
+    if(archivo.hay_archivo()){
+        ifstream archivo_materiales("materiales.txt");
+        while (!archivo_materiales.eof()){
+            material = new Material(archivo.leer_hasta_espacio(archivo_materiales,' '),stoi(archivo.leer_hasta_espacio(archivo_materiales,'\n')));
+            vector.anadir_elemento(material);
+        }
+        archivo_materiales.close();
+    }
+    else{
+        *si_hay_archivo = false;
+    }
+    return vector;
+
+}
 

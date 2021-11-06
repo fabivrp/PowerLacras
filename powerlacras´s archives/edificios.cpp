@@ -19,3 +19,6 @@ void Edificios :: aumentar_construidos(){
 int Edificios :: devolver_construidos(){
     return this->cant_construidos;
 }
+string Edificios :: devolver_nombre(){
+    return this->nomrbe_edificio;
+}

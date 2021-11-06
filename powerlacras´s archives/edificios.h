@@ -22,6 +22,7 @@ public:
     Edificios(string nombre ,int piedra,int madera,int metal,int cant_max_construidos);
     void aumentar_construidos();
     int devolver_construidos();
+    string devolver_nombre();
     virtual int cuanto_produce() = 0;
 
     //~edificios();

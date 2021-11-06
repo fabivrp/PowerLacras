@@ -2,18 +2,18 @@
 #define H_P_MATERIAL_H
 
 #include "vector.h"
-#include <string>
+#include <iostream>
 
 
 using namespace std;
 
 class Material{
 
-protected:
-    char tipo;
+private:
+    string tipo;
     int stock;
 public:
-    Material(char tipo,int stock);
+    Material(string tipo,int stock);
     void mostrar();
     void disminuir_stock(int decremento);
     void agregar_al_stock(int incremento);
