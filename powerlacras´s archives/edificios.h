@@ -23,6 +23,7 @@ public:
     void aumentar_construidos();
     int devolver_construidos();
     string devolver_nombre();
+    char devolver_simbolo();
     virtual int cuanto_produce() = 0;
 
     //~edificios();

@@ -16,6 +16,7 @@ public:
 
 Mapa(int filas, int columnas);
 bool llenar_mapa(Casillero* casilla,int coordenadaf,int coordenadac);
+void actualizar_mapa(Casillero* casilla,int coordenadaf,int coordenadac);
 void mostrar();
 ~Mapa();
 

@@ -28,6 +28,7 @@ public:
     //Juego(/* args */);
     bool cargar_archivos();
     void agregar_ubicaciones();
+    void menu();
     ~Juego();
 };
 

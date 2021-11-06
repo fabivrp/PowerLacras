@@ -11,26 +11,21 @@ Juego::~Juego(){
     this-> vector_materiales.Vector_destructor();
 }
 
-
-
-
 bool Juego ::cargar_archivos(){
-    bool si_hay_archivos = true;
+    bool hay_archivos = false;
+    int cont_archivos = 0;
     Cargar_archivos cargar_archivos;
-    this->mapa = cargar_archivos.cargar_mapa(&si_hay_archivos);
-    this->vector_edificios = cargar_archivos.cargar_edificios(&si_hay_archivos);
-    this->vector_ubicaciones =  cargar_archivos.cargar_ubicaciones(&si_hay_archivos);
-    this->vector_materiales = cargar_archivos.cargar_materiales(&si_hay_archivos);
-    agregar_ubicaciones();
-    return si_hay_archivos;
+    
+    this->mapa = cargar_archivos.cargar_mapa(&cont_archivos);
+    this->vector_edificios = cargar_archivos.cargar_edificios(&cont_archivos);
+    this->vector_ubicaciones =  cargar_archivos.cargar_ubicaciones(&cont_archivos);
+    this->vector_materiales = cargar_archivos.cargar_materiales(&cont_archivos);
+    if(cont_archivos == 4){
+        agregar_ubicaciones();
+        hay_archivos = true;
+    }
+    return hay_archivos;
 }
-
-
-
-
-
-
-
 
 int Juego :: devolver_pos_vector(string nombre_a_buscar) {
     int pos_vector_edificio;
@@ -40,10 +35,6 @@ int Juego :: devolver_pos_vector(string nombre_a_buscar) {
     }
     return pos_vector_edificio;
 }
-
-
-
-
 
 void Juego :: agregar_ubicaciones(){
     for(int i = 0 ; i < this->vector_ubicaciones.tamanio() ; i++){
@@ -55,5 +46,58 @@ void Juego :: agregar_ubicaciones(){
         edificio->aumentar_construidos();
         Casilleroc *casilla = new Casilleroc(edificio->devolver_simbolo());
         mapa->actualizar_mapa(casilla,fil,col);
-        }
+        mapa->mostrar();
     }
+}
+
+
+void Juego :: menu(){
+    
+    int opcion;
+    do{
+        cin >> opcion;
+        switch (opcion) {
+        case 1:
+        cout << "entre aqui  1" << endl;
+            
+            break;
+        case 2:
+        cout << "entre aqui  2" << endl;
+            
+            break;
+        case 3:
+        cout << "entre aqui  3" << endl;
+            
+            break;
+        case 4:
+        cout << "entre aqui  4" << endl;
+            
+            break;
+        case 5:
+        cout << "entre aqui  5" << endl;
+        	
+			break;
+        case 6:
+        cout << "entre aqui  6" << endl;
+			break;
+        case 7:
+        cout << "entre aqui  7" << endl;
+			break;
+        case 8:
+        cout << "entre aqui  8" << endl;
+			break;
+        case 9:
+        cout << "entre aqui  9" << endl;
+			break;
+        case 10:
+        cout << "entre aqui  10" << endl;
+			break;
+            cout << " que opcion desea " << endl;
+        cin >> opcion;
+    }
+        //mostrar_menu
+        
+    } while (opcion < 9);
+    
+
+}

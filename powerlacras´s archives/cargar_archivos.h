@@ -17,10 +17,10 @@ private:
     /* data */
 public:
     Cargar_archivos();
-    Mapa* cargar_mapa(bool *si_hay_archivo);
-    Vector <Edificios> cargar_edificios(bool *si_hay_archivo);
-    Vector <Ubicaciones> cargar_ubicaciones(bool *si_hay_archivo);
-    Vector <Material> cargar_materiales(bool *si_hay_archivo);
+    Mapa* cargar_mapa(int *cont_archivos);
+    Vector <Edificios> cargar_edificios(int *cont_archivos);
+    Vector <Ubicaciones> cargar_ubicaciones(int *cont_archivos);
+    Vector <Material> cargar_materiales(int *cont_archivos);
     ~Cargar_archivos();
 };
 

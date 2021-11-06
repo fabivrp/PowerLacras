@@ -19,7 +19,9 @@ int main(){
 
     if (juego.cargar_archivos()){
        cout << "si cargoooooooooooooooooooo" << endl;
+       juego.menu();
     }
+
 
    /* Leer_archivos archivo = Leer_archivos("mapa_vacio.txt");
     

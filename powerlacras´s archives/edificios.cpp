@@ -22,3 +22,7 @@ int Edificios :: devolver_construidos(){
 string Edificios :: devolver_nombre(){
     return this->nomrbe_edificio;
 }
+
+char Edificios :: devolver_simbolo(){
+    return this->simbolo;
+}
