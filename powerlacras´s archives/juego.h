@@ -12,6 +12,7 @@
 #include "material.h"
 #include "casillero.h"
 #include "casilleroc.h"
+#include "opciones.h"
 //#include "vector.h"
 #include <fstream>
 
@@ -23,6 +24,7 @@ private:
     Vector <Material> vector_materiales;
     Mapa *mapa;
     int devolver_pos_vector(string nombre_a_buscar);
+    int procesar_opcion();
 
 public:
     //Juego(/* args */);

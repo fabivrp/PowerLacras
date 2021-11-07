@@ -27,6 +27,7 @@ bool Juego ::cargar_archivos(){
     return hay_archivos;
 }
 
+// esta funcion se usa en opciones.cpp (codigo repetido), hay que hacer que haya sola una una de estas.Codigo repetido
 int Juego :: devolver_pos_vector(string nombre_a_buscar) {
     int pos_vector_edificio;
     for (int i = 0 ; i < this->vector_edificios.tamanio();i++){
@@ -51,16 +52,15 @@ void Juego :: agregar_ubicaciones(){
     cout << endl;
         mapa->mostrar();
 }
-
-
-void Juego :: menu(){
-    
-    int opcion;
-    do{
-        cin >> opcion;
-        switch (opcion) {
+int Juego :: procesar_opcion(){
+    string opcion;
+        Opciones opciones(this->vector_edificios,this->vector_ubicaciones,this->vector_materiales,this->mapa);
+        cout << "Ingresar una de las siguientes opciones:"<< endl;
+        getline(cin,opcion);
+        switch (stoi(opcion)) {
         case 1:
         cout << "entre aqui  1" << endl;
+            opciones.costruir_edificio();
             
             break;
         case 2:
@@ -95,11 +95,20 @@ void Juego :: menu(){
         cout << "entre aqui  10" << endl;
 			break;
             cout << " que opcion desea " << endl;
-        cin >> opcion;
     }
-        //mostrar_menu
-        
-    } while (opcion < 9);
+    return stoi (opcion);
+
+}
+
+
+void Juego :: menu(){
+    
+    int opcion;
+    do{
+        opcion = procesar_opcion();
+        if(opcion > 10  || opcion < 1) cout << " invalida respuesta" << endl;
+
+    } while (opcion < 10 || opcion > 10);
     
 
 }
