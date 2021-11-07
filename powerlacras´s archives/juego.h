@@ -15,6 +15,12 @@
 #include "opciones.h"
 //#include "vector.h"
 #include <fstream>
+#include <sstream>
+#include <cstdlib>
+#include <iomanip>
+
+const int LARGO_EDIFICIO = 24;
+const int LARGO_CARACTERISTICAS = 16;
 
 class Juego
 {
@@ -30,6 +36,8 @@ public:
     //Juego(/* args */);
     bool cargar_archivos();
     void agregar_ubicaciones();
+    void mostrar_edificios();
+    void mostrar_edificios_construidos();
     void menu();
     ~Juego();
 };

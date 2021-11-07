@@ -24,6 +24,10 @@ public:
     int devolver_construidos();
     string devolver_nombre();
     char devolver_simbolo();
+    int devolver_cantidad_piedra();
+    int devolver_cantidad_madera();
+    int devolver_cantidad_metal();
+    int devolver_max_construccion();
     virtual int cuanto_produce() = 0;
 
     //~edificios();

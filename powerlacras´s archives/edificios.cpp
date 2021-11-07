@@ -26,3 +26,19 @@ string Edificios :: devolver_nombre(){
 char Edificios :: devolver_simbolo(){
     return this->simbolo;
 }
+
+int Edificios :: devolver_cantidad_piedra(){
+   return this->piedra;
+}
+int Edificios :: devolver_cantidad_madera(){
+    return this->madera;
+}
+
+int Edificios :: devolver_cantidad_metal(){
+    return this->metal;
+}
+
+int Edificios :: devolver_max_construccion(){
+    return this->cant_max_construidos;
+}
+
