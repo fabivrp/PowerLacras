@@ -30,6 +30,7 @@ private:
     Vector <Material> vector_materiales;
     Mapa *mapa;
     int devolver_pos_vector(string nombre_a_buscar);
+    int devolver_pos_vector2(string nombre);
     int procesar_opcion();
 
 public:

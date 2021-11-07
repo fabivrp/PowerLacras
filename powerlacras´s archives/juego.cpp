@@ -37,6 +37,16 @@ int Juego :: devolver_pos_vector(string nombre_a_buscar) {
     return pos_vector_edificio;
 }
 
+//cosa para ubicaciones
+int Juego :: devolver_pos_vector2(string nombre_a_buscar) {
+    int pos_vector_ubicaciones;
+    for (int i = 0 ; i < this->vector_ubicaciones.tamanio();i++){
+        Ubicaciones *ubicacions = vector_ubicaciones.devolver_info(i);
+            if (ubicacions->devolver_nombre() == nombre_a_buscar ) pos_vector_ubicaciones = i;
+    }
+    return pos_vector_ubicaciones;
+}
+
 void Juego :: agregar_ubicaciones(){
         mapa->mostrar();
     for(int i = 0 ; i < this->vector_ubicaciones.tamanio() ; i++){
