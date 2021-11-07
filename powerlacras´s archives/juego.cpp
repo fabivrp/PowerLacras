@@ -63,6 +63,10 @@ void Juego :: agregar_ubicaciones(){
         mapa->mostrar();
 }
 
+int calcular_espacio_delantero(int espacio, int  largo_palabra){
+    
+    return (espacio - largo_palabra)/2;
+}
 void Juego :: mostrar_edificios(){
     cout << BGND_DARK_AQUA_29<<"+-------------------------------------------------------------------------------------------------------+" << END_COLOR << endl
          << BGND_DARK_AQUA_29<<"|          TIPO         |            MATERIALES  REQUERIDOS             |   UNIDADES    |  DISPONIBLES  |" << END_COLOR << endl
@@ -73,75 +77,124 @@ void Juego :: mostrar_edificios(){
     for (int i = 0; i < vector_edificios.tamanio(); i++){
         Edificios* aux = vector_edificios.devolver_info(i);
 
-        int espacio_delantero = calcular_espacio_delantero(LARGO_EDIFICIO, aux->devolver_nombre().length());
-        int espacio_trasero = LARGO_EDIFICIO - espacio_delantero - aux->devolver_nombre().length();
+        int espacio_delantero = calcular_espacio_delantero(ESPACIO_TIPO_EDIFICIO, aux->devolver_nombre().length());
+        int espacio_trasero = ESPACIO_TIPO_EDIFICIO - espacio_delantero - aux->devolver_nombre().length();
         string material = to_string(aux->devolver_cantidad_piedra());
         
         cout << BGND_BLACK_16<< setfill(' ');
         cout << "|" << setw(espacio_delantero) << "" << aux->devolver_nombre() << setw(espacio_trasero) << "|";
         
         
-        espacio_delantero = calcular_espacio_delantero(LARGO_CARACTERISTICAS, material.length());
-        espacio_trasero = LARGO_CARACTERISTICAS - espacio_delantero - material.length();
+        espacio_delantero = calcular_espacio_delantero (ESPACIO_MATERIALES, material.length());
+        espacio_trasero = ESPACIO_MATERIALES - espacio_delantero - material.length();
         cout << setw(espacio_delantero) << "" << material << setw(espacio_trasero) << "|";
         
         material = to_string(aux->devolver_cantidad_madera());
-        espacio_delantero = calcular_espacio_delantero(LARGO_CARACTERISTICAS, material.length());
-        espacio_trasero = LARGO_CARACTERISTICAS - espacio_delantero - material.length();
+        espacio_delantero = calcular_espacio_delantero (ESPACIO_MATERIALES, material.length());
+        espacio_trasero = ESPACIO_MATERIALES - espacio_delantero - material.length();
         cout << setw(espacio_delantero) << "" << material << setw(espacio_trasero) << "|";
         
         material = to_string(aux->devolver_cantidad_piedra());
-        espacio_delantero = calcular_espacio_delantero(LARGO_CARACTERISTICAS, material.length());
-        espacio_trasero = LARGO_CARACTERISTICAS - espacio_delantero - material.length();
+        espacio_delantero = calcular_espacio_delantero (ESPACIO_MATERIALES, material.length());
+        espacio_trasero = ESPACIO_MATERIALES - espacio_delantero - material.length();
         cout << setw(espacio_delantero) << "" << material << setw(espacio_trasero) << "|";
         
         material = to_string(aux->devolver_construidos());
-        espacio_delantero = calcular_espacio_delantero(LARGO_CARACTERISTICAS, material.length());
-        espacio_trasero = LARGO_CARACTERISTICAS - espacio_delantero - material.length();
+        espacio_delantero = calcular_espacio_delantero(ESPACIO_UNIDADES_CONSTRUIDAS, material.length());
+        espacio_trasero = ESPACIO_UNIDADES_CONSTRUIDAS - espacio_delantero - material.length();
         cout << setw(espacio_delantero) << "" << material << setw(espacio_trasero) << "|";
         
         material = to_string(aux->devolver_max_construccion());
-        espacio_delantero = calcular_espacio_delantero(LARGO_CARACTERISTICAS, material.length());
-        espacio_trasero = LARGO_CARACTERISTICAS - espacio_delantero - material.length();
+        espacio_delantero = calcular_espacio_delantero(ESPACIO_UNIDADES_DISPONIBLES, material.length());
+        espacio_trasero = ESPACIO_UNIDADES_DISPONIBLES - espacio_delantero - material.length();
         cout << setw(espacio_delantero) << "" << material << setw(espacio_trasero) << "|" << END_COLOR <<endl;
         
         
         cout << BGND_DARK_AQUA_29 << "|-----------------------------------------------------------------------|-------------------------------|" << END_COLOR << endl;
       
     }
+
+    cout << endl;
     
-}
-int calcular_espacio_delantero(int espacio, int  largo_palabra){
-    
-    return (espacio - largo_palabra)/2;
 }
 
+string Juego::extraer_coordenadas(string edificio){
+    string coordenadas = " ";
+
+    for(int i = 0 ; i < this->vector_ubicaciones.tamanio() ; i++){
+        Ubicaciones *ubicacion = vector_ubicaciones.devolver_info(i);
+        
+        if (edificio == ubicacion->devolver_nombre()){
+            coordenadas = coordenadas + '(' + to_string(ubicacion->devolver_fil()) + ',' + to_string(ubicacion->devolver_col()) + ") ";
+        }
+    }
+
+    return coordenadas;
+
+}
 void Juego :: mostrar_edificios_construidos(){
-    cout << BGND_DARK_AQUA_29<<"+-------------------------------------------------------+" << END_COLOR << endl
-         << BGND_DARK_AQUA_29<<"|          TIPO         |   UNIDADES    |  COORDENADAS  |" << END_COLOR << endl
-         << BGND_DARK_AQUA_29<<"|           DE          |      EN       |      EN EL    |" << END_COLOR << endl
-         << BGND_DARK_AQUA_29<<"|        EDIFICIO       |   ANDYPOLIS   |      MAPA     |" << END_COLOR << endl
-         << BGND_DARK_AQUA_29<<"|-----------------------|-------------------------------|" << END_COLOR <<endl;
+    cout << BGND_DARK_AQUA_29<< "\t\t" "+---------------------------------------------------------------------+" << END_COLOR << endl
+         << BGND_DARK_AQUA_29<< "\t\t" "|          TIPO         |   UNIDADES    |         COORDENADAS         |" << END_COLOR << endl
+         << BGND_DARK_AQUA_29<< "\t\t" "|           DE          |      EN       |            EN EL            |" << END_COLOR << endl
+         << BGND_DARK_AQUA_29<< "\t\t" "|        EDIFICIO       |   ANDYPOLIS   |            MAPA             |" << END_COLOR << endl
+         << BGND_DARK_AQUA_29<< "\t\t" "|-----------------------|---------------------------------------------|" << END_COLOR <<endl;
 
-    for (int i = 0; i < vector_edificios.tamanio(); i++){
-        Edificios* aux = vector_edificios.devolver_info(i);
+    for (int i = 0; i < this->vector_edificios.tamanio(); i++){
+        Edificios* aux = this->vector_edificios.devolver_info(i);
 
-        int espacio_delantero = calcular_espacio_delantero(LARGO_EDIFICIO, aux->devolver_nombre().length());
-        int espacio_trasero = LARGO_EDIFICIO - espacio_delantero - aux->devolver_nombre().length();
+        int espacio_delantero = calcular_espacio_delantero(ESPACIO_TIPO_EDIFICIO, aux->devolver_nombre().length());
+        int espacio_trasero = ESPACIO_TIPO_EDIFICIO - espacio_delantero - aux->devolver_nombre().length();
         string caracteristica = to_string(aux->devolver_construidos());
         
         cout << BGND_BLACK_16<< setfill(' ');
-        cout << "|" << setw(espacio_delantero) << "" << aux->devolver_nombre() << setw(espacio_trasero) << "|";
+        cout << "\t\t" "|" << setw(espacio_delantero) << "" << aux->devolver_nombre() << setw(espacio_trasero) << "|";
         
         
-        espacio_delantero = calcular_espacio_delantero(LARGO_CARACTERISTICAS, caracteristica.length());
-        espacio_trasero = LARGO_CARACTERISTICAS - espacio_delantero - caracteristica.length();
+        espacio_delantero = calcular_espacio_delantero(ESPACIO_UNIDADES_CONSTRUIDAS, caracteristica.length());
+        espacio_trasero = ESPACIO_UNIDADES_CONSTRUIDAS - espacio_delantero - caracteristica.length();
         cout << setw(espacio_delantero) << "" << caracteristica << setw(espacio_trasero) << "|";
-         
-        cout << BGND_DARK_AQUA_29 << "|-----------------------|-------------------------------|" << END_COLOR << endl;
+
+       
+        string coordenadas =  extraer_coordenadas(aux->devolver_nombre());
+        
+        espacio_delantero = calcular_espacio_delantero(ESPACIO_COORDENADAS, coordenadas.length());
+        espacio_trasero = ESPACIO_COORDENADAS - espacio_delantero - coordenadas.length();
+        cout << setw(espacio_delantero) << "" << coordenadas << setw(espacio_trasero) << "|" << END_COLOR << endl;
+        /*
+        */ 
+        cout << "\t\t" << BGND_DARK_AQUA_29 << "|-----------------------|---------------------------------------------|" << END_COLOR << endl;
       
     }
+
+    cout << endl;   
+}
+
+void Juego :: mostrar_materiales(){
+    cout << "\t\t\t       "<< BGND_DARK_AQUA_29 <<"+---------------------------------------+" << END_COLOR << endl
+         << "\t\t\t       "<< BGND_DARK_AQUA_29 <<"|          TIPO         |   UNIDADES    |" << END_COLOR << endl
+         << "\t\t\t       "<< BGND_DARK_AQUA_29 <<"|           DE          |     EN EL     |" << END_COLOR << endl
+         << "\t\t\t       "<< BGND_DARK_AQUA_29 <<"|        MATERIAL       |     STOCK     |" << END_COLOR << endl
+         << "\t\t\t       "<< BGND_DARK_AQUA_29 <<"|-----------------------|---------------|" << END_COLOR <<endl;
+
+    for (int i = 0; i < this->vector_materiales.tamanio(); i++){
+        Material* aux = this->vector_materiales.devolver_info(i);
+
+        int espacio_delantero = calcular_espacio_delantero(ESPACIO_TIPO_MATERIAL, aux->devolver_nombre().length());
+        int espacio_trasero = ESPACIO_TIPO_MATERIAL - espacio_delantero - aux->devolver_nombre().length();
+
+        cout << "\t\t\t       " << BGND_BLACK_16<< setfill(' ');
+        cout << "|" << setw(espacio_delantero) << "" << aux->devolver_nombre() << setw(espacio_trasero) << "|";
+        
+        string caracteristica = to_string(aux->devolver_stock());
     
+        espacio_delantero = calcular_espacio_delantero(ESPACIO_UNIDADES_CONSTRUIDAS, caracteristica.length());
+        espacio_trasero = ESPACIO_UNIDADES_CONSTRUIDAS - espacio_delantero - caracteristica.length();
+        cout << setw(espacio_delantero) << "" << caracteristica << setw(espacio_trasero) << "|" << END_COLOR << endl;   
+     
+        cout << "\t\t\t       " << BGND_DARK_AQUA_29 << "|-----------------------|---------------|" << END_COLOR << endl;
+      
+    }
+    cout << endl;
 }
 int Juego :: procesar_opcion(){
     string opcion;

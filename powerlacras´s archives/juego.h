@@ -13,14 +13,18 @@
 #include "casillero.h"
 #include "casilleroc.h"
 #include "opciones.h"
-//#include "vector.h"
+#include "vector.h"
 #include <fstream>
 #include <sstream>
 #include <cstdlib>
 #include <iomanip>
 
-const int LARGO_EDIFICIO = 24;
-const int LARGO_CARACTERISTICAS = 16;
+const int ESPACIO_TIPO_EDIFICIO = 24;
+const int ESPACIO_TIPO_MATERIAL = 24;
+const int ESPACIO_MATERIALES = 16;
+const int ESPACIO_UNIDADES_CONSTRUIDAS = 16;
+const int ESPACIO_UNIDADES_DISPONIBLES = 16;
+const int ESPACIO_COORDENADAS = 30;
 
 class Juego
 {
@@ -29,18 +33,22 @@ private:
     Vector <Ubicaciones> vector_ubicaciones;
     Vector <Material> vector_materiales;
     Mapa *mapa;
-    int devolver_pos_vector(string nombre_a_buscar);
-    int devolver_pos_vector2(string nombre);
-    int procesar_opcion();
 
 public:
     //Juego(/* args */);
     bool cargar_archivos();
     void agregar_ubicaciones();
     void mostrar_edificios();
+    void mostrar_materiales();
     void mostrar_edificios_construidos();
     void menu();
     ~Juego();
+    
+private:    
+    int devolver_pos_vector(string nombre_a_buscar);
+    int devolver_pos_vector2(string nombre);
+    int procesar_opcion();
+    string extraer_coordenadas (string nombre);
 };
 
 

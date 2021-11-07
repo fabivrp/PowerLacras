@@ -17,3 +17,11 @@ void Material::disminuir_stock(int decremento){
 void Material::agregar_al_stock(int incremento){    
     this -> stock = this -> stock + incremento;
 }
+
+string Material::devolver_nombre(){
+    return this -> tipo;
+}
+
+int Material::devolver_stock(){
+    return this -> stock;
+}
