@@ -16,7 +16,8 @@ private:
     Vector <Material> vector_materiales;
     Mapa *mapa;
     template <typename Tipo>
-    int devolver_pos_vector(string nombre_a_buscar,Vector <Tipo> vector);
+    bool hay_objeto(string nombre_a_buscar,Vector <Tipo> vector,int *pos_vector);
+    bool hay_materiales_suficiente(int pos_vector_edificio);
 public:
 
 /*
