@@ -142,28 +142,29 @@ void Juego :: mostrar_edificios_construidos(){
     for (int i = 0; i < this->vector_edificios.tamanio(); i++){
         Edificios* aux = this->vector_edificios.devolver_info(i);
 
-        int espacio_delantero = calcular_espacio_delantero(ESPACIO_TIPO_EDIFICIO, aux->devolver_nombre().length());
-        int espacio_trasero = ESPACIO_TIPO_EDIFICIO - espacio_delantero - aux->devolver_nombre().length();
-        string caracteristica = to_string(aux->devolver_construidos());
+        if (aux->devolver_construidos()>0){
+            int espacio_delantero = calcular_espacio_delantero(ESPACIO_TIPO_EDIFICIO, aux->devolver_nombre().length());
+            int espacio_trasero = ESPACIO_TIPO_EDIFICIO - espacio_delantero - aux->devolver_nombre().length();
+            string caracteristica = to_string(aux->devolver_construidos());
         
-        cout << BGND_BLACK_16<< setfill(' ');
-        cout << "\t\t" "|" << setw(espacio_delantero) << "" << aux->devolver_nombre() << setw(espacio_trasero) << "|";
+            cout << BGND_BLACK_16<< setfill(' ');
+            cout << "\t\t" "|" << setw(espacio_delantero) << "" << aux->devolver_nombre() << setw(espacio_trasero) << "|";
         
         
-        espacio_delantero = calcular_espacio_delantero(ESPACIO_UNIDADES_CONSTRUIDAS, caracteristica.length());
-        espacio_trasero = ESPACIO_UNIDADES_CONSTRUIDAS - espacio_delantero - caracteristica.length();
-        cout << setw(espacio_delantero) << "" << caracteristica << setw(espacio_trasero) << "|";
+            espacio_delantero = calcular_espacio_delantero(ESPACIO_UNIDADES_CONSTRUIDAS, caracteristica.length());
+            espacio_trasero = ESPACIO_UNIDADES_CONSTRUIDAS - espacio_delantero - caracteristica.length();
+            cout << setw(espacio_delantero) << "" << caracteristica << setw(espacio_trasero) << "|";
 
        
-        string coordenadas =  extraer_coordenadas(aux->devolver_nombre());
+            string coordenadas =  extraer_coordenadas(aux->devolver_nombre());
         
-        espacio_delantero = calcular_espacio_delantero(ESPACIO_COORDENADAS, coordenadas.length());
-        espacio_trasero = ESPACIO_COORDENADAS - espacio_delantero - coordenadas.length();
-        cout << setw(espacio_delantero) << "" << coordenadas << setw(espacio_trasero) << "|" << END_COLOR << endl;
+            espacio_delantero = calcular_espacio_delantero(ESPACIO_COORDENADAS, coordenadas.length());
+            espacio_trasero = ESPACIO_COORDENADAS - espacio_delantero - coordenadas.length();
+            cout << setw(espacio_delantero) << "" << coordenadas << setw(espacio_trasero) << "|" << END_COLOR << endl;
         /*
         */ 
-        cout << "\t\t" << BGND_DARK_AQUA_29 << "|-----------------------|---------------------------------------------|" << END_COLOR << endl;
-      
+            cout << "\t\t" << BGND_DARK_AQUA_29 << "|-----------------------|---------------------------------------------|" << END_COLOR << endl;
+      }
     }
 
     cout << endl;   
