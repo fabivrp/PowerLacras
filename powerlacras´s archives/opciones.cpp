@@ -23,11 +23,11 @@ bool Opciones :: hay_objeto(string nombre_a_buscar,Vector <Tipo> vectorr,int *po
         cout << i << endl;
         i++;
     }
-    return encontrado
+    return encontrado;
 }
 bool Opciones :: hay_materiales_suficiente(int pos_vector_edificio){
     
-    
+    return true;
 }
 
 void Opciones :: costruir_edificio(){
