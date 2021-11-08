@@ -19,15 +19,64 @@ protected:
     int produccion;
     char simbolo;
 public:
+    /*
+    *PRE:
+    *POST:
+    */
     Edificios(string nombre ,int piedra,int madera,int metal,int cant_max_construidos);
+    
+    /*
+    *PRE:
+    *POST:
+    */
     void aumentar_construidos();
+    
+    /*
+    *PRE:
+    *POST:
+    */
     int devolver_construidos();
+    
+    /*
+    *PRE:
+    *POST:
+    */
     string devolver_nombre();
+    
+    /*
+    *PRE:
+    *POST:
+    */
     char devolver_simbolo();
+    
+    /*
+    *PRE:
+    *POST:
+    */
     int devolver_cantidad_piedra();
+    
+    /*
+    *PRE:
+    *POST:
+    */
     int devolver_cantidad_madera();
+    
+    /*
+    *PRE:
+    *POST:
+    */
     int devolver_cantidad_metal();
+    
+    /*
+    *PRE:
+    *POST:
+    */
     int devolver_max_construccion();
+    
+    /*
+    *PRE:
+    *POST:
+    */
     virtual int cuanto_produce() = 0;
 
     //~edificios();

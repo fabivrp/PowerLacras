@@ -7,6 +7,11 @@ class Fabrica : public Edificios {
 
 public:
     Fabrica(string nombre ,int pidra,int madera, int metal, int cant_max_construidos);
+
+    /*
+    *PRE:
+    *POST:
+    */
     int cuanto_produce();
     //~mina();
 };

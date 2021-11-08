@@ -10,8 +10,23 @@ class Parsere
 private:
     string entrada;
 public:
+
+    /*
+    *PRE:
+    *POST:
+    */
     Parsere(string nombre_edificio);
+  
+    /*
+    *PRE:
+    *POST:
+    */
     Edificios* procesar_entrada(ifstream & archivo);
+  
+    /*
+    *PRE:
+    *POST:
+    */
     string tipo_edificio();
 };
 

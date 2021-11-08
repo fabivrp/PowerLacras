@@ -13,8 +13,22 @@ Casillero*** matriz;
 
 public: 
 
+/*
+*PRE:
+*POST:
+*/
 Matriz(int filas, int columnas);
+
+/*
+*PRE:
+*POST:
+*/
 bool llenar_matriz(Casillero* casilla);
+
+/*
+*PRE:
+*POST:
+*/
 void mostrar();
 };
 

@@ -11,6 +11,11 @@ class Casilleroi : public Casillero{
 
 public:
     Casilleroi(char tipo_casilla);
+
+    /*
+    *PRE:
+    *POST:
+    */
     void mostrar();
 };
 

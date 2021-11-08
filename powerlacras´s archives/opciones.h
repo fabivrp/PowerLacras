@@ -18,7 +18,17 @@ private:
     template <typename Tipo>
     int devolver_pos_vector(string nombre_a_buscar,Vector <Tipo> vector);
 public:
+
+/*
+*PRE:
+*POST:
+*/
 void costruir_edificio();
+
+/*
+*PRE:
+*POST:
+*/
 Opciones (Vector <Edificios> vector_edificio,Vector <Ubicaciones> vector_ubicaciones,Vector <Material> vector_materiales ,Mapa *mapa);
     
 };

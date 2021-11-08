@@ -6,7 +6,17 @@ class Obelisco : public Edificios {
 
 
 public:
+  
+    /*
+    *PRE:
+    *POST:
+    */  
     Obelisco(string nombre ,int pidra,int madera, int metal, int cant_max_construidos);
+    
+    /*
+    *PRE:
+    *POST:
+    */
     int cuanto_produce();
     //~mina();
 };

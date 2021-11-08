@@ -10,9 +10,24 @@ class Menu{
 private:
     /* data */
 public:
+   
+    /*
+    *PRE:
+    *POST:
+    */
     Menu(/* args */);
-    ~Menu();
+  
+    /*
+    *PRE:
+    *POST:
+    */
     int procesar_opcion(int opcion);
+  
+    /*
+    *PRE:
+    *POST:
+    */
+    ~Menu();
 };
 
 

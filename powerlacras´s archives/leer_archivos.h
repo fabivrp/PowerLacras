@@ -14,15 +14,26 @@ string archivo_leer;
 
 
 public:
+
+/*
+    *PRE:
+    *POST:
+    */
     Leer_archivos(string archivo_leer);
+    
+    /*
+    *PRE:
+    *POST:
+    */
     bool hay_archivo();
 
-
    /* string leer_hasta_espacio(ifstream & archivo,bool *si_leyo);*/
+  
+    /*
+    *PRE:
+    *POST:
+    */
     string leer_hasta_espacio(ifstream & archivo,char delimitador);
-    
-    
-    
     
     
     ~Leer_archivos();

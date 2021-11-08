@@ -10,8 +10,23 @@ class Parser
 private:
     char entrada;
 public:
+
+    /*
+    *PRE:
+    *POST:
+    */
     Parser(char letra);
+  
+    /*
+    *PRE:
+    *POST:
+    */
     Casillero* procesar_entrada();
+  
+    /*
+    *PRE:
+    *POST:
+    */
     string tipo_casilla();
 };
 

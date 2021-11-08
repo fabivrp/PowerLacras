@@ -13,24 +13,46 @@ private:
     //Atributos
     int largo;
     Tipo** elementos;
-    void redimensionar();
 
+    /*
+    *PRE:
+    *POST:
+    */
+    void redimensionar();
+  
+    /*
+    *PRE:
+    *POST:
+    */
     void copiar(Tipo** vector, int desde, int hasta);
 public:
     //Metodos
     Vector();
-
+  
+    /*
+    *PRE:
+    *POST:
+    */
     void Vector_destructor();
-
+  
+    /*
+    *PRE:
+    *POST:
+    */
     int tamanio();
+      
+    /*
+    *PRE:
+    *POST:
+    */
     Tipo* devolver_info(int pos);
-
-
+  
+    /*
+    *PRE:
+    *POST:
+    */
     void anadir_elemento(Tipo* elemento);
 
-
-
-   
 };
 //CONSTRUCTOR
 template <typename Tipo>

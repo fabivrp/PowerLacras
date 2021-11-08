@@ -14,9 +14,28 @@ Casillero*** mapa;
 
 public: 
 
+/*
+*PRE:
+*POST:
+*/
 Mapa(int filas, int columnas);
+
+/*
+*PRE:
+*POST:
+*/
 bool llenar_mapa(Casillero* casilla,int coordenadaf,int coordenadac);
+
+/*
+*PRE:
+*POST:
+*/
 void actualizar_mapa(Casillero* casilla,int coordenadaf,int coordenadac);
+
+/*
+*PRE:
+*POST:
+*/
 void mostrar();
 ~Mapa();
 

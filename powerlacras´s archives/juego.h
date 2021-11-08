@@ -36,18 +36,66 @@ private:
 
 public:
     //Juego(/* args */);
+    /*
+    *PRE:
+    *POST:
+    */
     bool cargar_archivos();
+    
+    /*
+    *PRE:
+    *POST:
+    */
     void agregar_ubicaciones();
+    
+    /*
+    *PRE:
+    *POST:
+    */
     void mostrar_edificios();
+
+    /*
+    *PRE:
+    *POST:
+    */
     void mostrar_materiales();
+    
+    /*
+    *PRE:
+    *POST:
+    */
     void mostrar_edificios_construidos();
+    
+    /*
+    *PRE:
+    *POST:
+    */
     void menu();
     ~Juego();
     
-private:    
+private: 
+    /*
+    *PRE:
+    *POST:
+    */
     int devolver_pos_vector(string nombre_a_buscar);
+    
+    /*
+    *PRE:
+    *POST:
+    */
     int devolver_pos_vector2(string nombre);
+    
+    /*
+    *PRE:
+    *POST:
+    */
     int procesar_opcion();
+
+    /*
+    *PRE:
+    *POST:
+    */
     string extraer_coordenadas (string nombre);
 };
 

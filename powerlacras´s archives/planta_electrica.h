@@ -6,7 +6,17 @@ class Planta_electrica : public Edificios {
 
 
 public:
+
+    /*
+    *PRE:
+    *POST:
+    */
     Planta_electrica(string nombre ,int pidra,int madera, int metal, int cant_max_construidos);
+  
+    /*
+    *PRE:
+    *POST:
+    */
     int cuanto_produce();
     //~mina();
 };
