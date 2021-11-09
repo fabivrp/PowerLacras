@@ -47,10 +47,9 @@ int main(){
     Juego juego;
 
     juego.cargar_archivos();
-
-    juego.recolectar_materiales();
-    
-
+    juego.mostrar_edificios();
+    juego.mostrar_edificios_construidos();
+    juego.mostrar_materiales();
     return 0;
 }
 
