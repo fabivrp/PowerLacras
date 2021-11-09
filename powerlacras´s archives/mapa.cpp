@@ -68,3 +68,11 @@ char Mapa::consultar_tipo(int fila, int columna){
 
     return this-> mapa[fila][columna]->tipo_casilla;
 }
+
+int Mapa :: devolver_filas(){
+    return this -> filas;
+}
+
+int Mapa :: devolver_columnas(){
+    return this -> columnas;
+}

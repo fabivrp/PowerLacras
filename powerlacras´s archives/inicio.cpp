@@ -112,10 +112,10 @@ void imprimir_bienvenida(){
 }
 int main (){   //  g++ main2.cpp mapa.cpp casilleroc.cpp casilleroi.cpp casillerot.cpp casillero.cpp parser.cpp parsere.cpp leer_archivos.cpp ubicaciones.cpp juego.cpp cargar_archivos.cpp aserradero.cpp mina.cpp escuela.cpp fabrica.cpp obelisco.cpp planta_electrica.cpp edificios.cpp material.cpp -o o
 
-    //mostrar_salida_parpaeante();
-    //imprimir_edificio();
+    imprimir_edificio();
     imprimir_bienvenida();
     
+    mostrar_salida_parpaeante();
 
 }
 

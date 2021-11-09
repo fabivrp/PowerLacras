@@ -1,4 +1,6 @@
 #include "juego.h"
+#include <stdlib.h>
+#include <time.h>
 
 const int PRODUCCION_MINIMA = 0;
 
@@ -296,6 +298,36 @@ void Juego :: consultar_coordenada(){
 }
 
 
+int Juego :: casillas_disponibles(){
+    int casillas_disponibles = 0;
+    for(int i = 0 ; i < mapa->devolver_filas() ; i++){
+        for(int j = 0; j < mapa->devolver_columnas() ; j++){
+            
+            if (mapa->consultar_tipo(i,j) == CAMINO){
+                casillas_disponibles++;
+            }
+        }       
+    }
+    return casillas_disponibles;
+}
+
+int Juego :: numero_aleatorio(int limite_inferior, int limite_superior){
+    return(limite_inferior + rand() % (limite_superior + 1 - limite_inferior)) ;
+}
+
+void Juego ::ejecutar_lluvia_materiales(){
+    int cantidad_madera, cantidad_metal, cantidad_piedra;
+    srand((unsigned)time(NULL));
+
+    cantidad_madera = numero_aleatorio(MIN_MADERA, MAX_MADERA);
+    cantidad_piedra = numero_aleatorio(MIN_PIEDRA, MAX_PIEDRA);
+    cantidad_metal = numero_aleatorio(MIN_METAL, MAX_METAL);
+
+    //cout << cantidad_metal << " metal " << cantidad_piedra << " piedra " << cantidad_madera << "madera" << endl;
+
+}
+/*
+*/
 int Juego :: procesar_opcion(){
     string opcion;
         Opciones opciones(this->vector_edificios,this->vector_ubicaciones,this->vector_materiales,this->mapa);

@@ -26,6 +26,13 @@ const int ESPACIO_UNIDADES_CONSTRUIDAS = 16;
 const int ESPACIO_UNIDADES_DISPONIBLES = 16;
 const int ESPACIO_COORDENADAS = 30;
 
+const int MAX_PIEDRA = 2;
+const int MIN_PIEDRA = 1;
+const int MAX_MADERA = 1;
+const int MIN_MADERA = 0;
+const int MAX_METAL = 4;
+const int MIN_METAL = 2;
+
 const char PLANTA_ELECTRICA = 'P';
 const char ESCUELA = 'E';
 const char OBELISCO = 'O';
@@ -98,6 +105,13 @@ public:
     */
    void consultar_coordenada();
 
+   /*
+   *PRE:
+   *POST:
+   */
+    void ejecutar_lluvia_materiales();
+
+
     ~Juego();
     
 private: 
@@ -125,8 +139,25 @@ private:
     */
     string extraer_coordenadas (string nombre);
 
-
+    /*
+    *PRE:
+    *POST:
+    */
     void describir_contenido(char tipo_casilla);
+
+
+    /*
+    *PRE:
+    *POST:
+    */
+    int casillas_disponibles();
+    
+    /*
+    *PRE:
+    *POST:
+    */
+    int numero_aleatorio(int limite_inferior, int limite_superior);
+
 };
 
 

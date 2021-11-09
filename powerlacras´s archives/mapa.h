@@ -43,6 +43,16 @@ void mostrar();
     *POST:
     */
 char consultar_tipo(int fila, int columna);
+/*
+    *PRE:
+    *POST:
+    */
+int devolver_filas();
+/*
+    *PRE:
+    *POST:
+    */
+int devolver_columnas();
 
 ~Mapa();
 

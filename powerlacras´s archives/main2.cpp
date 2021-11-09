@@ -25,10 +25,10 @@ const string PATH_ARCHIVO_MATERIALES = "materiales.txt";
 const string PATH_MAPA = "mapa.txt";
 const string PATH_UBICACIONES = "ubicaciones.txt";
 
+/*
 const string METAL = "Metal";
 const string PIEDRA = "Piedra";
 const string MADERA = "Madera";
-/*
 */
 struct Materiales{
     string tipo;
@@ -51,8 +51,9 @@ int main(){
     //juego.mostrar_edificios_construidos();
     //juego.mostrar_materiales();
     
-    juego.consultar_coordenada();
-
+    //juego.consultar_coordenada();
+    juego.ejecutar_lluvia_materiales();
+    
     return 0;
 }
 
