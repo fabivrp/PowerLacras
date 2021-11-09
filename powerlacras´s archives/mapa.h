@@ -37,6 +37,13 @@ void actualizar_mapa(Casillero* casilla,int coordenadaf,int coordenadac);
 *POST:
 */
 void mostrar();
+
+/*
+    *PRE:
+    *POST:
+    */
+char consultar_tipo(int fila, int columna);
+
 ~Mapa();
 
 };

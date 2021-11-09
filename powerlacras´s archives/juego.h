@@ -26,6 +26,20 @@ const int ESPACIO_UNIDADES_CONSTRUIDAS = 16;
 const int ESPACIO_UNIDADES_DISPONIBLES = 16;
 const int ESPACIO_COORDENADAS = 30;
 
+const char PLANTA_ELECTRICA = 'P';
+const char ESCUELA = 'E';
+const char OBELISCO = 'O';
+const char ASERRADERO = 'A';
+const char MINA = 'M';
+const char FABRICA = 'F';
+const char TERRENO = 'T';
+const char LAGO = 'L';
+const char CAMINO = 'C';
+const char METAL = 'I';
+const char MADERA = 'W';
+const char PIEDRA = 'S';
+
+
 class Juego
 {
 private:
@@ -72,7 +86,18 @@ public:
     */
     void menu();
 
+    /*
+    *PRE:
+    *POST:
+    */
     void recolectar_materiales();
+
+    /*
+    *PRE:
+    *POST:
+    */
+   void consultar_coordenada();
+
     ~Juego();
     
 private: 
@@ -99,6 +124,9 @@ private:
     *POST:
     */
     string extraer_coordenadas (string nombre);
+
+
+    void describir_contenido(char tipo_casilla);
 };
 
 

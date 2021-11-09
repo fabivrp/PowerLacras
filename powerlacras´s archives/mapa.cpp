@@ -63,3 +63,8 @@ Mapa ::~Mapa(){
     }
     delete []mapa;
 }
+
+char Mapa::consultar_tipo(int fila, int columna){
+
+    return this-> mapa[fila][columna]->tipo_casilla;
+}

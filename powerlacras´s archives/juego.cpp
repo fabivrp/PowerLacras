@@ -216,6 +216,86 @@ void Juego::recolectar_materiales(){
     }    
 }
 
+void Juego :: describir_contenido(char tipo_casilla){
+     
+     switch (tipo_casilla) {
+        case ASERRADERO:
+
+            cout << "La casilla es de tipo terreno y tiene un Aserradero construido " << endl;
+
+            break;
+        case ESCUELA:
+
+            cout << "La casilla es de tipo terreno y tiene una Escuela construida " << endl;
+
+            break;
+        case MINA:
+
+            cout << "La casilla es de tipo terreno y tiene una Mina construida " << endl;
+
+            break;
+        case FABRICA:
+
+            cout << "La casilla es de tipo terreno y tiene una Fábrica construida " << endl;
+
+            break;
+        case OBELISCO:
+    
+            cout << "La casilla es de tipo terreno y tiene un Obelisco construido " << endl;
+    
+            break;
+        case PLANTA_ELECTRICA:
+           
+            cout << "La casilla es de tipo terreno y tiene una Planta eléctrica construida " << endl;
+
+            break;
+        case TERRENO:
+           
+            cout << "La casilla es de tipo terreno y está disponible para construcción " << endl;
+        
+            break;
+        case LAGO:
+           
+            cout << "La casilla es de tipo lago, no puedes construir sobre un cuerpo de agua " << endl;
+           
+           break;
+        case CAMINO:
+           
+            cout << "La casilla es de tipo lago, no puedes construir sobre un cuerpo de agua " << endl;
+           
+           break;
+        case METAL:
+           
+            cout << "La casilla es de tipo camino y tine material de tipo metal sobre ella " << endl;
+           
+           break;
+        case PIEDRA:
+            
+            cout << "La casilla es de tipo camino y tine material de tipo piedra sobre ella " << endl;
+           
+           break;
+        case MADERA:
+           
+            cout << "La casilla es de tipo camino y tine material de tipo madera sobre ella " << endl;
+           
+           break;
+    }
+}
+
+void Juego :: consultar_coordenada(){
+    
+    int fila, columna;
+    
+    cout << "Igrese la fila de la coordenada que desea consultar: ";
+    cin >> fila; 
+    
+    cout << "Igrese la columna de la coordenada que desea consultar: ";
+    cin >> columna; 
+
+    describir_contenido(mapa->consultar_tipo(fila,columna));
+}
+
+
 int Juego :: procesar_opcion(){
     string opcion;
         Opciones opciones(this->vector_edificios,this->vector_ubicaciones,this->vector_materiales,this->mapa);

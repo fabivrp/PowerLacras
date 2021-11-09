@@ -13,6 +13,8 @@ public:
 
     Casillero(char tipo_casilla);
     virtual void mostrar() = 0;
+    
+//virtual char devolver_tipo() = 0;
 
 };
 
