@@ -12,3 +12,8 @@ int Aserradero :: cuanto_produce(){
     return  this->produccion;
 }
 
+const string Aserradero :: tipo_produccion(){
+
+    return TIPO_PRODUCCION_ASERRADERO;
+}
+

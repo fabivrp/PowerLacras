@@ -12,3 +12,7 @@ int Escuela :: cuanto_produce(){
     return  this->produccion;
 }
 
+const string Escuela :: tipo_produccion(){
+    return TIPO_PRODUCCION_ESCUELA;
+}
+

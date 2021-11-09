@@ -71,6 +71,8 @@ public:
     *POST:
     */
     void menu();
+
+    void recolectar_materiales();
     ~Juego();
     
 private: 

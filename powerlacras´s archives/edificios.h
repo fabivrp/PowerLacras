@@ -3,6 +3,12 @@
 #include <iostream>
 using namespace std;
 
+const string TIPO_PRODUCCION_OBELISCO = " ";
+const string TIPO_PRODUCCION_PLANTA = " ";
+const string TIPO_PRODUCCION_ESCUELA = " ";
+const string TIPO_PRODUCCION_MINA = "Piedra";
+const string TIPO_PRODUCCION_FABRICA = "Metal";
+const string TIPO_PRODUCCION_ASERRADERO = "Madera";
 
 //CREO QUE LA CLASE TENDRIA QUE SER EN SINGULAR  LIKE ---> -EDIFICIO. 
 
@@ -78,6 +84,12 @@ public:
     *POST:
     */
     virtual int cuanto_produce() = 0;
+    
+    /*
+    *PRE:
+    *POST:
+    */
+    virtual const string tipo_produccion() = 0;
 
     //~edificios();
 };

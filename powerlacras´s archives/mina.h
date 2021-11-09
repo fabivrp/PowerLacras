@@ -12,7 +12,13 @@ public:
     *POST:
     */
     Mina(string nombre ,int piedra,int madera, int metal, int cant_max_construidos);
-  
+    
+    /*
+    *PRE:
+    *POST:
+    */
+    const string tipo_produccion();
+    
     /*
     *PRE:
     *POST:

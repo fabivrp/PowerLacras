@@ -7,6 +7,11 @@ Planta_electrica::Planta_electrica(string nombre,int piedra,int madera,int metal
     this->simbolo = 'P';
 }
 
+const string Planta_electrica :: tipo_produccion(){
+    return TIPO_PRODUCCION_PLANTA;
+}
+
 int Planta_electrica :: cuanto_produce(){
     return  this->produccion;
 }
+

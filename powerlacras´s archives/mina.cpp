@@ -12,3 +12,7 @@ int Mina :: cuanto_produce(){
     return  this->produccion;
 }
 
+const string Mina:: tipo_produccion(){
+    return TIPO_PRODUCCION_MINA;
+}
+

@@ -8,6 +8,9 @@ Obelisco::Obelisco(string nombre,int piedra,int madera,int metal, int cant_max_c
     this->simbolo = 'O';
 }
 
+const string Obelisco :: tipo_produccion(){
+    return TIPO_PRODUCCION_OBELISCO;
+}
 int Obelisco :: cuanto_produce(){
     return  this->produccion;
 }

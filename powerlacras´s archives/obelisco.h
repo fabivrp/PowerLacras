@@ -17,6 +17,12 @@ public:
     *PRE:
     *POST:
     */
+    const string tipo_produccion();
+    
+    /*
+    *PRE:
+    *POST:
+    */
     int cuanto_produce();
     //~mina();
 };

@@ -1,7 +1,4 @@
 #include <iostream>
-#include <fstream>
-#include <string>
-#include <iostream>
 #include "casillero.h"
 #include "edificios.h"
 #include "leer_archivos.h"
@@ -46,23 +43,13 @@ struct Edificio{
 };
 
 
-int main()
-{
-    char tipo;
-    string cantidad;
-    tipo = 'S';
-   int num = 6;
+int main(){
+    Juego juego;
 
+    juego.cargar_archivos();
+
+    juego.recolectar_materiales();
     
-int* t;
-    
-    
-Cargar_archivos y;
-  Mapa* mapa = y.cargar_mapa(t);
-  
-  mapa->mostrar();
-   
-   
 
     return 0;
 }

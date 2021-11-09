@@ -1,5 +1,7 @@
 #include "juego.h"
 
+const int PRODUCCION_MINIMA = 0;
+
 /*Juego::Juego()
 {
 }
@@ -197,6 +199,23 @@ void Juego :: mostrar_materiales(){
     }
     cout << endl;
 }
+void Juego::recolectar_materiales(){
+
+    for (int i = 0; i < vector_edificios.tamanio(); i++){
+        Edificios* aux = vector_edificios.devolver_info(i);
+
+        if (aux->cuanto_produce() > PRODUCCION_MINIMA){
+            for (int j = 0; j < vector_materiales.tamanio(); j++){
+                Material* aux_material = vector_materiales.devolver_info(j);
+        
+                if (aux->tipo_produccion() == aux_material->devolver_nombre()){
+                    aux_material->agregar_al_stock(aux->cuanto_produce());    
+                }
+            }
+        }
+    }    
+}
+
 int Juego :: procesar_opcion(){
     string opcion;
         Opciones opciones(this->vector_edificios,this->vector_ubicaciones,this->vector_materiales,this->mapa);
