@@ -55,6 +55,9 @@ const char METAL = 'I';
 const char MADERA = 'W';
 const char PIEDRA = 'S';
 
+const string BRINDA_MATERIALES = "SI";
+const string NO_BRINDA_MATERIALES = "NO";
+
 
 class Juego
 {
