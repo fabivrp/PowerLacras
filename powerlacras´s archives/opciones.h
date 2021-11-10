@@ -41,6 +41,7 @@ protected:
     bool coordenada_es_valida(int *fil,int *col);
     void pedir_coordenada(int *fila, int *columna);
     bool confirmo_accion(string accion,string objeto);
+    int calcular_espacio_delantero(int espacio, int  largo_palabra);
     //void agregar_edificacion(int pos_vector_edificio,int pos_piedra,int pos_madera,int pos_metal);
 
 public:
