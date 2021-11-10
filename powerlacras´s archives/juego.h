@@ -19,6 +19,11 @@
 #include <cstdlib>
 #include <iomanip>
 
+struct Coordenada{
+    int fila;
+    int columna;
+};
+
 const int ESPACIO_TIPO_EDIFICIO = 24;
 const int ESPACIO_TIPO_MATERIAL = 24;
 const int ESPACIO_MATERIALES = 16;
@@ -32,6 +37,9 @@ const int MAX_MADERA = 1;
 const int MIN_MADERA = 0;
 const int MAX_METAL = 4;
 const int MIN_METAL = 2;
+
+const int MIN_FILAS = 0;
+const int MIN_COLUMNAS = 0;
 
 const char PLANTA_ELECTRICA = 'P';
 const char ESCUELA = 'E';
@@ -162,7 +170,13 @@ private:
     *PRE:
     *POST:
     */
-    bool casilla_disponible(int fila, int columna);
+    bool casilla_disponible(Coordenada coordenada);
+    
+    /*
+    *PRE:
+    *POST:
+    */
+    Coordenada asignar_coordenada(Coordenada coordenada);
 
 };
 

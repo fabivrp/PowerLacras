@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
+
+
 const int PRODUCCION_MINIMA = 0;
 
 /*Juego::Juego()
@@ -108,7 +110,7 @@ void Juego :: mostrar_edificios(){
         espacio_trasero = ESPACIO_UNIDADES_CONSTRUIDAS - espacio_delantero - material.length();
         cout << setw(espacio_delantero) << "" << material << setw(espacio_trasero) << "|";
         
-        material = to_string(aux->devolver_max_construccion());
+        material = to_string(aux->devolver_max_construccion()-1);
         espacio_delantero = calcular_espacio_delantero(ESPACIO_UNIDADES_DISPONIBLES, material.length());
         espacio_trasero = ESPACIO_UNIDADES_DISPONIBLES - espacio_delantero - material.length();
         cout << setw(espacio_delantero) << "" << material << setw(espacio_trasero) << "|" << END_COLOR <<endl;
@@ -314,20 +316,36 @@ int Juego :: casillas_disponibles(){
 int Juego :: numero_aleatorio(int limite_inferior, int limite_superior){
     return(limite_inferior + rand() % (limite_superior + 1 - limite_inferior)) ;
 }
-bool Juego :: casilla_disponible(int fila, int columna){
-    return true;
+
+bool Juego :: casilla_disponible(Coordenada coordenada){
+   
+    return this->mapa->consultar_tipo(coordenada.fila, coordenada.columna) == CAMINO;
 
 }
 
+Coordenada Juego :: asignar_coordenada(Coordenada coordenada){
+
+    coordenada.fila = numero_aleatorio(MIN_FILAS, mapa->devolver_filas());
+
+    return coordenada;
+}
+
 void Juego ::ejecutar_lluvia_materiales(){
-    int cantidad_madera, cantidad_metal, cantidad_piedra, total_materiales;
     srand((unsigned)time(NULL));
+    
+    int cantidad_madera, cantidad_metal, cantidad_piedra, total_materiales;
+    Coordenada coordenada_piedra, coordenada_metal, coordenada_madera;
 
     cantidad_madera = numero_aleatorio(MIN_MADERA, MAX_MADERA);
     cantidad_piedra = numero_aleatorio(MIN_PIEDRA, MAX_PIEDRA);
     cantidad_metal = numero_aleatorio(MIN_METAL, MAX_METAL);
 
+    total_materiales = cantidad_madera + cantidad_metal + cantidad_piedra;
 
+    if (total_materiales < casillas_disponibles()){
+        
+    }
+    
 
     //cout << cantidad_metal << " metal " << cantidad_piedra << " piedra " << cantidad_madera << "madera" << endl;
 
