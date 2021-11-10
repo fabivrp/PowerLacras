@@ -98,7 +98,7 @@ void Juego :: mostrar_edificios(){
         espacio_trasero = ESPACIO_MATERIALES - espacio_delantero - material.length();
         cout << setw(espacio_delantero) << "" << material << setw(espacio_trasero) << "|";
         
-        material = to_string(aux->devolver_cantidad_piedra());
+        material = to_string(aux->devolver_cantidad_metal());
         espacio_delantero = calcular_espacio_delantero (ESPACIO_MATERIALES, material.length());
         espacio_trasero = ESPACIO_MATERIALES - espacio_delantero - material.length();
         cout << setw(espacio_delantero) << "" << material << setw(espacio_trasero) << "|";
