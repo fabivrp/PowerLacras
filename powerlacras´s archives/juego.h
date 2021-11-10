@@ -157,6 +157,12 @@ private:
     *POST:
     */
     int numero_aleatorio(int limite_inferior, int limite_superior);
+    
+    /*
+    *PRE:
+    *POST:
+    */
+    bool casilla_disponible(int fila, int columna);
 
 };
 

@@ -29,6 +29,10 @@ void Casillerot :: mostrar(){
     if (this -> tipo_casilla == PIEDRA)
         cout << BGND_LIGHT_AQUA_43<< " " << PIEDRA << " " << END_COLOR;
 }      
+
+void Casillerot :: cambiar_contenido(char tipo_nuevo){
+    this->tipo_casilla = tipo_nuevo;
+}
 /*
             
 DISPONIBLE:

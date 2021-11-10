@@ -314,14 +314,20 @@ int Juego :: casillas_disponibles(){
 int Juego :: numero_aleatorio(int limite_inferior, int limite_superior){
     return(limite_inferior + rand() % (limite_superior + 1 - limite_inferior)) ;
 }
+bool Juego :: casilla_disponible(int fila, int columna){
+    return true;
+
+}
 
 void Juego ::ejecutar_lluvia_materiales(){
-    int cantidad_madera, cantidad_metal, cantidad_piedra;
+    int cantidad_madera, cantidad_metal, cantidad_piedra, total_materiales;
     srand((unsigned)time(NULL));
 
     cantidad_madera = numero_aleatorio(MIN_MADERA, MAX_MADERA);
     cantidad_piedra = numero_aleatorio(MIN_PIEDRA, MAX_PIEDRA);
     cantidad_metal = numero_aleatorio(MIN_METAL, MAX_METAL);
+
+
 
     //cout << cantidad_metal << " metal " << cantidad_piedra << " piedra " << cantidad_madera << "madera" << endl;
 

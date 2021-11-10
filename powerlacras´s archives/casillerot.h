@@ -10,8 +10,16 @@ using namespace std;
 class Casillerot : public Casillero{
 
 public:
-    Casillerot(char tipo_casilla);
 
+
+    Casillerot(char tipo_casilla);
+    
+    /*
+    *PRE:
+    *POST:
+    */
+    void cambiar_contenido( char tipo_nuevo);
+    
     /*
     *PRE:
     *POST:
