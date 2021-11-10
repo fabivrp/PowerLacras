@@ -331,15 +331,20 @@ int Juego :: numero_aleatorio(int limite_inferior, int limite_superior){
 
 bool Juego :: casilla_disponible(Coordenada coordenada){
    
-    return this->mapa->consultar_tipo(coordenada.fila, coordenada.columna) == CAMINO;
+    return this->mapa->consultar_tipo(coordenada.fila-1, coordenada.columna-1) == CAMINO;
 
 }
 
-Coordenada Juego :: asignar_coordenada(Coordenada coordenada){
+void Juego :: asignar_coordenada(Coordenada& coordenada){
+        
+    while (!casilla_disponible(coordenada)){ 
+        coordenada.fila = numero_aleatorio(MIN_FILAS, mapa->devolver_filas()-1);
+        coordenada.columna = numero_aleatorio(MIN_COLUMNAS, mapa->devolver_columnas()-1);    
+    }
+}
 
-    coordenada.fila = numero_aleatorio(MIN_FILAS, mapa->devolver_filas());
-
-    return coordenada;
+void Juego :: cambiar_contenido(Coordenada coordenada){
+    
 }
 
 void Juego ::ejecutar_lluvia_materiales(){
@@ -353,10 +358,16 @@ void Juego ::ejecutar_lluvia_materiales(){
     cantidad_metal = numero_aleatorio(MIN_METAL, MAX_METAL);
 
     total_materiales = cantidad_madera + cantidad_metal + cantidad_piedra;
+    coordenada_piedra.columna=0;
+    coordenada_piedra.fila=0;
 
-    if (total_materiales < casillas_disponibles()){
-        
-    }
+    asignar_coordenada(coordenada_piedra);
+
+
+    cout << coordenada_piedra.fila << " " << coordenada_piedra.columna << endl;
+    
+    
+    //if (total_materiales < casillas_disponibles()){ }
     
 
     //cout << cantidad_metal << " metal " << cantidad_piedra << " piedra " << cantidad_madera << "madera" << endl;

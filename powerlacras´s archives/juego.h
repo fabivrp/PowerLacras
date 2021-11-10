@@ -180,7 +180,13 @@ private:
     *PRE:
     *POST:
     */
-    Coordenada asignar_coordenada(Coordenada coordenada);
+    void asignar_coordenada(Coordenada& coordenada);
+    
+    /*
+    *PRE:
+    *POST:
+    */
+    void cambiar_contenido(Coordenada coordenada);
 
 };
 
