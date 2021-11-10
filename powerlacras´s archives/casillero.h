@@ -5,6 +5,8 @@
 
 class Casillero
 {
+private:
+    bool ocupado;
 protected:
     char tipo_casilla;
     //char tipo_objeto;
@@ -12,7 +14,9 @@ protected:
 public:
 
     Casillero(char tipo_casilla);
+    bool esta_ocupado();
     virtual void mostrar() = 0;
+    virtual void dar_mensaje() = 0;
     
     char devolver_tipo();
 

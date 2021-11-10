@@ -62,6 +62,7 @@ void Juego :: agregar_ubicaciones(){
 int Juego :: procesar_opcion(){
      string opcion;
         Construir_edificio op1(&this->vector_edificios,&this->vector_ubicaciones,&this->vector_materiales,this->mapa);
+        Demoler_edificio op4(&this->vector_edificios,&this->vector_ubicaciones,&this->vector_materiales,this->mapa);
         Listar_edificios_construidos op2(&this->vector_edificios,&this->vector_ubicaciones,&this->vector_materiales,this->mapa);
         Listar_edificios op3(&this->vector_edificios,&this->vector_ubicaciones,&this->vector_materiales,this->mapa);
         Listar_materiales op7(&this->vector_edificios,&this->vector_ubicaciones,&this->vector_materiales,this->mapa);
@@ -87,7 +88,7 @@ int Juego :: procesar_opcion(){
             break;
         case 4:
         cout << "entre aqui  4" << endl;
-            //xqw2.accion();
+            op4.accion();
             
             break;
         case 5:

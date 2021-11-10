@@ -56,4 +56,7 @@ void Casilleroc :: mostrar(){
     cout << BGND_LIGHT_BLUE_33 << this -> tipo_casilla << END_COLOR;
     */
 }
+void Casilleroc :: dar_mensaje(){
+    cout << "La casilla es de tipo terreno " << endl;
+}
 

@@ -35,6 +35,7 @@ bool Mapa::llenar_mapa(Casillero* casilla,  int fila, int columna){
 
 }
 void Mapa::actualizar_mapa(Casillero* casilla,  int fila, int columna){
+        
         delete mapa[fila][columna];
         mapa[fila][columna] = casilla;
 
@@ -67,6 +68,11 @@ Mapa ::~Mapa(){
 char Mapa::consultar_tipo(int fila, int columna){
 
     return this-> mapa[fila][columna]->devolver_tipo();
+}
+
+Casillero* Mapa :: devolver_casilla(int fil,int col){
+    return mapa[fil][col];
+
 }
 
 int Mapa :: devolver_filas(){

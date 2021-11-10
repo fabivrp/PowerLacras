@@ -33,6 +33,11 @@ void Casillerot :: mostrar(){
 void Casillerot :: cambiar_contenido(char tipo_nuevo){
     this->tipo_casilla = tipo_nuevo;
 }
+
+void Casillerot :: dar_mensaje(){
+    cout << "La casilla es de tipo camino " << endl;
+
+}
 /*
             
 DISPONIBLE:

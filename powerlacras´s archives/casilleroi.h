@@ -17,6 +17,7 @@ public:
     *POST:
     */
     void mostrar();
+    void dar_mensaje();
 };
 
 

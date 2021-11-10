@@ -54,6 +54,8 @@ int devolver_filas();
     */
 int devolver_columnas();
 
+Casillero* devolver_casilla(int fil,int col);
+
 ~Mapa();
 
 };

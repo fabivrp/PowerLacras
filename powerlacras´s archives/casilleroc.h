@@ -11,6 +11,7 @@ public:
     
     Casilleroc (char tipo_casilla);
     void mostrar();
+    void dar_mensaje();
    
 };
 

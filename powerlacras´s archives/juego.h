@@ -11,6 +11,7 @@
 #include "cargar_archivos.h"
 #include "consultar_coordenada.h"
 #include "construir_edificio.h"
+#include "demoler_edificio.h"
 #include "recolectar_recursos.h"
 #include "lluvia_recursos.h"
 #include "listar_edificios_construidos.h"
