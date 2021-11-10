@@ -88,7 +88,7 @@ int Juego :: procesar_opcion(){
             break;
         case 4:
         cout << "entre aqui  4" << endl;
-            op4.accion();
+           // op4.accion();
             
             break;
         case 5:

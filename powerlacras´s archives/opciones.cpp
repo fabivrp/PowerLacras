@@ -45,7 +45,14 @@ int Opciones :: calcular_espacio_delantero(int espacio, int  largo_palabra){
 }
 
 
-
+void Opciones :: imprimir_centrado(int espacio, string palabra){
+      
+        int espacio_delantero = calcular_espacio_delantero (espacio, palabra.length());
+        int espacio_trasero = espacio - espacio_delantero - palabra.length();
+        cout << BGND_BLACK_16<< setfill(' ');
+        cout << setw(espacio_delantero) << "" << palabra << setw(espacio_trasero) << "|" << END_COLOR;
+        
+}
 
 
 

@@ -12,6 +12,8 @@ Demoler_edificio::Demoler_edificio(Vector <Edificios> *vector_edificio,Vector <U
 
 
 
+/*
+*/
 void Demoler_edificio :: accion(){
         
     this->coordenada_es_valida(&this->fil,&this->col);
@@ -29,11 +31,15 @@ void Demoler_edificio :: accion(){
     }
 }
 
+
 bool Demoler_edificio :: hay_edificio(int fila, int columna){
-    return ; 
+    return false ; 
 }
 
+/*
+*/
 void Demoler_edificio :: obtener_datos(char tipo_casilla){
+
 
     int pos_vector_edificio = 0;
     Edificios* aux = this->vector_edificio->devolver_info(pos_vector_edificio); 
@@ -50,6 +56,7 @@ void Demoler_edificio :: obtener_datos(char tipo_casilla){
 }
 
 void Demoler_edificio :: regresar_material(string tipo, int cant_material){
+/*
     int contador = 0;
     Material* aux = this->vector_materiales->devolver_info(contador); 
     
@@ -59,6 +66,6 @@ void Demoler_edificio :: regresar_material(string tipo, int cant_material){
     }
 
     aux->agregar_al_stock(cant_material);
+*/
+
 }
-
-

@@ -5,13 +5,15 @@
 
 using namespace std;
 
+const int PRODUCCION_MINIMA = 0;
+const int ESPACIO_MATERIALES = 16;
+const int ESPACIO_COORDENADAS = 30;
 const int ESPACIO_TIPO_EDIFICIO = 24;
 const int ESPACIO_TIPO_MATERIAL = 24;
-const int ESPACIO_MATERIALES = 16;
+const int ESPACIO_UNIDADES_STOCK = 16;
+const int ESPACIO_BRIDA_MATERIALES = 16;
 const int ESPACIO_UNIDADES_CONSTRUIDAS = 16;
 const int ESPACIO_UNIDADES_DISPONIBLES = 16;
-const int ESPACIO_COORDENADAS = 30;
-const int PRODUCCION_MINIMA = 0;
 
 const int MAX_PIEDRA = 2;
 const int MIN_PIEDRA = 1;

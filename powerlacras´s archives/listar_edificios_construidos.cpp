@@ -35,24 +35,17 @@ void Listar_edificios_construidos :: accion(){
 
         if (aux->devolver_construidos()>0){
             cout << BGND_DARK_AQUA_29<< "\t\t" "|---------------------------------------------------------------------|" << END_COLOR <<endl;
-            int espacio_delantero = calcular_espacio_delantero(ESPACIO_TIPO_EDIFICIO, aux->devolver_nombre().length());
-            int espacio_trasero = ESPACIO_TIPO_EDIFICIO - espacio_delantero - aux->devolver_nombre().length();
-            string caracteristica = to_string(aux->devolver_construidos());
-        
             cout << BGND_BLACK_16<< setfill(' ');
-            cout << "\t\t" "|" << setw(espacio_delantero) << "" << aux->devolver_nombre() << setw(espacio_trasero) << "|";
-        
-        
-            espacio_delantero = calcular_espacio_delantero(ESPACIO_UNIDADES_CONSTRUIDAS, caracteristica.length());
-            espacio_trasero = ESPACIO_UNIDADES_CONSTRUIDAS - espacio_delantero - caracteristica.length();
-            cout << setw(espacio_delantero) << "" << caracteristica << setw(espacio_trasero) << "|";
+            cout << "\t\t" "|";
 
-       
+            imprimir_centrado(ESPACIO_TIPO_MATERIAL,aux->devolver_nombre());
+            
+            imprimir_centrado(ESPACIO_UNIDADES_CONSTRUIDAS,to_string(aux->devolver_construidos()));
+
             string coordenadas =  extraer_coordenadas(aux->devolver_nombre());
-        
-            espacio_delantero = calcular_espacio_delantero(ESPACIO_COORDENADAS, coordenadas.length());
-            espacio_trasero = ESPACIO_COORDENADAS - espacio_delantero - coordenadas.length();
-            cout << setw(espacio_delantero) << "" << coordenadas << setw(espacio_trasero) << "|" << END_COLOR << endl;
+           
+            imprimir_centrado(ESPACIO_COORDENADAS, coordenadas);
+            cout << endl;
         }
     }
 

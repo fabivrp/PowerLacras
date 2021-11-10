@@ -47,12 +47,12 @@ int main(){
     Juego juego;
 
     juego.cargar_archivos();
-   //juego.mostrar_edificios();
+    juego.menu();
     //juego.mostrar_edificios_construidos();
     //juego.mostrar_materiales();
     
     //juego.consultar_coordenada();
-    juego.ejecutar_lluvia_materiales();
+    //juego.ejecutar_lluvia_materiales();
     
     return 0;
 }
