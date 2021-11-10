@@ -112,19 +112,20 @@ void Juego :: mostrar_edificios(){
         espacio_trasero = ESPACIO_UNIDADES_CONSTRUIDAS - espacio_delantero - material.length();
         cout << setw(espacio_delantero) << "" << material << setw(espacio_trasero) << "|";
         
-        material = to_string(aux->devolver_max_construccion()-1);
+        material = to_string(aux->devolver_max_construccion()- aux -> devolver_construidos());
         espacio_delantero = calcular_espacio_delantero(ESPACIO_UNIDADES_DISPONIBLES, material.length());
         espacio_trasero = ESPACIO_UNIDADES_DISPONIBLES - espacio_delantero - material.length();
         cout << setw(espacio_delantero) << "" << material << setw(espacio_trasero) << "|" << END_COLOR <<endl;
         
+    }
         
       
-    }
     
     cout << BGND_DARK_AQUA_29 << "╚-------------------------------------------------------------------------------------------------------╝" << END_COLOR << endl;
     cout << endl;
     
-}*/////////////////////////////////////////////////////////
+}
+*/////////////////////////////////////////////////////////
 
 /*string Juego::extraer_coordenadas(string edificio){
     string coordenadas = " ";
@@ -333,6 +334,7 @@ void Juego ::ejecutar_lluvia_materiales(){
         colocar_material(cantidad_piedra, PIEDRA);
         colocar_material(cantidad_metal, METAL);
     }
+    else cout << "No hay suficiente espacio para hacer la lluvia de materiales" << endl;
 }
 
 /*
@@ -392,6 +394,63 @@ int Juego :: procesar_opcion(){
 
 }
 
+bool Juego :: hay_edificio(int fila, int columna){
+    return ((mapa->consultar_tipo(fila, columna) == ESCUELA) 
+            || (mapa->consultar_tipo(fila, columna) == OBELISCO)
+            || (mapa->consultar_tipo(fila, columna) == PLANTA_ELECTRICA) 
+            || (mapa->consultar_tipo(fila, columna) == ASERRADERO)
+            || (mapa->consultar_tipo(fila, columna) == MINA) 
+            || (mapa->consultar_tipo(fila, columna) == FABRICA)); 
+}
+
+void Juego :: obtener_datos(int& piedra, int& madera, int& metal, int fila, int columna){
+
+    int contador = 0;
+    Edificios* aux = vector_edificios.devolver_info(contador); 
+    
+    while ((aux->devolver_simbolo() != mapa->consultar_tipo(fila, columna)) && (contador < vector_edificios.tamanio())){
+        contador++;
+        aux = vector_edificios.devolver_info(contador);
+    }
+    
+    piedra = aux->devolver_cantidad_piedra();
+    madera = aux->devolver_cantidad_madera();
+    metal = aux->devolver_cantidad_metal();
+
+}
+
+void Juego :: regresar_material(string tipo, int cant_material){
+    int contador = 0;
+    Material* aux = vector_materiales.devolver_info(contador); 
+    
+    while ((aux->devolver_nombre() != tipo) && (contador < vector_materiales.tamanio())){
+        contador++;
+        aux = vector_materiales.devolver_info(contador);
+    }
+
+    aux->agregar_al_stock(cant_material);
+}
+
+void Juego :: demoler_edificio(){
+    int fila, columna;
+    int piedra_necesaria, metal_necesario, madera_necesaria;
+
+    cout << "Ingrese la fila de la coordenada que desea demoler: ";
+    cin >> fila;
+    cout << "Ingrese la columna de la coordenada que desea demoler: ";
+    cin >> columna;
+
+    if (hay_edificio(fila, columna)){
+        obtener_datos(piedra_necesaria, madera_necesaria, metal_necesario, fila, columna);
+        Casilleroc* casillero = new Casilleroc(TERRENO);
+        mapa->actualizar_mapa(casillero, fila, columna);
+
+        regresar_material(TIPO_PIEDRA, piedra_necesaria/2);
+        regresar_material(TIPO_MADERA, madera_necesaria/2);
+        regresar_material(TIPO_METAL, metal_necesario/2);
+       
+    }
+}
 
 void Juego :: menu(){
     

@@ -35,6 +35,10 @@ const char METAL = 'I';
 const char MADERA = 'W';
 const char PIEDRA = 'S';
 
+const string TIPO_METAL = "Metal";
+const string TIPO_MADERA = "Madera";
+const string TIPO_PIEDRA = "Piedra";
+
 const string BRINDA_MATERIALES = "SI";
 const string NO_BRINDA_MATERIALES = "NO";
 
