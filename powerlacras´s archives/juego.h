@@ -9,6 +9,7 @@
 #include "parsere.h"
 #include "ubicaciones.h"
 #include "cargar_archivos.h"
+#include "construir_edificio.h"
 #include "material.h"
 #include "casillero.h"
 #include "casilleroc.h"

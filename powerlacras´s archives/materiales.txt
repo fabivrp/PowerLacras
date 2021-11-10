@@ -1,5 +1,5 @@
-Piedra 300
-Madera 100
-Metal 250
-Oro 6
-Vibranio 2
+piedra 300
+madera 100
+metal 250
+oro 6
+vibranio 2

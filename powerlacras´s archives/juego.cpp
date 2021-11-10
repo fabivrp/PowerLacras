@@ -335,15 +335,16 @@ void Juego ::ejecutar_lluvia_materiales(){
 /*
 */
 int Juego :: procesar_opcion(){
-    string opcion;
-        Opciones opciones(this->vector_edificios,this->vector_ubicaciones,this->vector_materiales,this->mapa);
+     string opcion;
+        //Opciones opciones(&this->vector_edificios,&this->vector_ubicaciones,&this->vector_materiales,this->mapa);
+        Construir_edificio optt(&this->vector_edificios,&this->vector_ubicaciones,&this->vector_materiales,this->mapa);
         cout << "Ingresar una de las siguientes opciones:"<< endl;
         getline(cin,opcion);
         switch (stoi(opcion)) {
         case 1:
         cout << "entre aqui  1" << endl;
-            opciones.costruir_edificio();
-            
+        optt.accion();
+        this->mapa->mostrar();
             break;
         case 2:
         cout << "entre aqui  2" << endl;

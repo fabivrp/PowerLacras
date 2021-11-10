@@ -19,7 +19,7 @@ int main(){
 
     if (juego.cargar_archivos()){
        cout << "si cargoooooooooooooooooooo" << endl;
-       //juego.menu();
+       juego.menu();
     }
     juego.mostrar_edificios();
     juego.mostrar_edificios_construidos();
