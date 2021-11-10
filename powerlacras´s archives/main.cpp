@@ -21,9 +21,9 @@ int main(){
        cout << "si cargoooooooooooooooooooo" << endl;
        juego.menu();
     }
-    juego.mostrar_edificios();
+    /*juego.mostrar_edificios();
     juego.mostrar_edificios_construidos();
-    juego.mostrar_materiales();
+    juego.mostrar_materiales();*/
 
    /* Leer_archivos archivo = Leer_archivos("mapa_vacio.txt");
     

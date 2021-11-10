@@ -40,6 +40,10 @@ bool Opciones :: hay_objeto2(string nombre_a_buscar,Vector <Material> vectorr,in
     return encontrado;
 }
 
+int Opciones :: calcular_espacio_delantero(int espacio, int  largo_palabra){
+    return (espacio - largo_palabra)/2;
+}
+
 
 
 

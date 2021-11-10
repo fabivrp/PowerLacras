@@ -5,9 +5,9 @@
 
 class Casillero
 {
-public:
+protected:
     char tipo_casilla;
-    char tipo_objeto;
+    //char tipo_objeto;
     
 public:
 
