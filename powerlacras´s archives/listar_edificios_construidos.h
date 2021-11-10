@@ -8,6 +8,7 @@
 class Listar_edificios_construidos : public Opciones
 {
 private:
+    string extraer_coordenadas(string edificio);
 
     
 public:

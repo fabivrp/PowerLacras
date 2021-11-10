@@ -126,7 +126,7 @@ void Juego :: mostrar_edificios(){
     
 }*/////////////////////////////////////////////////////////
 
-string Juego::extraer_coordenadas(string edificio){
+/*string Juego::extraer_coordenadas(string edificio){
     string coordenadas = " ";
 
     for(int i = 0 ; i < this->vector_ubicaciones.tamanio() ; i++){
@@ -139,7 +139,7 @@ string Juego::extraer_coordenadas(string edificio){
 
     return coordenadas;
 
-}
+}*/
 
 
 void Juego :: mostrar_materiales(){
@@ -343,6 +343,8 @@ int Juego :: procesar_opcion(){
         //Opciones opciones(&this->vector_edificios,&this->vector_ubicaciones,&this->vector_materiales,this->mapa);
         Construir_edificio optt(&this->vector_edificios,&this->vector_ubicaciones,&this->vector_materiales,this->mapa);
         Listar_edificios_construidos xqw(&this->vector_edificios,&this->vector_ubicaciones,&this->vector_materiales,this->mapa);
+        Listar_edificios xqw1(&this->vector_edificios,&this->vector_ubicaciones,&this->vector_materiales,this->mapa);
+        Listar_materiales xqw2(&this->vector_edificios,&this->vector_ubicaciones,&this->vector_materiales,this->mapa);
         cout << "Ingresar una de las siguientes opciones:"<< endl;
         getline(cin,opcion);
         switch (stoi(opcion)) {
@@ -357,10 +359,12 @@ int Juego :: procesar_opcion(){
             break;
         case 3:
         cout << "entre aqui  3" << endl;
+            xqw1.accion();
             
             break;
         case 4:
         cout << "entre aqui  4" << endl;
+            xqw2.accion();
             
             break;
         case 5:

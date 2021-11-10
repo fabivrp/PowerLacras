@@ -11,6 +11,8 @@
 #include "cargar_archivos.h"
 #include "construir_edificio.h"
 #include "listar_edificios_construidos.h"
+#include "listar_edificios.h"
+#include "listar_materiales.h"
 #include "material.h"
 #include "casillero.h"
 #include "casilleroc.h"
