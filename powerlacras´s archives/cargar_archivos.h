@@ -16,11 +16,40 @@ class Cargar_archivos{
 private:
     /* data */
 public:
+    /*
+    *PRE: -
+    *POST:Devuleve la cantidad de materiales que produce el edificio.
+    */
     Cargar_archivos();
-    Mapa* cargar_mapa(int *cont_archivos);
-    Vector <Edificios> cargar_edificios(int *cont_archivos);
-    Vector <Ubicaciones> cargar_ubicaciones(int *cont_archivos);
-    Vector <Material> cargar_materiales(int *cont_archivos);
+    
+    /*
+    *PRE: -
+    *POST:  Carga las  casillas del tipo correspondiente según los datos contenidos en el 
+    *archivo, si se lee exitosamente se suma uno al contador de archivos.
+    */
+    Mapa* cargar_mapa(int *contador_archivos);
+    
+    /*
+    *PRE: -
+    *POST:  Carga los edificios que están contenidos en el archivo dentro del vector, si 
+    *se lee exitosamente se suma uno al contador de archivos.
+    */
+    Vector <Edificios> cargar_edificios(int *contador_archivos);
+    
+    /*
+    *PRE: -
+    *POST:  Carga las ubicaciones de los edificios construidos dentro del vector, si 
+    *se lee exitosamente se suma uno al contador de archivos.
+    */
+    Vector <Ubicaciones> cargar_ubicaciones(int *contador_archivos);
+    
+    /*
+    *PRE: -
+    *POST:  Carga los materiales contenidos en el archivo dentro del vector, si 
+    *se lee exitosamente se suma uno al contador de archivos.
+    */
+    Vector <Material> cargar_materiales(int *contador_archivos);
+    
     ~Cargar_archivos();
 };
 

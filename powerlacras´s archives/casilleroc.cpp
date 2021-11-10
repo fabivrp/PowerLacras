@@ -2,7 +2,7 @@
 
 
 const char PLANTA_ELECTRICA = 'P';
-const char DISPONIBLE = 'T';
+const char TERRENO = 'T';
 const char ASERRADERO = 'A';
 const char OBELISCO = 'O';
 const char FABRICA = 'F';
@@ -27,7 +27,7 @@ Casilleroc::Casilleroc(char tipo_casilla) : Casillero(tipo_casilla)
 //CasilleroC::~CasilleroC()
 void Casilleroc :: mostrar(){
       
-        if (this -> tipo_casilla == DISPONIBLE)
+        if (this -> tipo_casilla == TERRENO)
                 cout << BGND_GREEN_34 << " "<< this ->tipo_casilla <<" " << END_COLOR;
 
             if (this -> tipo_casilla == PLANTA_ELECTRICA)

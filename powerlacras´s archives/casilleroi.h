@@ -13,10 +13,17 @@ public:
     Casilleroi(char tipo_casilla);
 
     /*
-    *PRE:
-    *POST:
+    *PRE: -
+    *POST:Devuleve que es de tipo Terreno si está vacía, en otro caso devuelve el 
+    *identificador del edificio que ocupa la casilla.
     */
+    
     void mostrar();
+
+    /*
+    *PRE: -
+    *POST:Muestra al usuario una descripción del tipo de casilla.
+    */
     void dar_mensaje();
 };
 

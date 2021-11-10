@@ -1,16 +1,7 @@
 #include "demoler_edificio.h"
 
-
-
-
-
-
 Demoler_edificio::Demoler_edificio(Vector <Edificios> *vector_edificio,Vector <Ubicaciones> *vector_ubicaciones,Vector <Material> *vector_materiales ,Mapa *mapa) : Opciones(vector_edificio,vector_ubicaciones,vector_materiales,mapa){
 }
-
-
-
-
 
 /*
 */
@@ -57,6 +48,7 @@ void Demoler_edificio :: obtener_datos(char tipo_casilla){
 
 void Demoler_edificio :: regresar_material(string tipo, int cant_material){
 /*
+*/
     int contador = 0;
     Material* aux = this->vector_materiales->devolver_info(contador); 
     
@@ -66,6 +58,5 @@ void Demoler_edificio :: regresar_material(string tipo, int cant_material){
     }
 
     aux->agregar_al_stock(cant_material);
-*/
 
 }

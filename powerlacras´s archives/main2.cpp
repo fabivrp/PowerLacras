@@ -48,12 +48,7 @@ int main(){
 
     juego.cargar_archivos();
     juego.menu();
-    //juego.mostrar_edificios_construidos();
-    //juego.mostrar_materiales();
-    
-    //juego.consultar_coordenada();
-    //juego.ejecutar_lluvia_materiales();
-    
+   
     return 0;
 }
 

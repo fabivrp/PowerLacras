@@ -10,7 +10,7 @@ Cargar_archivos::~Cargar_archivos()
 {
 }
 
-Mapa* Cargar_archivos :: cargar_mapa(int *cont_archivos){
+Mapa* Cargar_archivos :: cargar_mapa(int *contador_archivos){
     Leer_archivos archivo = Leer_archivos("mapa.txt");
     Mapa* mapa = nullptr;
     if (archivo.hay_archivo()){
@@ -32,12 +32,12 @@ Mapa* Cargar_archivos :: cargar_mapa(int *cont_archivos){
             }
         }
         archivo_mapa.close();
-        *cont_archivos = *cont_archivos + 1 ;
+        *contador_archivos = *contador_archivos + 1 ;
     }
     return mapa;
 }
 
-/*Edificios* Cargar_archivos :: cargar_edificios(int *cont_archivos){
+/*Edificios* Cargar_archivos :: cargar_edificios(int *contador_archivos){
     Leer_archivos archivo = Leer_archivos("edificios.txt");
     Edificios* edificios;
     if (archivo.hay_archivo()){
@@ -51,7 +51,7 @@ Mapa* Cargar_archivos :: cargar_mapa(int *cont_archivos){
     return edificios;
 }*/
 
-Vector <Edificios> Cargar_archivos :: cargar_edificios(int *cont_archivos){
+Vector <Edificios> Cargar_archivos :: cargar_edificios(int *contador_archivos){
     Leer_archivos archivo = Leer_archivos("edificios.txt");
     Edificios* edificio;
     Vector <Edificios> vector;
@@ -63,12 +63,12 @@ Vector <Edificios> Cargar_archivos :: cargar_edificios(int *cont_archivos){
             vector.anadir_elemento(edificio);
         } 
         archivo_edificios.close();  
-        *cont_archivos = *cont_archivos + 1 ;
+        *contador_archivos = *contador_archivos + 1 ;
     }
     return vector;
 }
 
-Vector <Ubicaciones> Cargar_archivos :: cargar_ubicaciones(int *cont_archivos){
+Vector <Ubicaciones> Cargar_archivos :: cargar_ubicaciones(int *contador_archivos){
     Leer_archivos archivo = Leer_archivos("ubicaciones.txt");
     Ubicaciones* ubicaciones;
     Vector <Ubicaciones> vector;
@@ -85,12 +85,12 @@ Vector <Ubicaciones> Cargar_archivos :: cargar_ubicaciones(int *cont_archivos){
             vector.anadir_elemento(ubicaciones);
         }
         archivo_ubicaciones.close();
-        *cont_archivos = *cont_archivos + 1 ;
+        *contador_archivos = *contador_archivos + 1 ;
     }
     return vector;
 }
 
-Vector <Material> Cargar_archivos :: cargar_materiales(int *cont_archivos){
+Vector <Material> Cargar_archivos :: cargar_materiales(int *contador_archivos){
     Leer_archivos archivo = Leer_archivos("materiales.txt");
     Material* material;
     Vector <Material> vector;
@@ -101,7 +101,7 @@ Vector <Material> Cargar_archivos :: cargar_materiales(int *cont_archivos){
             vector.anadir_elemento(material);
         }
         archivo_materiales.close();
-        *cont_archivos = *cont_archivos + 1 ;
+        *contador_archivos = *contador_archivos + 1 ;
     }
     return vector;
 
