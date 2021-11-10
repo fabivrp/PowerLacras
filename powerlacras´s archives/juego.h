@@ -94,6 +94,12 @@ public:
    *POST:
    */
     void ejecutar_lluvia_materiales();
+   
+   /*
+   *PRE:
+   *POST:
+   */
+    void demoler_edificio();
 
 
     ~Juego();
@@ -165,6 +171,25 @@ private:
     *POST:
     */
     void colocar_material(int cantidad_material, char tipo);
+    
+    /*
+    *PRE:
+    *POST:
+    */
+    bool hay_edificio (int fila, int columna);
+    
+    /*
+    *PRE:
+    *POST:
+    */
+    void obtener_datos(int& piedra, int& madera, int& metal, int fila, int columna);
+    /*
+    *PRE:
+    *POST:
+    */
+    void regresar_material(string tipo, int cant_material);
+
+
 
 };
 
