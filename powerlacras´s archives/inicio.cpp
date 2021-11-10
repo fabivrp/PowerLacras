@@ -10,17 +10,17 @@ using namespace std;
 using namespace std::this_thread;
 using namespace std::chrono;
 
-void imprimir_salida(const string color, const string color1){
+void imprimir_salida(const string color_1, const string color_2){
 
-cout << color << "\t\t\t    " "                                 .''.                     " << endl <<    
-               "\t\t\t    "  "       .''.             *''*    :_"<<color1<<"\\/"<<color<<"_:     .              "  << endl << 
-               "\t\t\t    "  "      :_"<<color1<<"\\/"<<color<<"_:   .    .:.*_"<<color1<<"\\/"<<color<<"_*   : "<<color1<<"/\\"<<color<<" :  .'.:.'.           " << endl << 
-               "\t\t\t    "  "  .''.: "<<color1<<"/\\"<<color<<" : _"<<color1<<"\\(/"<<color<<"_  ':'* "<<color1<<"/\\"<<color<<" *  : '..'.  -="<<color1<<":o:"<<color<<"=-           "<< endl << 
-               "\t\t\t    "  " :_"<<color1<<"\\/"<<color<<"_:'.:::. "<<color1<<"/)\\"<<color<<"*''*  " <<TXT_LIGHT_BLUE_39 << ".|."<< color<< "* '.\\'/.'_"<<color1<<"\\(/"<<color<<"_'.':'.'           "<<endl << 
-               "\t\t\t    "  " : "<<color1<<"/\\"<<color<<" : :"<<color1<<":::"<<color<<":  '*_"<<color1<<"\\/"<<color<<"_* " <<TXT_LIGHT_BLUE_39 << "| |"<< color<< "  -= "<<color1<<"o"<<color<<" =- "<<color1<<"/)\\"<<color<<"    '  *           "<<endl << 
-               "\t\t\t    "  "  '..'  ':::'   * "<<color1<<"/\\"<<color<<" * " <<TXT_LIGHT_BLUE_39 << "|'|"<< color<< "  .'/.\\'.  '."<<TXT_LIGHT_BLUE_39<<"_____              "<<endl << 
-               "\t\t\t    "  "      "<<color<<"*        "<<TXT_LIGHT_BLUE_39<<"__"<<color<<"*..*"<<TXT_LIGHT_BLUE_39<<" |  |     :      |.   |' .---'|     "  << endl << 
-               "\t\t\t    "  "       _"<<color<<"*"<<TXT_LIGHT_BLUE_39<<"   .-'   '-. |  |     .--'|  ||   | _|    |     "<< endl << 
+cout << color_1 << "\t\t\t    " "                                 .''.                     " << endl <<    
+               "\t\t\t    "  "       .''.             *''*    :_" << color_2 << "\\/" << color_1 << "_:     .              "  << endl << 
+               "\t\t\t    "  "      :_" << color_2 << "\\/" << color_1 << "_:   .    .:.*_" << color_2 << "\\/" << color_1 << "_*   : " << color_2 << "/\\" << color_1 << " :  .'.:.'.           " << endl << 
+               "\t\t\t    "  "  .''.: " << color_2 << "/\\" << color_1 << " : _" << color_2 << "\\(/" << color_1 << "_  ':'* " << color_2 << "/\\" << color_1 << " *  : '..'.  -=" << color_2 << ":o:" << color_1 << "=-           "<< endl << 
+               "\t\t\t    "  " :_" << color_2 << "\\/" << color_1 << "_:'.:::. " << color_2 << "/)\\" << color_1 << "*''*  " <<TXT_LIGHT_BLUE_39 << ".|."<< color_1<< "* '.\\'/.'_" << color_2 << "\\(/" << color_1 << "_'.':'.'           "<<endl << 
+               "\t\t\t    "  " : " << color_2 << "/\\" << color_1 << " : :" << color_2 << ":::" << color_1 << ":  '*_" << color_2 << "\\/" << color_1 << "_* " <<TXT_LIGHT_BLUE_39 << "| |"<< color_1<< "  -= " << color_2 << "o" << color_1 << " =- " << color_2 << "/)\\" << color_1 << "    '  *           "<<endl << 
+               "\t\t\t    "  "  '..'  ':::'   * " << color_2 << "/\\" << color_1 << " * " <<TXT_LIGHT_BLUE_39 << "|'|"<< color_1<< "  .'/.\\'.  '." <<TXT_LIGHT_BLUE_39<< "_____              "<<endl << 
+               "\t\t\t    "  "      " << color_1 << "*        " <<TXT_LIGHT_BLUE_39<< "__" << color_1 << "*..*" <<TXT_LIGHT_BLUE_39<< " |  |     :      |.   |' .---'|     "  << endl << 
+               "\t\t\t    "  "       _" << color_1 << "*" <<TXT_LIGHT_BLUE_39<< "   .-'   '-. |  |     .--'|  ||   | _|    |     "<< endl << 
                "\t\t\t    "  "    .-'|  _.|  |    ||   '-__  |   |  |    ||      |     "<< endl << 
                "\t\t\t    "  "    |' | |.    |    ||       | |   |  |    ||      |     "<< endl << 
                "\t\t\t    "  " ___|  '-'     '    ''       '-'   '-.'    '`      |____ "<< END_COLOR << endl; 
@@ -28,7 +28,7 @@ cout << color << "\t\t\t    " "                                 .''.            
 
 
 }
-void mostrar_salida_parpaeante(){
+void mostrar_salida_parpadeante(){
 
     bool estado = true;
     int contar = 0;
@@ -110,12 +110,40 @@ void imprimir_bienvenida(){
             "\t\t\t""                     |___/|_|                         "<< endl;
 
 }
+
+void imprimir_menu(){
+     cout <<"╔-------------------------------------------------------╗" << endl << 
+            "|          ACTIVIDAD REALIZABLE           |   OPCION    |" << endl <<
+            "|--------------------------------------------------------" << endl <<
+            "|      Construir edificio por nombre      |      1      |" << endl <<
+            "|--------------------------------------------------------" << endl <<
+            "|      Listar edificios construidos       |      2      |" << endl <<
+            "|--------------------------------------------------------" << endl <<
+            "|       Listar todos los edificios        |      3      |" << endl <<
+            "|--------------------------------------------------------" << endl <<
+            "|     Demoler edificio por coordenada     |      4      |" << endl <<
+            "|--------------------------------------------------------" << endl <<
+            "|              Mostrar mapa               |      5      |" << endl <<
+            "|--------------------------------------------------------" << endl <<
+            "|          Consultar coordenada           |      6      |" << endl <<
+            "|--------------------------------------------------------" << endl <<
+            "|           Mostrar inventario            |      7      |" << endl <<
+            "|--------------------------------------------------------" << endl <<
+            "|     Recolectar recursos producidos      |      8      |" << endl <<
+            "|--------------------------------------------------------" << endl <<
+            "|           Lluvia de recursos            |      9      |" << endl <<
+            "|--------------------------------------------------------" << endl <<
+            "|             Guardar y salir             |     10      |" << endl <<
+            "╚-------------------------------------------------------╝" << endl;
+}
+
+
 int main (){   //  g++ main2.cpp mapa.cpp casilleroc.cpp casilleroi.cpp casillerot.cpp casillero.cpp parser.cpp parsere.cpp leer_archivos.cpp ubicaciones.cpp juego.cpp cargar_archivos.cpp aserradero.cpp mina.cpp escuela.cpp fabrica.cpp obelisco.cpp planta_electrica.cpp edificios.cpp material.cpp -o o
 
     imprimir_edificio();
     imprimir_bienvenida();
     
-    mostrar_salida_parpaeante();
+    mostrar_salida_parpadeante();
 
 }
 

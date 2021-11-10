@@ -14,6 +14,7 @@
 #include "material.h"
 #include "casillero.h"
 #include "casilleroc.h"
+#include "casillerot.h"
 #include "opciones.h"
 #include "vector.h"
 #include "constantes.h"
@@ -158,6 +159,12 @@ private:
     *POST:
     */
     void cambiar_contenido(Coordenada coordenada);
+
+    /*
+    *PRE:
+    *POST:
+    */
+    void colocar_material(int cantidad_material, char tipo);
 
 };
 

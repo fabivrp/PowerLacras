@@ -287,50 +287,57 @@ int Juego :: numero_aleatorio(int limite_inferior, int limite_superior){
 
 bool Juego :: casilla_disponible(Coordenada coordenada){
    
-    return this->mapa->consultar_tipo(coordenada.fila-1, coordenada.columna-1) == CAMINO;
+    return this->mapa->consultar_tipo(coordenada.fila, coordenada.columna) == CAMINO;
 
 }
 
 void Juego :: asignar_coordenada(Coordenada& coordenada){
         
     while (!casilla_disponible(coordenada)){ 
-        coordenada.fila = numero_aleatorio(MIN_FILAS, mapa->devolver_filas()-1);
-        coordenada.columna = numero_aleatorio(MIN_COLUMNAS, mapa->devolver_columnas()-1);    
+        coordenada.fila = numero_aleatorio(MIN_FILAS, (mapa->devolver_filas()-1));
+        coordenada.columna = numero_aleatorio(MIN_COLUMNAS, (mapa->devolver_columnas()-1));    
     }
 }
 
-void Juego :: cambiar_contenido(Coordenada coordenada){
-    
-}
+void Juego :: colocar_material(int cantidad_material, char tipo){
+    Coordenada coordenada;
+    coordenada.fila = 0; 
+    coordenada.columna = 0; 
 
+    if (cantidad_material > 0){
+        
+        for (int i = 0; i < cantidad_material; i++){
+            
+            asignar_coordenada(coordenada);
+            Casillerot* casilla = new Casillerot(tipo);
+
+            mapa->actualizar_mapa(casilla, coordenada.fila, coordenada.columna);
+        }
+    }
+    
+
+}
 void Juego ::ejecutar_lluvia_materiales(){
     srand((unsigned)time(NULL));
     
     int cantidad_madera, cantidad_metal, cantidad_piedra, total_materiales;
-    Coordenada coordenada_piedra, coordenada_metal, coordenada_madera;
 
     cantidad_madera = numero_aleatorio(MIN_MADERA, MAX_MADERA);
     cantidad_piedra = numero_aleatorio(MIN_PIEDRA, MAX_PIEDRA);
     cantidad_metal = numero_aleatorio(MIN_METAL, MAX_METAL);
-
+    
     total_materiales = cantidad_madera + cantidad_metal + cantidad_piedra;
-    coordenada_piedra.columna=0;
-    coordenada_piedra.fila=0;
 
-    asignar_coordenada(coordenada_piedra);
-
-
-    cout << coordenada_piedra.fila << " " << coordenada_piedra.columna << endl;
-    
-    
-    //if (total_materiales < casillas_disponibles()){ }
-    
-
-    //cout << cantidad_metal << " metal " << cantidad_piedra << " piedra " << cantidad_madera << "madera" << endl;
-
+    if (total_materiales <= casillas_disponibles()){ 
+        colocar_material(cantidad_madera, MADERA);
+        colocar_material(cantidad_piedra, PIEDRA);
+        colocar_material(cantidad_metal, METAL);
+    }
 }
+
 /*
 */
+
 int Juego :: procesar_opcion(){
      string opcion;
         //Opciones opciones(&this->vector_edificios,&this->vector_ubicaciones,&this->vector_materiales,this->mapa);

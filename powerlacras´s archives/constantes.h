@@ -1,7 +1,10 @@
 #ifndef H_P_CONSTANTES_H
 #define H_P_CONSTANTES_H
+
 #include <iostream>
+
 using namespace std;
+
 const int ESPACIO_TIPO_EDIFICIO = 24;
 const int ESPACIO_TIPO_MATERIAL = 24;
 const int ESPACIO_MATERIALES = 16;
