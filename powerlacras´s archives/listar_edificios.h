@@ -24,8 +24,7 @@ public:
     *Andypolis, así ocmo la cantidad de materiales que se requieren para su construcción 
     *y si proveen materiales o no
     */
-    void accion();
-
+    void mostrar_edificios();
 };
 
 

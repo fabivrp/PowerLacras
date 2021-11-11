@@ -19,22 +19,9 @@ bool Leer_archivos::hay_archivo(){
     return true;
 }
 
-/*string Leer_archivos :: leer_hasta_espacio(ifstream & archivo,bool *si_leyo){
-    string leido;
-    if (!(archivo >> leido)) *si_leyo = false;
-    return leido;
-}*/
-
 string Leer_archivos :: leer_hasta_espacio(ifstream & archivo, char delimitador){
-    string leido;
     
-    //archivo >> leido;
+    string leido;
     getline(archivo,leido, delimitador);
     return leido;
-}
-
-
-
-
-Leer_archivos::~Leer_archivos(){
 }

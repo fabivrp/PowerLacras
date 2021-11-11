@@ -14,6 +14,18 @@ private:
     Vector <Edificios> vector_edificios_aux;
     Vector <Material> vector_materiales_aux;
     Mapa *mapa_aux;
+    
+public:
+
+    Guardar(Vector <Ubicaciones> vector_ubicaciones,Vector <Edificios> vector_edificios,Vector <Material> vector_materiales, Mapa *mapa);
+    
+     /*
+    *PRE:
+    *POST: guarda todos los cambios realixados durante la ejecucion en sus archivos corespondientes
+    */
+    void guardar_todo();
+    
+private:
 
      /*
     *PRE:
@@ -36,16 +48,7 @@ private:
     */
     void guardar_materiales();
 
-    
-public:
 
-    Guardar(Vector <Ubicaciones> vector_ubicaciones,Vector <Edificios> vector_edificios,Vector <Material> vector_materiales, Mapa *mapa);
-    
-     /*
-    *PRE:
-    *POST: guarda todos los cambios realixados durante la ejecucion en sus archivos corespondientes
-    */
-    void guardar_todo();
 
     
 };

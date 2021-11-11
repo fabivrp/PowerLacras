@@ -13,10 +13,8 @@
 
 class Cargar_archivos{
 
-private:
-    /* data */
 public:
-    Cargar_archivos();
+    
     /*
     *PRE: -
     *POST:Devuleve la cantidad de materiales que produce el edificio.
@@ -50,7 +48,6 @@ public:
     */
     Vector <Material> cargar_materiales(int *contador_archivos);
     
-    ~Cargar_archivos();
 };
 
 

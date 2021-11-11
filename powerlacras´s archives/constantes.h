@@ -2,6 +2,7 @@
 #define H_P_CONSTANTES_H
 
 #include <iostream>
+#include "colors.h"
 
 using namespace std;
 
@@ -31,6 +32,11 @@ const int MIN_METAL = 2;
 const int MIN_FILAS = 0;
 const int MIN_COLUMNAS = 0;
 
+const int PRODUCCION_FABRICA = 40 ;
+const int PRODUCCION_MINA = 15;
+const int PRODUCCION_ASERRADERO = 25 ;
+const int NO_PRODUCE = 0;
+
 const char PLANTA_ELECTRICA = 'P';
 const char ESCUELA = 'E';
 const char OBELISCO = 'O';
@@ -43,6 +49,21 @@ const char CAMINO = 'C';
 const char METAL = 'I';
 const char MADERA = 'W';
 const char PIEDRA = 'S';
+
+const string NOMBRE_PLANTA_ELECTRICA = "planta_electrica";
+const string NOMBRE_ESCUELA = "escuela";
+const string NOMBRE_OBELISCO = "obelisco";
+const string NOMBRE_ASERRADERO = "aserradero";
+const string NOMBRE_MINA = "mina";
+const string NOMBRE_FABRICA = "fabrica";
+const string CASO_PLANTA = "planta";
+
+const string TIPO_PRODUCCION_OBELISCO = " ";
+const string TIPO_PRODUCCION_PLANTA = " ";
+const string TIPO_PRODUCCION_ESCUELA = " ";
+const string TIPO_PRODUCCION_MINA = "piedra";
+const string TIPO_PRODUCCION_FABRICA = "metal";
+const string TIPO_PRODUCCION_ASERRADERO = "madera";
 
 const string TIPO_METAL = "metal";
 const string TIPO_MADERA = "madera";

@@ -1,16 +1,8 @@
 #include"cargar_archivos.h"
 
 
-
-Cargar_archivos::Cargar_archivos(/* args */)
-{
-}
-
-Cargar_archivos::~Cargar_archivos()
-{
-}
-
 Mapa* Cargar_archivos :: cargar_mapa(int *cont_archivos){
+    
     Leer_archivos archivo = Leer_archivos(PATH_ENTRADA_MAPA);
     Mapa* mapa = nullptr;
     if (archivo.hay_archivo()){
@@ -38,6 +30,7 @@ Mapa* Cargar_archivos :: cargar_mapa(int *cont_archivos){
 }
 
 Vector <Edificios> Cargar_archivos :: cargar_edificios(int *cont_archivos){
+    
     Leer_archivos archivo = Leer_archivos(PATH_ENTRADA_EDIFICIOS);
     Edificios* edificio;
     Vector <Edificios> vector;
@@ -55,6 +48,7 @@ Vector <Edificios> Cargar_archivos :: cargar_edificios(int *cont_archivos){
 }
 
 Vector <Ubicaciones> Cargar_archivos :: cargar_ubicaciones(int *cont_archivos){
+    
     Leer_archivos archivo = Leer_archivos(PATH_ENTRADA_UBICACIONES);
     Ubicaciones* ubicaciones;
     Vector <Ubicaciones> vector;
@@ -77,6 +71,7 @@ Vector <Ubicaciones> Cargar_archivos :: cargar_ubicaciones(int *cont_archivos){
 }
 
 Vector <Material> Cargar_archivos :: cargar_materiales(int *cont_archivos){
+    
     Leer_archivos archivo = Leer_archivos(PATH_ENTRADA_MATERIALES);
     Material* material;
     Vector <Material> vector;
@@ -91,6 +86,5 @@ Vector <Material> Cargar_archivos :: cargar_materiales(int *cont_archivos){
         *cont_archivos = *cont_archivos + 1 ;
     }
     return vector;
-
 }
 

@@ -21,7 +21,7 @@ public:
     *PRE:
     *POST:Muestra por pantalla todos los materiales del stock así como también su stock
     */
-    void accion();
+    void mostrar_materiales();
 };
 
 #endif //LISTAR_MATERIALES_H

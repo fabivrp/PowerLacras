@@ -1,14 +1,10 @@
 #ifndef H_P_EDIFICIOS_H
 #define H_P_EDIFICIOS_H
 #include <iostream>
+#include "constantes.h"
 using namespace std;
 
-const string TIPO_PRODUCCION_OBELISCO = " ";
-const string TIPO_PRODUCCION_PLANTA = " ";
-const string TIPO_PRODUCCION_ESCUELA = " ";
-const string TIPO_PRODUCCION_MINA = "piedra";
-const string TIPO_PRODUCCION_FABRICA = "metal";
-const string TIPO_PRODUCCION_ASERRADERO = "madera";
+
 
 //CREO QUE LA CLASE TENDRIA QUE SER EN SINGULAR  LIKE ---> -EDIFICIO. 
 

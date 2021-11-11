@@ -19,8 +19,7 @@ private:
     Mapa *mapa_aux;
     int pos_vector_edificio,pos_piedra,pos_madera,pos_metal,coordenada_fil,coordenada_col;
     string edificio_a_construir;
-    
-    
+
 public:
 
     Construir_edificio(Vector <Edificios> *vector_edificio,Vector <Ubicaciones> *vector_ubicaciones,Vector <Material> *vector_materiales ,Mapa *mapa);
@@ -28,9 +27,8 @@ public:
     *PRE: -
     *POST:Ejecuta la construcción del edificio solicitado por el usuario. 
     */
-    void accion();
-    //void modificar();
-    //void costruir_edificio();
+    void construir_edificacion();
+    
 private:
    
     /*
@@ -78,8 +76,5 @@ private:
     */
     void restar_material(int pos_vector_material,int cant_restar);
 };
-
-
-
 
 #endif //H_P_CONSTRUIR_EDIFICIO

@@ -14,9 +14,6 @@ private:
     Vector <Material> vector_materiales_aux;
     Mapa *mapa_aux;
     
-
-
-    
 public:
 
     Consultar_coordenada(Vector <Edificios> vector_edificio,Vector <Ubicaciones> vector_ubicaciones,Vector <Material> vector_materiales ,Mapa *mapa);
@@ -25,7 +22,7 @@ public:
     *POST: Verifica que la coordenada sea valida, en el caso de que lo sea informa al usuario 
     *qué tipo de casilla es.
     */
-    void accion();
+    void consultar_ubicacion();
 
 private:
 /*

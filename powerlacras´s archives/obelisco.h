@@ -28,6 +28,4 @@ public:
     //~mina();
 };
 
-
-
 #endif //H_P_OBELISCO_H

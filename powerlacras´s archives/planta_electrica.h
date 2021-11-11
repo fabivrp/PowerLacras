@@ -25,9 +25,6 @@ public:
     */
     void imprimir_mensaje();
 
-    //~mina();
 };
-
-
 
 #endif //H_P_PLANTA_ELECTRICA_H

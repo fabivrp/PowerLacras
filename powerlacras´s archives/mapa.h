@@ -40,20 +40,28 @@ void actualizar_mapa(Casillero* casilla,int coordenadaf,int coordenadac);
 void mostrar();
 
 /*
-    *PRE:
-    *POST:Devuelve el tipo de casilla que hay en las coordenadas seleccionadas
-    */
+*PRE:
+*POST:Devuelve el tipo de casilla que hay en las coordenadas seleccionadas
+*/
+
 char consultar_tipo(int fila, int columna);
 /*
-    *PRE:
-    *POST:Devuelve cuantas filas tiene el mapa
-    */
+*PRE:
+*POST:Devuelve cuantas filas tiene el mapa
+*/
+
 int devolver_filas();
 /*
-    *PRE:
-    *POST:devuelve cuntas columnas tiene el mapa
-    */
+*PRE:
+*POST:devuelve cuntas columnas tiene el mapa
+*/
+
 int devolver_columnas();
+
+/*
+*PRE: La fila y la columna recibida tiene que estar dentro del rango del tamanio del mapa
+*POST: Devuelve la informacion de la casilla en esas coordendas recibidas
+*/
 
 Casillero* devolver_casilla(int fil,int col);
 

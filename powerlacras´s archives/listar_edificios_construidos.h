@@ -6,8 +6,8 @@
 #include "vector.h"
 
 
-class Listar_edificios_construidos
-{
+class Listar_edificios_construidos{
+
 private:
     Vector <Ubicaciones> vector_ubicaciones_aux;
     Vector <Edificios> vector_edificios_aux;
@@ -31,7 +31,7 @@ public:
     *POST:Muestra por pantalla los edificios que hay construidos en andypolis así como
     *las coordnadas en donde se encuntran
     */
-    void accion();
+    void mostrar_edificios_construidos();
 };
 
 

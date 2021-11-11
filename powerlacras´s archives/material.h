@@ -2,10 +2,6 @@
 #define H_P_MATERIAL_H
 
 #include "vector.h"
-#include <iostream>
-
-
-using namespace std;
 #include "constantes.h"
 
 class Material{
@@ -64,7 +60,5 @@ public:
     void imprimir_mensaje();
 
 };
-
-//Prueba
 
 #endif //H_P_MATERIAL_H

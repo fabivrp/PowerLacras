@@ -1,30 +1,23 @@
 #include "parser.h"
-#include "casilleroc.h"
-#include "casilleroi.h"
-#include "casillerot.h"
 
 
 Parser::Parser(char letra){
+    
     this->entrada = letra;
 }
 
 Casillero* Parser :: procesar_entrada(){
+    
     Casillero* casillero;
-    if(this->entrada == 'L'){
+    if(this->entrada == LAGO){
         casillero = new Casilleroi(this->entrada);
     }
-    else if (this->entrada == 'S' ||this->entrada == 'W' ||this->entrada == 'I' ||this->entrada == 'C'){
+    else if (this->entrada == PIEDRA ||this->entrada == MADERA ||this->entrada == METAL ||this->entrada == CAMINO){
         casillero = new Casillerot(this->entrada);
 
     }
     else{
         casillero = new Casilleroc(this->entrada);
     }
-
     return casillero;
-
 }
-
-//string Parser ::tipo_casilla(){
-//
-//}

@@ -1,6 +1,7 @@
 #include "consultar_coordenada.h"
 
 Consultar_coordenada::Consultar_coordenada(Vector <Edificios> vector_edificio,Vector <Ubicaciones> vector_ubicaciones,Vector <Material> vector_materiales ,Mapa *mapa){
+    
     this->vector_edificios_aux = vector_edificio;
     this->vector_ubicaciones_aux = vector_ubicaciones;
     this->vector_materiales_aux = vector_materiales;
@@ -9,6 +10,7 @@ Consultar_coordenada::Consultar_coordenada(Vector <Edificios> vector_edificio,Ve
 
 
 int Consultar_coordenada :: buscar_edificio(char simobolo_a_buscar) {
+    
     bool encontrado = false;
     int pos_vector;
     int i = 0;
@@ -22,7 +24,9 @@ int Consultar_coordenada :: buscar_edificio(char simobolo_a_buscar) {
     }
     return pos_vector;
 }
+
 int Consultar_coordenada :: buscar_material(char simobolo_a_buscar) {
+   
     bool encontrado = false;
     int pos_vector;
     int i = 0;
@@ -38,7 +42,8 @@ int Consultar_coordenada :: buscar_material(char simobolo_a_buscar) {
 }
 
 
-void Consultar_coordenada :: accion(){
+void Consultar_coordenada :: consultar_ubicacion(){
+
     cout << "Ingrese las coordenadas a consultar " << endl;
     cout << endl;
     coordenada_es_valida(&this->fil,&this->col,mapa_aux);

@@ -1,19 +1,13 @@
 #ifndef CASILLEROT_H
 #define CASILLEROT_H
-
 #include "casillero.h"
-#include <iostream>
-using namespace std;
-
-
+#include "constantes.h"
 
 class Casillerot : public Casillero{
 
 public:
 
-
     Casillerot(char tipo_casilla);
-    
     /*
     *PRE: -
     *POST:Reemplaza el tipo de la casilla por el identificador del material indicado.

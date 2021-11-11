@@ -6,10 +6,8 @@ class Aserradero : public Edificios {
 
 
 public:
+
     Aserradero(string nombre ,int pidra,int madera, int metal, int cant_max_construidos);
-
-
-   
     /*
     *PRE: -
     *POST:Devuleve el nombre del material que produce el edificio

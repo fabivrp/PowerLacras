@@ -2,22 +2,16 @@
 #define LLUVIA_RECURSOS_H
 
 #include "constantes.h"
-#include "colors.h"
-#include <iomanip>
 #include "casillerot.h"
 #include <stdlib.h>
 #include <time.h>
 #include "mapa.h"
 
-
-
-
 class Lluvia_recursos{
+    
 private:
     int fil, col;
     Mapa* mapa_aux;
-
-
 
 public:
     Lluvia_recursos(Mapa *mapa);

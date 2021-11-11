@@ -36,10 +36,4 @@ void imprimir_bienvenida();
     */
 void imprimir_menu();
  
-
-
-
-
-
-
 #endif //H_P_INICIO_H

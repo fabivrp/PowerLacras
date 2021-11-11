@@ -20,7 +20,7 @@ cout << color_1 << "\t\t\t    " "                                 .''.          
 
 }
 void mostrar_salida_parpadeante(){
-
+    
     bool estado = true;
     int contar = 0;
 

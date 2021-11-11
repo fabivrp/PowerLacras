@@ -2,6 +2,7 @@
 
 
 bool hay_objeto(string nombre_a_buscar,Vector <Edificios> vectorr,int *pos_vector) {
+    
     bool encontrado = false;
     int i = 0;
     while (i < vectorr.tamanio() && encontrado == false){
@@ -19,6 +20,7 @@ bool hay_objeto(string nombre_a_buscar,Vector <Edificios> vectorr,int *pos_vecto
 }
 
 bool hay_objeto2(string nombre_a_buscar,Vector <Material> vectorr,int *pos_vector) {
+    
     bool encontrado = false;
     int i = 0;
     while (i < vectorr.tamanio() && encontrado == false){
@@ -35,20 +37,21 @@ bool hay_objeto2(string nombre_a_buscar,Vector <Material> vectorr,int *pos_vecto
 }
 
 int calcular_espacio_delantero(int espacio, int  largo_palabra){
+    
     return (espacio - largo_palabra)/2;
 }
 
 
 void imprimir_centrado(int espacio, string palabra){
       
-        int espacio_delantero = calcular_espacio_delantero (espacio, (int)palabra.length());
-        int espacio_trasero = espacio - espacio_delantero - (int)palabra.length();
-        cout << BGND_BLACK_16<< setfill(' ');
-        cout << setw(espacio_delantero) << "" << palabra << setw(espacio_trasero) << "|" << END_COLOR;
-        
+    int espacio_delantero = calcular_espacio_delantero (espacio, (int)palabra.length());
+    int espacio_trasero = espacio - espacio_delantero - (int)palabra.length();
+    cout << BGND_BLACK_16<< setfill(' ');
+    cout << setw(espacio_delantero) << "" << palabra << setw(espacio_trasero) << "|" << END_COLOR;  
 }
 
 void pedir_coordenada(int *fila, int *columna){
+   
     string fil , col;
     cout << "Ingrese la coordenada de la fila: " ;
     getline(cin,fil);
@@ -59,7 +62,9 @@ void pedir_coordenada(int *fila, int *columna){
     *fila = stoi(fil);
     *columna = stoi(col);
 }
+
 bool coordenada_es_valida(int *fil,int *col,Mapa *mapa){
+    
     bool es_valida = true;
     do {
         pedir_coordenada(&(*fil),&(*col));
@@ -67,28 +72,21 @@ bool coordenada_es_valida(int *fil,int *col,Mapa *mapa){
             cout << "Las coordenadas ingresadas no son validas " << endl;
             es_valida = false;
         }
-        else {
-            es_valida =  true;
-        }
-    }while(!es_valida);
+        else es_valida =  true;
+    } while(!es_valida);
     return true;
-
 }
 bool hay_coordenada_disponible(int *fil,int *col,Mapa *mapa){
+    
     bool si_hay = false;
     coordenada_es_valida(&(*fil),&(*col),mapa);
-    //if(this->mapa->devolver_info_coordenada(*fil,*col) == 'T'){
-    if(mapa->consultar_tipo(*fil,*col) == 'T'){
-        si_hay = true;
-    }
-    else{
-        cout << "la coordenada ingresada esta ocupada" << endl;
-    }
+    if(mapa->consultar_tipo(*fil,*col) == TERRENO) si_hay = true;
+    else cout << "la coordenada ingresada esta ocupada" << endl;
     return si_hay;
-   
 }
 
 bool confirmo_accion(string accion,string objeto){
+    
     string respuesta;
     bool confirmo_accion;
     bool repetir;
@@ -109,9 +107,8 @@ bool confirmo_accion(string accion,string objeto){
            confirmo_accion = false;
        }
     
-   }while(repetir);
+   } while(repetir);
    cout << endl;
    return confirmo_accion;
-
 }
 

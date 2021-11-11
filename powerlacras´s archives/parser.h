@@ -2,6 +2,9 @@
 #define H_P_PARSER_H
 #include <iostream>
 #include "casillero.h"
+#include "casilleroc.h"
+#include "casilleroi.h"
+#include "casillerot.h"
 
 using namespace std;
 
@@ -20,11 +23,6 @@ public:
     */
     Casillero* procesar_entrada();
   
-    /*
-    *PRE:
-    *POST:
-    */
-    string tipo_casilla();
 };
 
 

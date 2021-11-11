@@ -5,16 +5,13 @@
 #include <fstream>
 using namespace std;
 
-
 class Leer_archivos
 {
+
 private:
 string archivo_leer;
 
-
-
 public:
-
 
     Leer_archivos(string archivo_leer);
     
@@ -32,14 +29,6 @@ public:
     */
     string leer_hasta_espacio(ifstream & archivo,char delimitador);
     
-    
-    ~Leer_archivos();
 };
-
-
-
-
-
-
 
 #endif //H_P_LEER_ARCHIVOS_H

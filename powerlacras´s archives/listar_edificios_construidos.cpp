@@ -7,8 +7,8 @@ Listar_edificios_construidos::Listar_edificios_construidos(Vector <Edificios> ve
 }
 
 string Listar_edificios_construidos::extraer_coordenadas(string edificio){
+    
     string coordenadas = " ";
-
     for(int i = 0 ; i < this->vector_ubicaciones_aux.tamanio() ; i++){
         Ubicaciones *ubicacion = this->vector_ubicaciones_aux.devolver_info(i);
         
@@ -16,13 +16,11 @@ string Listar_edificios_construidos::extraer_coordenadas(string edificio){
             coordenadas = coordenadas + '(' + to_string(ubicacion->devolver_fil()) + ',' + to_string(ubicacion->devolver_col()) + ") ";
         }
     }
-
     return coordenadas;
 
 }
 
-
-void Listar_edificios_construidos :: accion(){
+void Listar_edificios_construidos :: mostrar_edificios_construidos(){
     cout << BGND_DARK_AQUA_29<< "\t\t" "╔---------------------------------------------------------------------╗" << END_COLOR << endl
          << BGND_DARK_AQUA_29<< "\t\t" "|          TIPO         |   UNIDADES    |         COORDENADAS         |" << END_COLOR << endl
          << BGND_DARK_AQUA_29<< "\t\t" "|           DE          |      EN       |            EN EL            |" << END_COLOR << endl
@@ -35,18 +33,13 @@ void Listar_edificios_construidos :: accion(){
             cout << BGND_DARK_AQUA_29<< "\t\t" "|---------------------------------------------------------------------|" << END_COLOR <<endl;
             cout << BGND_BLACK_16<< setfill(' ');
             cout << "\t\t" "|";
-
             imprimir_centrado(ESPACIO_TIPO_MATERIAL,aux->devolver_nombre());
-            
             imprimir_centrado(ESPACIO_UNIDADES_CONSTRUIDAS,to_string(aux->devolver_construidos()));
-
             string coordenadas =  extraer_coordenadas(aux->devolver_nombre());
-           
             imprimir_centrado(ESPACIO_COORDENADAS, coordenadas);
             cout << endl;
         }
     }
-
     cout << "\t\t" << BGND_DARK_AQUA_29 << "╚---------------------------------------------------------------------╝" << END_COLOR << endl;
     cout << endl; 
     

@@ -7,7 +7,7 @@ class Mina : public Edificios {
 
 public:
     
-   
+
     Mina(string nombre ,int piedra,int madera, int metal, int cant_max_construidos);
     
     /*

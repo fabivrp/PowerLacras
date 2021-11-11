@@ -5,9 +5,7 @@ Listar_materiales::Listar_materiales(Vector <Material> vector_materiales){
 
 }
 
-
-
-void Listar_materiales :: accion(){
+void Listar_materiales :: mostrar_materiales(){
 cout     << "\t\t\t       " << BGND_DARK_AQUA_29 << "╔---------------------------------------╗" << END_COLOR << endl
          << "\t\t\t       " << BGND_DARK_AQUA_29 << "|          TIPO         |   UNIDADES    |" << END_COLOR << endl
          << "\t\t\t       " << BGND_DARK_AQUA_29 << "|           DE          |     EN EL     |" << END_COLOR << endl

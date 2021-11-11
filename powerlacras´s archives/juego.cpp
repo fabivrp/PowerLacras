@@ -65,25 +65,25 @@ int Juego :: procesar_opcion(){
         system(CLR_SCREEN);
         switch (stoi(opcion)) {
         case 1:
-        construir_edificio.accion();
+        construir_edificio.construir_edificacion();
             break;
         case 2:
-            listar_edificios_construidos.accion();
+            listar_edificios_construidos.mostrar_edificios_construidos();
             break;
         case 3:
-            listar_edificios.accion();
+            listar_edificios.mostrar_edificios();
             break;
         case 4:
-           demoler_edificio.accion();
+           demoler_edificio.realizar_demolicion();
             break;
         case 5:
             mapa->mostrar();
 			break;
         case 6:
-            consultar_coordenada.accion();
+            consultar_coordenada.consultar_ubicacion();
 			break;
         case 7:
-            listar_materiales.accion();
+            listar_materiales.mostrar_materiales();
 			break;
         case 8:
             recolectar_recursos.accion();

@@ -4,13 +4,12 @@
 #include "vector.h"
 #include "edificios.h"
 #include "ubicaciones.h"
-//#include "juego.h"
 #include "material.h"
 #include "mapa.h"
 #include "casilleroc.h"
 #include <iostream>
 #include <iomanip>
-//#include "x.h"
+
 using namespace std;
  /*
     *PRE:

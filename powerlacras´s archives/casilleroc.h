@@ -2,8 +2,8 @@
 #define H_P_CASILLEROC_H
 
 #include "casillero.h"
-#include <iostream>
-using namespace std;
+
+
 
 class Casilleroc: public Casillero{
 
