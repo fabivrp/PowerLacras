@@ -5,7 +5,9 @@
 
 
 
-Listar_edificios::Listar_edificios(Vector <Edificios> *vector_edificio,Vector <Ubicaciones> *vector_ubicaciones,Vector <Material> *vector_materiales ,Mapa *mapa) : Opciones(vector_edificio,vector_ubicaciones,vector_materiales,mapa){
+Listar_edificios::Listar_edificios(Vector <Edificios> vector_edificio,Vector <Ubicaciones> vector_ubicaciones,Vector <Material> ector_materiales){
+    this->vector_edificios_aux = vector_edificio; 
+    this->vector_ubicaciones_aux = vector_ubicaciones; 
 }
 
 
@@ -16,8 +18,8 @@ void Listar_edificios :: accion(){
          << BGND_DARK_AQUA_29<<"|           DE          |-----------------------------------------------|      EN       |     PARA SU   |     ALGUN     |" << END_COLOR << endl
          << BGND_DARK_AQUA_29<<"|        EDIFICIO       |     PIEDRA    |     MADERA    |     METAL     |   ANDYPOLIS   |  CONSTRUCCION |    MATERIAL   |" << END_COLOR << endl;
 
-    for (int i = 0; i < this->vector_edificio->tamanio(); i++){
-        Edificios* aux = this->vector_edificio->devolver_info(i);
+    for (int i = 0; i < this->vector_edificios_aux.tamanio(); i++){
+        Edificios* aux = this->vector_edificios_aux.devolver_info(i);
         cout << BGND_DARK_AQUA_29<<"|-----------------------------------------------------------------------------------------------------------------------|" << END_COLOR <<endl;
         cout << BGND_BLACK_16 << "|";
         imprimir_centrado(ESPACIO_TIPO_EDIFICIO, aux->devolver_nombre());

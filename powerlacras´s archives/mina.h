@@ -23,7 +23,9 @@ public:
     *PRE:
     *POST:
     */
-    int cuanto_produce();
+
+    void imprimir_mensaje();
+
     //~mina();
 };
 

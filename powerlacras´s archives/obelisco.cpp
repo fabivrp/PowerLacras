@@ -11,6 +11,7 @@ Obelisco::Obelisco(string nombre,int piedra,int madera,int metal, int cant_max_c
 const string Obelisco :: tipo_produccion(){
     return TIPO_PRODUCCION_OBELISCO;
 }
-int Obelisco :: cuanto_produce(){
-    return  this->produccion;
+
+void Obelisco :: imprimir_mensaje(){
+    cout << "tiene un Obelisco construida" << endl;
 }

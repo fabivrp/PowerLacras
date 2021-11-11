@@ -10,10 +10,12 @@
 
 
 
-class Listar_materiales : public Opciones{
+class Listar_materiales{
+private :
+    Vector <Material> vector_materiales_aux;
 
 public:
-    Listar_materiales(Vector <Edificios> *vector_edificio,Vector <Ubicaciones> *vector_ubicaciones,Vector <Material> *vector_materiales ,Mapa *mapa);
+    Listar_materiales(Vector <Material> vector_materiales);
     void accion();
 };
 

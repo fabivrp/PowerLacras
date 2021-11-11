@@ -6,11 +6,13 @@
 
 
 using namespace std;
+#include "constantes.h"
 
 class Material{
 
 private:
-    string tipo;
+    string nombre;
+    char tipo;
     int stock;
 public:
     
@@ -18,7 +20,7 @@ public:
     *PRE:
     *POST:
     */
-    Material(string tipo,int stock);
+    Material(string nombre,int stock);
     
     
     /*
@@ -50,6 +52,9 @@ public:
     *POST:
     */
     int devolver_stock();
+    char devolver_simbolo();
+    void imprimir_mensaje();
+
 };
 
 //Prueba

@@ -1,4 +1,4 @@
-#include "construir_edificio.h"
+#include "prueba.h"
 
 
 
@@ -7,20 +7,20 @@ prueba::prueba(Vector <Ubicaciones> *vector){
 
     this->ubi = vector;
 }*/
-/*void Construir_edificio :: modificar(){
+void prueba :: modificar(){
     Ubicaciones *ubican = new Ubicaciones("mina",0,0);
     vector_ubicaciones_aux->anadir_elemento(ubican);
-}*/
+}
 
 
-Construir_edificio :: Construir_edificio(Vector <Edificios> *vector_edificio,Vector <Ubicaciones> *vector_ubicaciones,Vector <Material> *vector_materiales ,Mapa *mapa){
+prueba::prueba(Vector <Edificios> *vector_edificio,Vector <Ubicaciones> *vector_ubicaciones,Vector <Material> *vector_materiales ,Mapa *mapa){
    this->vector_edificios_aux = vector_edificio; 
    this->vector_ubicaciones_aux = vector_ubicaciones; 
    this->vector_materiales_aux = vector_materiales;
    this->mapa_aux = mapa;  
 }
 
-int Construir_edificio :: cant_material_requerido(string material ,Edificios *edificio){
+int prueba :: cant_material_requerido(string material ,Edificios *edificio){
     int cantidad;
     if(material == "piedra"){
         cantidad = edificio->devolver_cantidad_piedra(); 
@@ -33,7 +33,7 @@ int Construir_edificio :: cant_material_requerido(string material ,Edificios *ed
     }
     return cantidad;
 }
-bool Construir_edificio :: hay_material(string nombre_material,int *pos_vector_material){
+bool prueba :: hay_material(string nombre_material,int *pos_vector_material){
     bool si_hay = true; 
     
     if (hay_objeto2(nombre_material,*this->vector_materiales_aux,&(*pos_vector_material))){
@@ -49,7 +49,7 @@ bool Construir_edificio :: hay_material(string nombre_material,int *pos_vector_m
     return si_hay;
     
 }
-bool Construir_edificio :: hay_materiales_suficiente(){
+bool prueba :: hay_materiales_suficiente(){
     bool si_hay_materiales = false;
     if (hay_material("piedra",&this->pos_piedra) && hay_material("madera",&this->pos_madera) && hay_material("metal",&this->pos_metal)){
         si_hay_materiales = true;
@@ -58,14 +58,14 @@ bool Construir_edificio :: hay_materiales_suficiente(){
     return si_hay_materiales;
 
 }
-bool Construir_edificio ::hay_espacio(){
+bool prueba ::hay_espacio(){
     bool no_hay = true;
     Edificios *edificio = this->vector_edificios_aux->devolver_info(this->pos_vector_edificio);
     if(edificio->devolver_construidos() + 1 > edificio->devolver_max_construccion()) no_hay = false;
     if(!no_hay) cout << "No hay espacio para constuir: " << edificio->devolver_nombre() << endl;
     return no_hay;
 }
-void Construir_edificio :: agregar_edificacion(){
+void prueba :: agregar_edificacion(){
     Edificios *edificio = this->vector_edificios_aux->devolver_info(this->pos_vector_edificio);
     edificio->aumentar_construidos();
     Ubicaciones *ubicacion_nueva = new Ubicaciones(this->edificio_a_construir,this->coordenada_fil,this->coordenada_col);
@@ -73,12 +73,12 @@ void Construir_edificio :: agregar_edificacion(){
     Casilleroc *casilla = new Casilleroc(edificio->devolver_simbolo());
     mapa_aux->actualizar_mapa(casilla,this->coordenada_fil,this->coordenada_col);
 }
-void Construir_edificio :: restar_material(int pos_vector_material,int cant_restar){
+void prueba :: restar_material(int pos_vector_material,int cant_restar){
     Material *material = vector_materiales_aux->devolver_info(pos_vector_material);
     material->disminuir_stock(cant_restar);
 
 }
-void Construir_edificio :: restar_materiales(){
+void prueba :: restar_materiales(){
 
     Edificios *edificio = vector_edificios_aux->devolver_info(this->pos_vector_edificio);
     restar_material(this->pos_piedra,edificio->devolver_cantidad_piedra());
@@ -90,7 +90,7 @@ void Construir_edificio :: restar_materiales(){
 }
 
 
-void Construir_edificio :: accion(){
+void prueba :: accion(){
     cout << "Que edificio desea construir" << endl;
     getline(cin,this->edificio_a_construir);
     if (edificio_a_construir == "planta electrica") edificio_a_construir = "planta";

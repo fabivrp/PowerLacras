@@ -8,12 +8,15 @@
 #include "constantes.h"
 
 
-class Listar_edificios : public Opciones
+class Listar_edificios
 {
-
+private:
+Vector <Edificios> vector_edificios_aux;
+Vector <Ubicaciones> vector_ubicaciones_aux;
+Vector <Material> vector_materiales_aux;
     
 public:
-    Listar_edificios(Vector <Edificios> *vector_edificio,Vector <Ubicaciones> *vector_ubicaciones,Vector <Material> *vector_materiales ,Mapa *mapa);
+    Listar_edificios(Vector <Edificios> vector_edificio,Vector <Ubicaciones> vector_ubicaciones,Vector <Material> vector_materiales);
     void accion();
 
 };

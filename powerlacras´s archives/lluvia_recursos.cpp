@@ -3,15 +3,9 @@
 
 
 
-
-
-
-Lluvia_recursos::Lluvia_recursos(Vector <Edificios> *vector_edificio,Vector <Ubicaciones> *vector_ubicaciones,Vector <Material> *vector_materiales ,Mapa *mapa) : Opciones(vector_edificio,vector_ubicaciones,vector_materiales,mapa){
+Lluvia_recursos::Lluvia_recursos(Mapa *mapa){
+    this->mapa_aux = mapa;
 }
-
-
-
-
 
 void Lluvia_recursos :: accion(){
     srand((unsigned)time(NULL));
@@ -36,10 +30,10 @@ void Lluvia_recursos :: accion(){
 int Lluvia_recursos :: casillas_disponibles(int total_materiales){
     int casillas_disponibles = 0;
     int i = 0;
-    while(i < this->mapa->devolver_filas() && casillas_disponibles < total_materiales){
+    while(i < this->mapa_aux->devolver_filas() && casillas_disponibles < total_materiales){
         int j = 0;
-        while(j < this->mapa->devolver_columnas() && casillas_disponibles < total_materiales){
-            if (this-> mapa->consultar_tipo(i,j) == CAMINO){
+        while(j < this->mapa_aux->devolver_columnas() && casillas_disponibles < total_materiales){
+            if (this-> mapa_aux->consultar_tipo(i,j) == CAMINO){
                 casillas_disponibles++;
             }
             j++;
@@ -57,15 +51,15 @@ int Lluvia_recursos :: numero_aleatorio(int limite_inferior, int limite_superior
 
 bool Lluvia_recursos :: casilla_disponible(){
    
-    return this->mapa->consultar_tipo(this->fil, this->col) == CAMINO;
+    return this->mapa_aux->consultar_tipo(this->fil, this->col) == CAMINO;
 
 }
 
 void Lluvia_recursos :: asignar_coordenada(){
         
     while (!casilla_disponible()){ 
-        this->fil = numero_aleatorio(MIN_FILAS, (this->mapa->devolver_filas()-1));
-        this->col = numero_aleatorio(MIN_COLUMNAS, (this->mapa->devolver_columnas()-1));    
+        this->fil = numero_aleatorio(MIN_FILAS, (this->mapa_aux->devolver_filas()-1));
+        this->col = numero_aleatorio(MIN_COLUMNAS, (this->mapa_aux->devolver_columnas()-1));    
     }
 }
 
@@ -81,7 +75,7 @@ void Lluvia_recursos :: colocar_material(int cantidad_material, char tipo){
             asignar_coordenada();
             Casillerot* casilla = new Casillerot(tipo);
 
-            mapa->actualizar_mapa(casilla, this->fil, this->col);
+            mapa_aux->actualizar_mapa(casilla, this->fil, this->col);
         }
     }
     

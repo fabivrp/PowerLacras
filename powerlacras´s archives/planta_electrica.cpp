@@ -11,7 +11,8 @@ const string Planta_electrica :: tipo_produccion(){
     return TIPO_PRODUCCION_PLANTA;
 }
 
-int Planta_electrica :: cuanto_produce(){
-    return  this->produccion;
+
+void Planta_electrica :: imprimir_mensaje(){
+    cout << "tiene una Planta electrica construida" << endl;
 }
 

@@ -3,13 +3,6 @@
 #include <time.h>
 
 
-
-
-
-/*Juego::Juego()
-{
-}
-*/
 Juego::~Juego(){
     delete this -> mapa;
     this-> vector_edificios.Vector_destructor();
@@ -33,7 +26,6 @@ bool Juego ::cargar_archivos(){
     return hay_archivos;
 }
 
-// esta funcion se usa en opciones.cpp (codigo repetido), hay que hacer que haya sola una una de estas.Codigo repetido
 int Juego :: devolver_pos_vector(string nombre_a_buscar) {
     int pos_vector_edificio;
     for (int i = 0 ; i < this->vector_edificios.tamanio();i++){
@@ -44,7 +36,6 @@ int Juego :: devolver_pos_vector(string nombre_a_buscar) {
 }
 
 void Juego :: agregar_ubicaciones(){
-        mapa->mostrar();
     for(int i = 0 ; i < this->vector_ubicaciones.tamanio() ; i++){
         Ubicaciones *ubicacion = vector_ubicaciones.devolver_info(i);
         string nombre_edificio = ubicacion->devolver_nombre();
@@ -55,141 +46,80 @@ void Juego :: agregar_ubicaciones(){
         Casilleroc *casilla = new Casilleroc(edificio->devolver_simbolo());
         mapa->actualizar_mapa(casilla,fil,col);
     }
-    cout << endl;
-        mapa->mostrar();
 }
 
 int Juego :: procesar_opcion(){
      string opcion;
-        Construir_edificio op1(&this->vector_edificios,&this->vector_ubicaciones,&this->vector_materiales,this->mapa);
-        Demoler_edificio op4(&this->vector_edificios,&this->vector_ubicaciones,&this->vector_materiales,this->mapa);
-        Listar_edificios_construidos op2(&this->vector_edificios,&this->vector_ubicaciones,&this->vector_materiales,this->mapa);
-        Listar_edificios op3(&this->vector_edificios,&this->vector_ubicaciones,&this->vector_materiales,this->mapa);
-        Listar_materiales op7(&this->vector_edificios,&this->vector_ubicaciones,&this->vector_materiales,this->mapa);
-        Consultar_coordenada op6(&this->vector_edificios,&this->vector_ubicaciones,&this->vector_materiales,this->mapa);
-        Recolectar_recursos op8(&this->vector_edificios,&this->vector_ubicaciones,&this->vector_materiales,this->mapa);
-        Lluvia_recursos op9(&this->vector_edificios,&this->vector_ubicaciones,&this->vector_materiales,this->mapa);
+        Construir_edificio construir_edificio(&(this->vector_edificios),&(this->vector_ubicaciones),&(this->vector_materiales),this->mapa);
+        Demoler_edificio demoler_edificio(&(this->vector_edificios),&(this->vector_ubicaciones),&(this->vector_materiales),this->mapa);
+        Listar_edificios_construidos listar_edificios_construidos(this->vector_edificios,this->vector_ubicaciones);
+        Listar_edificios listar_edificios (this->vector_edificios,this->vector_ubicaciones,this->vector_materiales);
+        Listar_materiales listar_materiales(this->vector_materiales);
+        Consultar_coordenada consultar_coordenada(this->vector_edificios,this->vector_ubicaciones,this->vector_materiales,this->mapa);
+        Recolectar_recursos recolectar_recursos(this->vector_edificios,&(this->vector_materiales));
+        Lluvia_recursos lluvia_recursos(this->mapa);
+        
+        imprimir_menu();
         cout << "Ingresar una de las siguientes opciones:"<< endl;
         getline(cin,opcion);
+        system(CLR_SCREEN);
         switch (stoi(opcion)) {
         case 1:
-        cout << "entre aqui  1" << endl;
-        op1.accion();
-        this->mapa->mostrar();
+        construir_edificio.accion();
             break;
         case 2:
-            cout << "entre aqui  2" << endl;
-            op2.accion();
+            listar_edificios_construidos.accion();
             break;
         case 3:
-        cout << "entre aqui  3" << endl;
-            op3.accion();
-            
+            listar_edificios.accion();
             break;
         case 4:
-        cout << "entre aqui  4" << endl;
-           // op4.accion();
-            
+           demoler_edificio.accion();
             break;
         case 5:
-        mapa->mostrar();
-        cout << "entre aqui  5" << endl;
-        	
+            mapa->mostrar();
 			break;
         case 6:
-
-        cout << "entre aqui  6" << endl;
-            op6.accion();
+            consultar_coordenada.accion();
 			break;
         case 7:
-        cout << "entre aqui  7" << endl;
-            op7.accion();
+            listar_materiales.accion();
 			break;
         case 8:
-        cout << "entre aqui  8" << endl;
-            op8.accion();
-        
+            recolectar_recursos.accion();
 			break;
         case 9:
-        cout << "entre aqui  9" << endl;
-            op9.accion();
-
+            lluvia_recursos.accion();
 			break;
         case 10:
         cout << "entre aqui  10" << endl;
 			break;
             cout << " que opcion desea " << endl;
     }
+
+    if(stoi(opcion) > 10  || stoi(opcion) < 1) cout << "Ingresaste un respuesta invalida " << endl;
+    cout << endl <<"Presione Enter para continuar";
+    cin.get(); 
+    system(CLR_SCREEN);
     return stoi (opcion);
-
 }
 
- /*
-bool Juego :: hay_edificio(int fila, int columna){
-    return ((mapa->consultar_tipo(fila, columna) == ESCUELA) 
-            || (mapa->consultar_tipo(fila, columna) == OBELISCO)
-            || (mapa->consultar_tipo(fila, columna) == PLANTA_ELECTRICA) 
-            || (mapa->consultar_tipo(fila, columna) == ASERRADERO)
-            || (mapa->consultar_tipo(fila, columna) == MINA) 
-            || (mapa->consultar_tipo(fila, columna) == FABRICA)); 
-}
 
-void Juego :: obtener_datos(int& piedra, int& madera, int& metal, int fila, int columna){
 
-    int contador = 0;
-    Edificios* aux = vector_edificios.devolver_info(contador); 
-    
-    while ((aux->devolver_simbolo() != mapa->consultar_tipo(fila, columna)) && (contador < vector_edificios.tamanio())){
-        contador++;
-        aux = vector_edificios.devolver_info(contador);
-    }
-    
-    piedra = aux->devolver_cantidad_piedra();
-    madera = aux->devolver_cantidad_madera();
-    metal = aux->devolver_cantidad_metal();
+void Juego :: menu(){
 
-}
-
-void Juego :: regresar_material(string tipo, int cant_material){
-    int contador = 0;
-    Material* aux = vector_materiales.devolver_info(contador); 
-    
-    while ((aux->devolver_nombre() != tipo) && (contador < vector_materiales.tamanio())){
-        contador++;
-        aux = vector_materiales.devolver_info(contador);
-    }
-
-    aux->agregar_al_stock(cant_material);
-}
-
-void Juego :: demoler_edificio(){
-    int fila, columna;
-    int piedra_necesaria, metal_necesario, madera_necesaria;
-
-    cout << "Ingrese la fila de la coordenada que desea demoler: ";
-    cin >> fila;
-    cout << "Ingrese la columna de la coordenada que desea demoler: ";
-    cin >> columna;
-
-    if (hay_edificio(fila, columna)){
-        obtener_datos(piedra_necesaria, madera_necesaria, metal_necesario, fila, columna);
-        Casilleroc* casillero = new Casilleroc(TERRENO);
-        mapa->actualizar_mapa(casillero, fila, columna);
-
-        regresar_material(TIPO_PIEDRA, piedra_necesaria/2);
-        regresar_material(TIPO_MADERA, madera_necesaria/2);
-        regresar_material(TIPO_METAL, metal_necesario/2);
-       
-    }
-}
- */
-
-void Juego :: chequear_respuesta(){
     
     int opcion;
+    system(CLR_SCREEN);
+    imprimir_edificio();
+    imprimir_bienvenida();
+    cout << endl <<"Presione Enter para continuar";
+    cin.get(); 
+    system(CLR_SCREEN);
+
     do{
         opcion = procesar_opcion();
-        if(opcion > 10  || opcion < 1) cout << " invalida respuesta" << endl;
+        //imprimir_menu();
 
     } while (opcion < 10 || opcion > 10);
     

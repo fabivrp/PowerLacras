@@ -16,4 +16,5 @@ char Casillero :: devolver_tipo(){
 bool Casillero :: esta_ocupado(){
     return ocupado;
 }
+Casillero :: ~Casillero(){}
 

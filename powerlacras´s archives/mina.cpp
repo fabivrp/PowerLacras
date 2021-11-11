@@ -8,11 +8,12 @@ Mina::Mina(string nombre, int piedra,int madera,int metal, int cant_max_construi
     this->simbolo = 'M';
 }
 
-int Mina :: cuanto_produce(){
-    return  this->produccion;
-}
+
 
 const string Mina:: tipo_produccion(){
     return TIPO_PRODUCCION_MINA;
+}
+void Mina :: imprimir_mensaje(){
+    cout << "tiene una Mina construida" << endl;
 }
 

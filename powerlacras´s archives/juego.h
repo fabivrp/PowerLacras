@@ -11,6 +11,7 @@
 #include "cargar_archivos.h"
 #include "consultar_coordenada.h"
 #include "construir_edificio.h"
+#include "inicio.h"
 #include "demoler_edificio.h"
 #include "recolectar_recursos.h"
 #include "lluvia_recursos.h"
@@ -28,6 +29,14 @@
 #include <sstream>
 #include <cstdlib>
 #include <iomanip>
+
+#ifdef __linux__
+#define CLR_SCREEN "clear"
+#endif // __linux__
+
+#ifdef __MINGW32__
+#define CLR_SCREEN "CLS"
+#endif // __MINGW32__
 
 struct Coordenada{
     int fila;
@@ -49,24 +58,64 @@ public:
     //Juego(/* args */);
     /*
     *PRE:
-    *POST:Carga todos los elementos provistos por los archivos a sus respectivas estructuras
+    *POST:
     */
     bool cargar_archivos();
     
     /*
     *PRE:
-    *POST:Agrega los edificios que est'an contenidos en el archivo ubicaciones al mapa
+    *POST:
     */
     void agregar_ubicaciones();
     
     /*
     *PRE:
-    *POST:Verifica que la opción dada por el usuario esté dentro de los valores calidos de las
-    *opciones
+    *POST:
     */
-    void chequear_respuesta();
+    void mostrar_edificios();
 
- 
+    /*
+    *PRE:
+    *POST:
+    */
+    void mostrar_materiales();
+    
+    /*
+    *PRE:
+    *POST:
+    */
+    void mostrar_edificios_construidos();
+    
+    /*
+    *PRE:
+    *POST:
+    */
+    void menu();
+
+    /*
+    *PRE:
+    *POST:
+    */
+    void recolectar_materiales();
+
+    /*
+    *PRE:
+    *POST:
+    */
+   void consultar_coordenada();
+
+   /*
+   *PRE:
+   *POST:
+   */
+    void ejecutar_lluvia_materiales();
+   
+   /*
+   *PRE:
+   *POST:
+   */
+    void demoler_edificio();
+
 
     ~Juego();
     
@@ -95,7 +144,18 @@ private:
     */
     string extraer_coordenadas (string nombre);
 
-    
+    /*
+    *PRE:
+    *POST:
+    */
+    void describir_contenido(char tipo_casilla);
+
+
+    /*
+    *PRE:
+    *POST:
+    */
+    int casillas_disponibles();
     
     /*
     *PRE:
@@ -103,6 +163,11 @@ private:
     */
     int numero_aleatorio(int limite_inferior, int limite_superior);
     
+    /*
+    *PRE:
+    *POST:
+    */
+    bool casilla_disponible(Coordenada coordenada);
     
     /*
     *PRE:
@@ -121,7 +186,23 @@ private:
     *POST:
     */
     void colocar_material(int cantidad_material, char tipo);
-   
+    
+    /*
+    *PRE:
+    *POST:
+    */
+    bool hay_edificio (int fila, int columna);
+    
+    /*
+    *PRE:
+    *POST:
+    */
+    void obtener_datos(int& piedra, int& madera, int& metal, int fila, int columna);
+    /*
+    *PRE:
+    *POST:
+    */
+    void regresar_material(string tipo, int cant_material);
 
 
 

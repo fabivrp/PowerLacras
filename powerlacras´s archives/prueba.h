@@ -1,16 +1,16 @@
-#ifndef H_P_CONSTRUIR_EDIFICIO
-#define H_P_CONSTRUIR_EDIFICIO
+#ifndef H_P_PRUEBA
+#define H_P_PRUEBA
 #include "vector.h"
 #include "ubicaciones.h"
 #include "mapa.h"
 #include "material.h"
 #include "edificios.h"
 #include "casilleroc.h"
-#include "opciones.h"
+#include "prueba2.h"
 
 
 
-class Construir_edificio
+class prueba
 {
 private:
 Vector <Ubicaciones> *vector_ubicaciones_aux;
@@ -29,12 +29,12 @@ string edificio_a_construir;
     
 public:
 
-    Construir_edificio(Vector <Edificios> *vector_edificio,Vector <Ubicaciones> *vector_ubicaciones,Vector <Material> *vector_materiales ,Mapa *mapa);
+    prueba(Vector <Edificios> *vector_edificio,Vector <Ubicaciones> *vector_ubicaciones,Vector <Material> *vector_materiales ,Mapa *mapa);
     //~prueba();
     void accion();
-    //void modificar();
+    void modificar();
     //void costruir_edificio();
 };
 
 
-#endif //H_P_CONSTRUIR_EDIFICIO
+#endif //H_P_PRUEBA

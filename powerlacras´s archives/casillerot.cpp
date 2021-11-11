@@ -35,7 +35,13 @@ void Casillerot :: cambiar_contenido(char tipo_nuevo){
 }
 
 void Casillerot :: dar_mensaje(){
-    cout << "La casilla es de tipo camino " << endl;
+    if(this->ocupado){
+    cout <<"La casilla es de tipo camino y ";
+    }
+    else{
+        cout <<"La casilla es de tipo camino y me ecuentro vacia " << endl;
+    }
+
 
 }
 /*

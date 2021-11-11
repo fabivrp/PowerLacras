@@ -8,12 +8,15 @@ Aserradero::Aserradero(string nombre,int piedra,int madera,int metal, int cant_m
     this->simbolo = 'A';
 }
 
-int Aserradero :: cuanto_produce(){
-    return  this->produccion;
-}
+
 
 const string Aserradero :: tipo_produccion(){
 
     return TIPO_PRODUCCION_ASERRADERO;
 }
+
+void Aserradero :: imprimir_mensaje(){
+    cout << "tiene un Aserradero construido" << endl;
+}
+
 

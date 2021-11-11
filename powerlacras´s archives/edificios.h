@@ -1,16 +1,14 @@
 #ifndef H_P_EDIFICIOS_H
 #define H_P_EDIFICIOS_H
 #include <iostream>
-#include "constantes.h"
-
 using namespace std;
 
 const string TIPO_PRODUCCION_OBELISCO = " ";
 const string TIPO_PRODUCCION_PLANTA = " ";
 const string TIPO_PRODUCCION_ESCUELA = " ";
-const string TIPO_PRODUCCION_MINA = "Piedra";
-const string TIPO_PRODUCCION_FABRICA = "Metal";
-const string TIPO_PRODUCCION_ASERRADERO = "Madera";
+const string TIPO_PRODUCCION_MINA = "piedra";
+const string TIPO_PRODUCCION_FABRICA = "metal";
+const string TIPO_PRODUCCION_ASERRADERO = "madera";
 
 //CREO QUE LA CLASE TENDRIA QUE SER EN SINGULAR  LIKE ---> -EDIFICIO. 
 
@@ -26,78 +24,79 @@ protected:
     int cant_construidos;
     int produccion;
     char simbolo;
-
 public:
     /*
-    *PRE:las cantidades que representan los materiales y elementos construidos deben ser >= 0
-    *POST:Establece la clase con los datos proporcionados.
+    *PRE:
+    *POST:
     */
     Edificios(string nombre ,int piedra,int madera,int metal,int cant_max_construidos);
     
     /*
     *PRE:
-    *POST: Aumenta la cantidad de construidos del ediificio en una unidad
+    *POST:
     */
     void aumentar_construidos();
     
     /*
     *PRE:
-    *POST:Devuelve la cantidad de edificios construidos de ese tipo.
+    *POST:
     */
     int devolver_construidos();
     
     /*
     *PRE:
-    *POST:Devuelve que tipo de edificio es (Escuela, mina, aserradero, etc)
+    *POST:
     */
     string devolver_nombre();
+    void disminuir_construidos();
+
     
     /*
     *PRE:
-    *POST: Devuelve el caracter representativo del tipo de edificio
+    *POST:
     */
     char devolver_simbolo();
     
     /*
     *PRE:
-    *POST: Devuelve la cantidad de piedras necesarias para la construcción de ese edificio
+    *POST:
     */
     int devolver_cantidad_piedra();
     
     /*
     *PRE:
-    *POST: Devuelve la cantidad de madera necesaria para la construcción de ese edificio
+    *POST:
     */
     int devolver_cantidad_madera();
     
     /*
     *PRE:
-    *POST: Devuelve la cantidad de metal necesario para la construcción de ese edificio
+    *POST:
     */
     int devolver_cantidad_metal();
     
     /*
     *PRE:
-    *POST:Devuelve la cantidad maxima permitida de edificios de ese tipo que pueden ser 
-    *construidos en Andypolis
+    *POST:
     */
     int devolver_max_construccion();
+    int cuanto_produce();
     
     /*
     *PRE:
-    *POST:Devuelve la cantidad de materiales que produce el edificio, en el caso de no
-    *producir ninguno devuelve 0
+    *POST:
     */
-    virtual int cuanto_produce() = 0;
+    //virtual int cuanto_produce() = 0;
+    virtual void imprimir_mensaje() = 0;
     
     /*
     *PRE:
-    *POST:Devuelve el tipo de material que produce el edificio, en caso de no producir ninguno 
-    *devuelve " "
+    *POST:
     */
     virtual const string tipo_produccion() = 0;
 
-    //~edificios();
+    virtual~Edificios();
+    
 };
 
 //Prueba

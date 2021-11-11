@@ -1,14 +1,5 @@
-#include <iostream>
-#include <thread>
-#include <chrono>
+#include "inicio.h"
 
-#include "colors.h"
-
-
-
-using namespace std;
-using namespace std::this_thread;
-using namespace std::chrono;
 
 void imprimir_salida(const string color_1, const string color_2){
 
@@ -35,37 +26,37 @@ void mostrar_salida_parpadeante(){
 
     do
     {
-        if (contar = 0){
+        if (contar == 0){
             system("clear");
             imprimir_salida(END_COLOR,TXT_LIGHT_RED_9);
             sleep_for(seconds(1));
         }
-        if (contar = 1){
+        if (contar == 1){
             system("clear");
             imprimir_salida(TXT_LIGHT_RED_9,TXT_LIGHT_YELLOW_155 );
             sleep_for(seconds(1));
         }
-        if (contar = 2){
+        if (contar == 2){
             system("clear");
             imprimir_salida(TXT_LIGHT_YELLOW_155,TXT_LIGHT_PURPLE_135 );
             sleep_for(seconds(1));
         }
-        if (contar = 3){
+        if (contar == 3){
             system("clear");
             imprimir_salida(TXT_LIGHT_PURPLE_135,TXT_LIGHT_GREEN_119 );
             sleep_for(seconds(1));
         }
-        if (contar = 4){
+        if (contar == 4){
             system("clear");
             imprimir_salida(TXT_LIGHT_GREEN_119, TXT_LIGHT_PINK_204 );
             sleep_for(seconds(1));
         }
-        if (contar = 5){
+        if (contar == 5){
             system("clear");
             imprimir_salida(TXT_LIGHT_PINK_204,END_COLOR );
             sleep_for(seconds(1));
         }
-        if (contar = 6){
+        if (contar == 6){
             system("clear");
             imprimir_salida(END_COLOR,END_COLOR );
             estado=false;
@@ -137,13 +128,4 @@ void imprimir_menu(){
             "╚-------------------------------------------------------╝" << endl;
 }
 
-
-int main (){   //  g++ main2.cpp mapa.cpp casilleroc.cpp casilleroi.cpp casillerot.cpp casillero.cpp parser.cpp parsere.cpp leer_archivos.cpp ubicaciones.cpp juego.cpp cargar_archivos.cpp aserradero.cpp mina.cpp escuela.cpp fabrica.cpp obelisco.cpp planta_electrica.cpp edificios.cpp material.cpp -o o
-
-    imprimir_edificio();
-    imprimir_bienvenida();
-    
-    mostrar_salida_parpadeante();
-
-}
 

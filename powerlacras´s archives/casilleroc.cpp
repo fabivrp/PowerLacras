@@ -2,7 +2,7 @@
 
 
 const char PLANTA_ELECTRICA = 'P';
-const char TERRENO = 'T';
+const char DISPONIBLE = 'T';
 const char ASERRADERO = 'A';
 const char OBELISCO = 'O';
 const char FABRICA = 'F';
@@ -24,10 +24,10 @@ Casilleroc::Casilleroc(char tipo_casilla) : Casillero(tipo_casilla)
     cout << "hilo" << endl;
     cout << this -> tipo_casilla << endl;
 }*/
-//CasilleroC::~CasilleroC()
+
 void Casilleroc :: mostrar(){
       
-        if (this -> tipo_casilla == TERRENO)
+        if (this -> tipo_casilla == DISPONIBLE)
                 cout << BGND_GREEN_34 << " "<< this ->tipo_casilla <<" " << END_COLOR;
 
             if (this -> tipo_casilla == PLANTA_ELECTRICA)
@@ -57,6 +57,12 @@ void Casilleroc :: mostrar(){
     */
 }
 void Casilleroc :: dar_mensaje(){
-    cout << "La casilla es de tipo terreno " << endl;
+    if(this->ocupado){
+    cout << "La casilla es de tipo terreno y ";
+    }
+    else{
+        cout << "La casilla es de tipo terreno y se ecuentra vacia " << endl;
+
+    }
 }
 
