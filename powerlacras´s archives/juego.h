@@ -49,64 +49,24 @@ public:
     //Juego(/* args */);
     /*
     *PRE:
-    *POST:
+    *POST:Carga todos los elementos provistos por los archivos a sus respectivas estructuras
     */
     bool cargar_archivos();
     
     /*
     *PRE:
-    *POST:
+    *POST:Agrega los edificios que est'an contenidos en el archivo ubicaciones al mapa
     */
     void agregar_ubicaciones();
     
     /*
     *PRE:
-    *POST:
+    *POST:Verifica que la opción dada por el usuario esté dentro de los valores calidos de las
+    *opciones
     */
-    void mostrar_edificios();
+    void chequear_respuesta();
 
-    /*
-    *PRE:
-    *POST:
-    */
-    void mostrar_materiales();
-    
-    /*
-    *PRE:
-    *POST:
-    */
-    void mostrar_edificios_construidos();
-    
-    /*
-    *PRE:
-    *POST:
-    */
-    void menu();
-
-    /*
-    *PRE:
-    *POST:
-    */
-    void recolectar_materiales();
-
-    /*
-    *PRE:
-    *POST:
-    */
-   void consultar_coordenada();
-
-   /*
-   *PRE:
-   *POST:
-   */
-    void ejecutar_lluvia_materiales();
-   
-   /*
-   *PRE:
-   *POST:
-   */
-    void demoler_edificio();
-
+ 
 
     ~Juego();
     
