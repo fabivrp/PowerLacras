@@ -54,7 +54,6 @@ public:
 //CONSTRUCTOR
 template <typename Tipo>
 Vector<Tipo>::Vector() {
-    
     largo = VACIO;
     elementos = NULL;
 }
@@ -62,7 +61,6 @@ Vector<Tipo>::Vector() {
 //DESTRUCTOR
 template <typename Tipo>
 void Vector<Tipo>::Vector_destructor() {
-    
     for(int i = 0 ; i < largo ; i++){
         delete elementos[i];
     }
@@ -72,7 +70,6 @@ void Vector<Tipo>::Vector_destructor() {
 //DEVOLVER LARGO DEL VECTOR
 template <typename Tipo>
 int Vector<Tipo>::tamanio() {
-    
     return this -> largo;
 }
 
@@ -91,7 +88,6 @@ void Vector<Tipo>::copiar(Tipo** auxiliar, int desde, int hasta){
 //REDIMENSIONAR
 template <typename Tipo>
 void Vector<Tipo>::redimensionar() {
-   
    Tipo** auxiliar = elementos;
    elementos = new Tipo* [(largo)+1];
    copiar(auxiliar,INICIO,largo);
@@ -103,14 +99,12 @@ void Vector<Tipo>::redimensionar() {
 //AÑADIR ELEMENTO
 template <typename Tipo>
 void Vector<Tipo>::anadir_elemento(Tipo* dato) {
-    
     redimensionar();
     elementos[largo-1] = dato;
 }  
 
 template <typename Tipo>
 Tipo* Vector<Tipo>::devolver_info(int pos) {
-    
     return elementos[pos];
 } 
 

@@ -91,11 +91,11 @@ bool confirmo_accion(string accion,string objeto){
     bool confirmo_accion;
     bool repetir;
     cout << "Desea confirmar la " << accion <<" del " << objeto << " ?" << endl;
-    cout << "Escriba 'S' para confirmar 'N' para negar: ";
+    cout << "Escriba 's' para confirmar 'n' para negar: ";
    do {
     getline(cin,respuesta); 
        if(respuesta[0] != 's' && respuesta[0] != 'n'){
-        cout << "No es valida la respuesta, por favor ingrese 'S' para confirmar 'N' para negar: ";
+        cout << "No es valida la respuesta, por favor ingrese 's' para confirmar 'n' para negar: ";
         repetir = true;
        }
        else if (respuesta[0] == 's'){

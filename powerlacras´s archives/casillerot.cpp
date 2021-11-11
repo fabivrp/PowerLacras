@@ -6,7 +6,7 @@ Casillerot::Casillerot(char tipo_casilla) : Casillero(tipo_casilla) {}
 
 void Casillerot :: mostrar(){
 
-    if (this -> tipo_casilla == TERRENO)
+    if (this -> tipo_casilla == CAMINO)
         cout << BGND_LIGHT_GRAY_246 << " "<< this -> tipo_casilla <<" " << END_COLOR;
         
     else if (this -> tipo_casilla == MADERA){

@@ -19,7 +19,7 @@ public:
     *PRE:
     *POST:ejecuta recolectar recursos
     */
-    void accion();
+    void recolectar_produccion();
 };
 
 

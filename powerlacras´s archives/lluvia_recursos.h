@@ -19,7 +19,7 @@ public:
     *PRE:
     *POST:ejecuta la lluvia de materiales
     */
-    void accion();
+    void ejecutar_lluvia();
 
 private:   
      /*

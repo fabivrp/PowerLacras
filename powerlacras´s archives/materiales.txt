@@ -1,0 +1,3 @@
+madera 400
+metal 7450
+piedra 1485

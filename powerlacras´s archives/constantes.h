@@ -50,7 +50,7 @@ const char METAL = 'I';
 const char MADERA = 'W';
 const char PIEDRA = 'S';
 
-const string NOMBRE_PLANTA_ELECTRICA = "planta_electrica";
+const string NOMBRE_PLANTA_ELECTRICA = "planta electrica";
 const string NOMBRE_ESCUELA = "escuela";
 const string NOMBRE_OBELISCO = "obelisco";
 const string NOMBRE_ASERRADERO = "aserradero";

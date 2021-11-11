@@ -6,7 +6,7 @@ Lluvia_recursos::Lluvia_recursos(Mapa *mapa){
     this->mapa_aux = mapa;
 }
 
-void Lluvia_recursos :: accion(){
+void Lluvia_recursos :: ejecutar_lluvia(){
     
     srand((unsigned)time(NULL));
     cout << "Comenzando la lluvia..." << endl;

@@ -86,10 +86,10 @@ int Juego :: procesar_opcion(){
             listar_materiales.mostrar_materiales();
 			break;
         case 8:
-            recolectar_recursos.accion();
+            recolectar_recursos.recolectar_produccion();
 			break;
         case 9:
-            lluvia_recursos.accion();
+            lluvia_recursos.ejecutar_lluvia();
 			break;
         case 10:
         guardar.guardar_todo();
