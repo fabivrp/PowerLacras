@@ -1,0 +1,9 @@
+8 10
+L L T T P I I T T T 
+L T T T T S I S M T 
+L L C S T I S T T T 
+I L T T T I S T T L 
+T L T T T L C M T I 
+T T T T T I W T T T 
+I I T I T I S T T T 
+T T F T T S C T T W 

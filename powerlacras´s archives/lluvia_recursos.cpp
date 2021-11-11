@@ -9,6 +9,7 @@ Lluvia_recursos::Lluvia_recursos(Mapa *mapa){
 
 void Lluvia_recursos :: accion(){
     srand((unsigned)time(NULL));
+    cout << "Comenzando la lluvia..." << endl;
     
     int cantidad_madera, cantidad_metal, cantidad_piedra, total_materiales;
 
@@ -21,8 +22,12 @@ void Lluvia_recursos :: accion(){
         colocar_material(cantidad_madera, MADERA);
         colocar_material(cantidad_piedra, PIEDRA);
         colocar_material(cantidad_metal, METAL);
+        cout << total_materiales << " materiales han caido del cielo " << endl;
+        cout << cantidad_piedra << " de piedra" << endl; 
+        cout << cantidad_madera << " de madera" << endl; 
+        cout << cantidad_metal<< " de metal" << endl; 
     }
-    else cout << "No hay suficiente espacio para hacer la lluvia de materiales" << endl;
+    else cout << "No hay suficiente espacio para hacer la lluvia de materiales :(" << endl;
 
 }
 

@@ -14,15 +14,15 @@ private:
     Vector <Edificios> vector_edificios_aux;
     Vector <Material> vector_materiales_aux;
     Mapa *mapa_aux;
+    void guardar_mapa();
+    void guardar_edificios();
+    void guardar_ubicaciones();
+    void guardar_materiales();
 
     
 public:
 
     Guardar(Vector <Ubicaciones> vector_ubicaciones,Vector <Edificios> vector_edificios,Vector <Material> vector_materiales, Mapa *mapa);
-    void guardar_mapa();
-    void guardar_edificios();
-    void guardar_ubicaciones();
-    void guardar_materiales();
     void guardar_todo();
 
     

@@ -21,6 +21,7 @@ Demoler_edificio::Demoler_edificio(Vector <Edificios> *vector_edificio,Vector <U
 void Demoler_edificio :: accion(){
         
     cout << "Ingrese las casillas del edificio que quiere demoler " << endl;
+    cout << endl;
     coordenada_es_valida(&this->fil,&this->col,mapa_aux);
     Casillero *casilla = mapa_aux->devolver_casilla(this->fil,this->col); 
     if (casilla->esta_ocupado()){
@@ -34,10 +35,9 @@ void Demoler_edificio :: accion(){
             regresar_material(TIPO_MADERA, this->cant_madera/2);
             regresar_material(TIPO_METAL, this->cant_metal/2);
             cout << "La demolicion se ha realizado con exito" << endl;
-            }
-        else{ 
-            cout <<"Ha cancelado la demolicion :( " << endl;
         }
+        else cout <<"Ha cancelado la demolicion :( " << endl;
+        
     }
     else{
         cout << "La coordenada ingresada no tiene un edificio para demoler" << endl;

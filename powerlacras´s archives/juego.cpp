@@ -58,7 +58,7 @@ int Juego :: procesar_opcion(){
         Consultar_coordenada consultar_coordenada(this->vector_edificios,this->vector_ubicaciones,this->vector_materiales,this->mapa);
         Recolectar_recursos recolectar_recursos(this->vector_edificios,&(this->vector_materiales));
         Lluvia_recursos lluvia_recursos(this->mapa);
-        
+        Guardar guardar(this->vector_ubicaciones,this->vector_edificios,this->vector_materiales,this->mapa);
         imprimir_menu();
         cout << "Ingresar una de las siguientes opciones:"<< endl;
         getline(cin,opcion);
@@ -93,6 +93,7 @@ int Juego :: procesar_opcion(){
 			break;
         case 10:
         cout << "entre aqui  10" << endl;
+        guardar.guardar_todo();
 			break;
             cout << " que opcion desea " << endl;
     }

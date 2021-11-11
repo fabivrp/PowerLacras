@@ -64,7 +64,7 @@ bool coordenada_es_valida(int *fil,int *col,Mapa *mapa){
     do {
         pedir_coordenada(&(*fil),&(*col));
         if(*fil < 0 || *col < 0 || *fil >= mapa->devolver_filas() || *col >= mapa->devolver_columnas()){
-            cout << "Las coordenadas ingresadas no son validad " << endl;
+            cout << "Las coordenadas ingresadas no son validas " << endl;
             es_valida = false;
         }
         else {
@@ -110,6 +110,7 @@ bool confirmo_accion(string accion,string objeto){
        }
     
    }while(repetir);
+   cout << endl;
    return confirmo_accion;
 
 }

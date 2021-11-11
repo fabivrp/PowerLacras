@@ -96,12 +96,14 @@ void Construir_edificio :: accion(){
     if (edificio_a_construir == "planta electrica") edificio_a_construir = "planta";
     if (hay_objeto(edificio_a_construir,*this->vector_edificios_aux,&this->pos_vector_edificio) && hay_espacio()){
         if(hay_materiales_suficiente()){
-            cout << "si hay el materiaaaalll" << endl;
             if(hay_coordenada_disponible(&this->coordenada_fil,&this->coordenada_col,mapa_aux)){
+                if (edificio_a_construir == "planta") edificio_a_construir = "planta electrica";
                 if (confirmo_accion("construir","edificio")) {
                     agregar_edificacion();
                     restar_materiales();
+                    cout << "Se ha logrado construir el edificio " << edificio_a_construir << endl;
                 }
+                else cout << "Ha cancelado la construccion de edificio " << edificio_a_construir << endl;
             }
         }
     }

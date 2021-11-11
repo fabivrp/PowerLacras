@@ -45,7 +45,8 @@ int Consultar_coordenada :: buscar_material(char simobolo_a_buscar) {
 
 
 void Consultar_coordenada :: accion(){
-    
+    cout << "Ingrese las coordenadas a consultar " << endl;
+    cout << endl;
     coordenada_es_valida(&this->fil,&this->col,mapa_aux);
     Casillero *casilla = this->mapa_aux->devolver_casilla(fil,col);
     casilla->dar_mensaje();

@@ -12,6 +12,7 @@
 #include "consultar_coordenada.h"
 #include "construir_edificio.h"
 #include "inicio.h"
+#include "guardar.h"
 #include "demoler_edificio.h"
 #include "recolectar_recursos.h"
 #include "lluvia_recursos.h"
