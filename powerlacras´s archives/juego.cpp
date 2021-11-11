@@ -92,8 +92,9 @@ int Juego :: procesar_opcion(){
             lluvia_recursos.accion();
 			break;
         case 10:
-        cout << "entre aqui  10" << endl;
         guardar.guardar_todo();
+        mostrar_salida_parpadeante();
+        cout << "Gracias por jugar y disculpe la tardanza el git a 10 min de la entrega fallo con 5 archivos :(" << endl;
 			break;
             cout << " que opcion desea " << endl;
     }
@@ -109,7 +110,6 @@ int Juego :: procesar_opcion(){
 
 void Juego :: menu(){
 
-    
     int opcion;
     system(CLR_SCREEN);
     imprimir_edificio();

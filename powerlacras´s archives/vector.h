@@ -48,6 +48,7 @@ public:
     *POST:añade un elemeto al vector
     */
     void anadir_elemento(Tipo* elemento);
+    void restar_tamanio();
 
 };
 //CONSTRUCTOR
@@ -106,6 +107,9 @@ template <typename Tipo>
 Tipo* Vector<Tipo>::devolver_info(int pos) {
     return elementos[pos];
 } 
+
+
+
 
 
 

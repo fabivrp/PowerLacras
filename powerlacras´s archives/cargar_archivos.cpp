@@ -11,10 +11,10 @@ Cargar_archivos::~Cargar_archivos()
 }
 
 Mapa* Cargar_archivos :: cargar_mapa(int *cont_archivos){
-    Leer_archivos archivo = Leer_archivos("mapa.txt");
+    Leer_archivos archivo = Leer_archivos(PATH_ENTRADA_MAPA);
     Mapa* mapa = nullptr;
     if (archivo.hay_archivo()){
-        ifstream archivo_mapa("mapa.txt");
+        ifstream archivo_mapa(PATH_ENTRADA_MAPA);
         int fil = stoi(archivo.leer_hasta_espacio(archivo_mapa,' '));
         int col = stoi( archivo.leer_hasta_espacio(archivo_mapa,'\n'));
         mapa = new Mapa(fil,col);
@@ -37,26 +37,12 @@ Mapa* Cargar_archivos :: cargar_mapa(int *cont_archivos){
     return mapa;
 }
 
-/*Edificios* Cargar_archivos :: cargar_edificios(int *cont_archivos){
-    Leer_archivos archivo = Leer_archivos("edificios.txt");
-    Edificios* edificios;
-    if (archivo.hay_archivo()){
-        ifstream archivo_edificios("edificios.txt");
-        for(int i = 0 ; !archivo_edificios.eof ; i++){
-            Parsere parsere = Parsere(archivo.leer_hasta_espacio(archivo_edificios,' '));
-            edificios[i] = parsere.procesar_entrada(archivo_edificios);
-        } 
-        archivo_edificios.close();  
-    }
-    return edificios;
-}*/
-
 Vector <Edificios> Cargar_archivos :: cargar_edificios(int *cont_archivos){
-    Leer_archivos archivo = Leer_archivos("edificios.txt");
+    Leer_archivos archivo = Leer_archivos(PATH_ENTRADA_EDIFICIOS);
     Edificios* edificio;
     Vector <Edificios> vector;
     if (archivo.hay_archivo()){
-        ifstream archivo_edificios("edificios.txt");
+        ifstream archivo_edificios(PATH_ENTRADA_EDIFICIOS);
         while (!archivo_edificios.eof()){
             Parsere parsere = Parsere(archivo.leer_hasta_espacio(archivo_edificios,' '));
             edificio = parsere.procesar_entrada(archivo_edificios);
@@ -69,11 +55,11 @@ Vector <Edificios> Cargar_archivos :: cargar_edificios(int *cont_archivos){
 }
 
 Vector <Ubicaciones> Cargar_archivos :: cargar_ubicaciones(int *cont_archivos){
-    Leer_archivos archivo = Leer_archivos("ubicaciones.txt");
+    Leer_archivos archivo = Leer_archivos(PATH_ENTRADA_UBICACIONES);
     Ubicaciones* ubicaciones;
     Vector <Ubicaciones> vector;
     if(archivo.hay_archivo()){
-        ifstream archivo_ubicaciones("ubicaciones.txt");
+        ifstream archivo_ubicaciones(PATH_ENTRADA_UBICACIONES);
         while (!archivo_ubicaciones.eof()){
             string nombre = archivo.leer_hasta_espacio(archivo_ubicaciones,' ');
             if(nombre == "planta") archivo.leer_hasta_espacio(archivo_ubicaciones,' ');
@@ -91,11 +77,11 @@ Vector <Ubicaciones> Cargar_archivos :: cargar_ubicaciones(int *cont_archivos){
 }
 
 Vector <Material> Cargar_archivos :: cargar_materiales(int *cont_archivos){
-    Leer_archivos archivo = Leer_archivos("materiales.txt");
+    Leer_archivos archivo = Leer_archivos(PATH_ENTRADA_MATERIALES);
     Material* material;
     Vector <Material> vector;
     if(archivo.hay_archivo()){
-        ifstream archivo_materiales("materiales.txt");
+        ifstream archivo_materiales(PATH_ENTRADA_MATERIALES);
         while (!archivo_materiales.eof()){
             material = new Material(archivo.leer_hasta_espacio(archivo_materiales,' '),stoi(archivo.leer_hasta_espacio(archivo_materiales,'\n')));
             vector.anadir_elemento(material);  

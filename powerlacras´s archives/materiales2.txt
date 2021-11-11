@@ -1,5 +1,5 @@
-piedra 285
-madera 50
-metal 225
+piedra 400
+madera 124
+metal 304
 oro 6
 vibranio 2

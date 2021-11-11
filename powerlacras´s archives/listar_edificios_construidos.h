@@ -24,7 +24,7 @@ private:
     
 public:
 
-    Listar_edificios_construidos(Vector <Edificios> *vector_edificio,Vector <Ubicaciones> *vector_ubicaciones,Vector <Material> *vector_materiales ,Mapa *mapa);
+    Listar_edificios_construidos(Vector <Edificios> vector_edificio,Vector <Ubicaciones> vector_ubicaciones);
     
     /*
     *PRE:

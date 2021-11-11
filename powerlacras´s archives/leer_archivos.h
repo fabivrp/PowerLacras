@@ -15,8 +15,8 @@ string archivo_leer;
 
 public:
 
-/*
-    eer_archivos(string archivo_leer);
+
+    Leer_archivos(string archivo_leer);
     
     /*
     *PRE:

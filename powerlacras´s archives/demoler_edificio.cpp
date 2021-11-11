@@ -12,26 +12,6 @@ Demoler_edificio::Demoler_edificio(Vector <Edificios> *vector_edificio,Vector <U
     this->mapa_aux = mapa;
 }
 
-void Demoler_edificio :: eliminar_del_vector(int pos){
-    for(int i = pos ; i < this->vector_ubicaciones_aux->tamanio(); i++){
-        this->vector_ubicaciones_aux[i] = this->vector_ubicaciones_aux[i+1];
-    }
-
-}
-int Demoler_edificio :: buscar_edificicacion_en_ubicaciones(){
-    for(int i = 0 ; i < vector_ubicaciones_aux->tamanio();i++){
-        Ubicaciones *aux = vector_ubicaciones_aux->devolver_info(i);
-        //Edificios *edificio = vector_edificios_aux->devolver_info(this->pos_vector_edificio_aux);
-        if (aux->devolver_fil() == this->fil && aux->devolver_col()){
-            return i;
-        }
-    }
-}
-
-
-
-/*
-*/
 void Demoler_edificio :: accion(){
         
     cout << "Ingrese las casillas del edificio que quiere demoler " << endl;
@@ -48,7 +28,6 @@ void Demoler_edificio :: accion(){
             regresar_material(TIPO_PIEDRA, this->cant_piedra/2);
             regresar_material(TIPO_MADERA, this->cant_madera/2);
             regresar_material(TIPO_METAL, this->cant_metal/2);
-            eliminar_del_vector(buscar_edificicacion_en_ubicaciones());
             cout << "La demolicion se ha realizado con exito" << endl;
         }
         else cout <<"Ha cancelado la demolicion :( " << endl;
@@ -58,7 +37,6 @@ void Demoler_edificio :: accion(){
         cout << "La coordenada ingresada no tiene un edificio para demoler" << endl;
     }
 }
-
 
 bool Demoler_edificio :: hay_edificio(int fila, int columna){
     return false ; 

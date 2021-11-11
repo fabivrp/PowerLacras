@@ -18,12 +18,15 @@ private:
     bool hay_edificio(int fila, int columna);
     void obtener_datos(char tipo_casilla);
     void regresar_material(string tipo, int cant_material);
-    void Demoler_edificio :: eliminar_del_vector(int pos);
-    int Demoler_edificio :: buscar_edificicacion_en_ubicaciones();
 
 
 
 public:
+
+    /*PRE:-
+    *POS: Realiza la demolicion del edificio especificado 
+    *luego de corroborar la existencia del mismo en la casilla seleccionada
+    */
     Demoler_edificio(Vector <Edificios> *vector_edificio,Vector <Ubicaciones> *vector_ubicaciones,Vector <Material> *vector_materiales ,Mapa *mapa);
     void accion();
 };

@@ -5,6 +5,12 @@
 
 using namespace std;
 
+const string PATH_ENTRADA_EDIFICIOS = "edificios.txt";
+const string PATH_ENTRADA_MATERIALES = "materiales.txt";
+const string PATH_ENTRADA_MAPA = "mapa.txt";
+const string PATH_ENTRADA_UBICACIONES = "ubicaciones.txt";
+
+
 const int PRODUCCION_MINIMA = 0;
 const int ESPACIO_MATERIALES = 16;
 const int ESPACIO_COORDENADAS = 30;

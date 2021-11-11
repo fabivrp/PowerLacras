@@ -21,7 +21,6 @@ public:
     *PRE: -
     *POST:Devuleve la cantidad de materiales que produce el edificio.
     */
-    Cargar_archivos();
     
     /*
     *PRE: -

@@ -19,7 +19,6 @@ int main(){
 
     if (juego.cargar_archivos()){
        juego.menu();
-       
     }
 
     return 0;
