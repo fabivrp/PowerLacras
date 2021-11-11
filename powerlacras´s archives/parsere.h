@@ -11,15 +11,11 @@ private:
     string entrada;
 public:
 
-    /*
-    *PRE:
-    *POST:
-    */
     Parsere(string nombre_edificio);
   
     /*
     *PRE:
-    *POST:
+    *POST:Determina el tipo de edificio segun el simbolo representativo que se prove
     */
     Edificios* procesar_entrada(ifstream & archivo);
   

@@ -8,20 +8,20 @@ class Obelisco : public Edificios {
 public:
   
     /*
-    *PRE:
-    *POST:
+    *PRE:los valores numericos denem ser >=0
+    *POST:crea un obelisco con los parametros iniciales dados
     */  
     Obelisco(string nombre ,int pidra,int madera, int metal, int cant_max_construidos);
     
     /*
     *PRE:
-    *POST:
+    *POST:devuelve el nombre del tipo de material que produce, en caso de no tener produccion devuelve " "
     */
     const string tipo_produccion();
     
     /*
     *PRE:
-    *POST:
+    *POST:imprime por pantalla el timo de edificio que es
     */
     void imprimir_mensaje();
 

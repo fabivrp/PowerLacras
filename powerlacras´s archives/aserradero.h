@@ -9,11 +9,17 @@ public:
     Aserradero(string nombre ,int pidra,int madera, int metal, int cant_max_construidos);
 
 
+   
     /*
-    *PRE:
-    *POST:
+    *PRE: -
+    *POST:Devuleve el nombre del material que produce el edificio
     */
     const string tipo_produccion();
+
+    /*
+    *PRE: -
+    *POST:Muestra por pantalla al usuario el tipo de edificio
+    */
     void imprimir_mensaje();
     //~mina();
     

@@ -11,15 +11,12 @@ private:
     char entrada;
 public:
 
-    /*
-    *PRE:
-    *POST:
-    */
+   
     Parser(char letra);
   
     /*
     *PRE:
-    *POST:
+    *POST:Determina que tipo de casilla es segun un simbolo representativo
     */
     Casillero* procesar_entrada();
   

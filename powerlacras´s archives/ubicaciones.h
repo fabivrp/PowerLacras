@@ -10,27 +10,23 @@ private:
     string nombre;
 public:
 
-    /*
-    *PRE:
-    *POST:
-    */
     Ubicaciones(string nombre , int fil , int col);
   
     /*
     *PRE:
-    *POST:
+    *POST:devuelve el nombre del elemento que hay en esa ubicacion
     */
     string devolver_nombre();
   
     /*
     *PRE:
-    *POST:
+    *POST:devuelve la fila de la coordenada
     */
     int devolver_fil();
   
     /*
     *PRE:
-    *POST:
+    *POST:devuelve la columna de la coordenada
     */
     int devolver_col();
 

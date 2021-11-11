@@ -16,9 +16,12 @@ private :
 
 public:
     Listar_materiales(Vector <Material> vector_materiales);
+     
+    /*
+    *PRE:
+    *POST:Muestra por pantalla todos los materiales del stock así como también su stock
+    */
     void accion();
 };
-
-
 
 #endif //LISTAR_MATERIALES_H

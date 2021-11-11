@@ -16,40 +16,36 @@ private:
 
     /*
     *PRE:
-    *POST:
+    *POST:Redimensiona el vector
     */
     void redimensionar();
   
     /*
     *PRE:
-    *POST:
+    *POST:copia los datos existentes desde una posicio hasta otra determinada
     */
     void copiar(Tipo** vector, int desde, int hasta);
 public:
     //Metodos
     Vector();
   
-    /*
-    *PRE:
-    *POST:
-    */
     void Vector_destructor();
   
     /*
     *PRE:
-    *POST:
+    *POST:devuelve la longitud del vector
     */
     int tamanio();
       
     /*
     *PRE:
-    *POST:
+    *POST: devuelve la informacion que hay en el vector en la posicion solicitada
     */
     Tipo* devolver_info(int pos);
   
     /*
     *PRE:
-    *POST:
+    *POST:añade un elemeto al vector
     */
     void anadir_elemento(Tipo* elemento);
 

@@ -18,6 +18,10 @@ private :
     
 public:
     Recolectar_recursos(Vector <Edificios> vector_edificio,Vector <Material> *vector_materiales);
+    /*
+    *PRE:
+    *POST:ejecuta recolectar recursos
+    */
     void accion();
 };
 

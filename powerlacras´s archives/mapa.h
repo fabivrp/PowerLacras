@@ -15,42 +15,43 @@ Casillero*** mapa;
 public: 
 
 /*
-*PRE:
-*POST:
+*PRE:la cantidad de filas y columnas deben ser >=0
+*POST:crea un mapa con la cantidad de filas eleccionadas
 */
 Mapa(int filas, int columnas);
 
 /*
-*PRE:
-*POST:
+*PRE:las coordenadas deben ser >=0
+*POST:Guarda un casillero en el mapa devuelve true si lo hizo correctamente, en aso contrario
+*devuelve false
 */
 bool llenar_mapa(Casillero* casilla,int coordenadaf,int coordenadac);
 
 /*
-*PRE:
-*POST:
+*PRE:coordenadas deben ser >=0
+*POST:Reemplaza una casilla antigua con una nueva
 */
 void actualizar_mapa(Casillero* casilla,int coordenadaf,int coordenadac);
 
 /*
 *PRE:
-*POST:
+*POST:Muestra por pantalla el mapa
 */
 void mostrar();
 
 /*
     *PRE:
-    *POST:
+    *POST:Devuelve el tipo de casilla que hay en las coordenadas seleccionadas
     */
 char consultar_tipo(int fila, int columna);
 /*
     *PRE:
-    *POST:
+    *POST:Devuelve cuantas filas tiene el mapa
     */
 int devolver_filas();
 /*
     *PRE:
-    *POST:
+    *POST:devuelve cuntas columnas tiene el mapa
     */
 int devolver_columnas();
 

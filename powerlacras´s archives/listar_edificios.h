@@ -17,6 +17,13 @@ Vector <Material> vector_materiales_aux;
     
 public:
     Listar_edificios(Vector <Edificios> vector_edificio,Vector <Ubicaciones> vector_ubicaciones,Vector <Material> vector_materiales);
+    
+    /*
+    *PRE:
+    *POST:Muestra por pantalla todos los edificios que pueden ser construidos en 
+    *Andypolis, así ocmo la cantidad de materiales que se requieren para su construcción 
+    *y si proveen materiales o no
+    */
     void accion();
 
 };

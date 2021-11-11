@@ -7,21 +7,18 @@ class Mina : public Edificios {
 
 public:
     
-    /*
-    *PRE:
-    *POST:
-    */
+   
     Mina(string nombre ,int piedra,int madera, int metal, int cant_max_construidos);
     
     /*
     *PRE:
-    *POST:
+    *POST: Devuelve el nobre del elemento producido por el edificio
     */
     const string tipo_produccion();
     
     /*
     *PRE:
-    *POST:
+    *POST:Indica por pantalla al usuario el tipo de construccion que hay en la casilla
     */
 
     void imprimir_mensaje();

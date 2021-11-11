@@ -8,18 +8,19 @@ class Escuela : public Edificios {
 public:
     Escuela(string nombre ,int pidra,int madera, int metal, int cant_max_construidos);
 
+    
     /*
     *PRE:
-    *POST:
+    *POST: Devuelve el tipo de elemento que produce la fábrica
     */
+    const string tipo_produccion();
 
     /*
     *PRE:
-    *POST:
+    *POST: muestra por pantalla el tipo de edificio que es
     */
-    const string tipo_produccion();
+    void imprimir_mensaje();
     //~mina();
-    void  imprimir_mensaje();
 };
 
 

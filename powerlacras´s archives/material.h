@@ -25,34 +25,42 @@ public:
     
     /*
     *PRE:
-    *POST:
+    *POST:Muestra por pantalla el tipo de material que hay en casilla
     */
     void mostrar();
   
     /*
     *PRE:
-    *POST:
+    *POST:Le resta al stock el decremento
     */
     void disminuir_stock(int decremento);
   
     /*
     *PRE:
-    *POST:
+    *POST:le suma al stock el incremento
     */
     void agregar_al_stock(int incremento);
   
     /*
     *PRE:
-    *POST:
+    *POST:Devuelve el nombre del elemento
     */
     string devolver_nombre();
   
     /*
     *PRE:
-    *POST:
+    *POST:Devuelve el stcok del elemento
     */
     int devolver_stock();
+     /*
+    *PRE:
+    *POST:devuelve el simbolo representaticvo del elemento
+    */
     char devolver_simbolo();
+     /*
+    *PRE:
+    *POST:Muestra por pantalla el tipo de elemento que hay
+    */
     void imprimir_mensaje();
 
 };

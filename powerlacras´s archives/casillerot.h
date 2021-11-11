@@ -15,17 +15,23 @@ public:
     Casillerot(char tipo_casilla);
     
     /*
-    *PRE:
-    *POST:
+    *PRE: -
+    *POST:Reemplaza el tipo de la casilla por el identificador del material indicado.
     */
     void cambiar_contenido( char tipo_nuevo);
     
     /*
-    *PRE:
-    *POST:
+    *PRE: -
+    *POST:Devuleve que es de tipo Terreno si está vacía, en otro caso devuelve el 
+    *identificador del edificio que ocupa la casilla.
     */
     void mostrar();
+    /*
+    *PRE: -
+    *POST:Muestra al usuario una descripción del tipo de casilla.
+    */ 
     void dar_mensaje();
+    
     
 };
 

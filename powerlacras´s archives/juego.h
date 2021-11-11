@@ -57,17 +57,19 @@ private:
 
 public:
     //Juego(/* args */);
-    /*
+    
+     /*
     *PRE:
-    *POST:
+    *POST:Carga todos los elementos provistos por los archivos a sus respectivas estructuras
     */
     bool cargar_archivos();
     
     /*
     *PRE:
-    *POST:
+    *POST:Agrega los edificios que est'an contenidos en el archivo ubicaciones al mapa
     */
     void agregar_ubicaciones();
+    
     
     /*
     *PRE:
@@ -121,9 +123,9 @@ public:
     ~Juego();
     
 private: 
-    /*
+   /*
     *PRE:
-    *POST:
+    *POST:Devuelve la posicion en el vector donde se encuentra el dato buscado
     */
     int devolver_pos_vector(string nombre_a_buscar);
     
@@ -135,7 +137,8 @@ private:
     
     /*
     *PRE:
-    *POST:
+    *POST:Realiza l acción correspondiente según el número de la opción
+    *seleccionaa
     */
     int procesar_opcion();
 
