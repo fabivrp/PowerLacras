@@ -1,4 +1,4 @@
-#include "prueba2.h"
+#include "opciones.h"
 
 
 bool hay_objeto(string nombre_a_buscar,Vector <Edificios> vectorr,int *pos_vector) {

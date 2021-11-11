@@ -131,85 +131,10 @@ private:
     
     /*
     *PRE:
-    *POST:
-    */
-    int devolver_pos_vector2(string nombre);
-    
-    /*
-    *PRE:
     *POST:Realiza l acción correspondiente según el número de la opción
     *seleccionaa
     */
     int procesar_opcion();
-
-    /*
-    *PRE:
-    *POST:
-    */
-    string extraer_coordenadas (string nombre);
-
-    /*
-    *PRE:
-    *POST:
-    */
-    void describir_contenido(char tipo_casilla);
-
-
-    /*
-    *PRE:
-    *POST:
-    */
-    int casillas_disponibles();
-    
-    /*
-    *PRE:
-    *POST:
-    */
-    int numero_aleatorio(int limite_inferior, int limite_superior);
-    
-    /*
-    *PRE:
-    *POST:
-    */
-    bool casilla_disponible(Coordenada coordenada);
-    
-    /*
-    *PRE:
-    *POST:
-    */
-    void asignar_coordenada(Coordenada& coordenada);
-    
-    /*
-    *PRE:
-    *POST:
-    */
-    void cambiar_contenido(Coordenada coordenada);
-
-    /*
-    *PRE:
-    *POST:
-    */
-    void colocar_material(int cantidad_material, char tipo);
-    
-    /*
-    *PRE:
-    *POST:
-    */
-    bool hay_edificio (int fila, int columna);
-    
-    /*
-    *PRE:
-    *POST:
-    */
-    void obtener_datos(int& piedra, int& madera, int& metal, int fila, int columna);
-    /*
-    *PRE:
-    *POST:
-    */
-    void regresar_material(string tipo, int cant_material);
-
-
-
 };
 
 

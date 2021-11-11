@@ -28,7 +28,6 @@ Mapa::Mapa(int filas, int columnas){
 }
 
 bool Mapa::llenar_mapa(Casillero* casilla,  int fila, int columna){
-    //cout << "hilo" << endl;
     
         mapa[fila][columna] = casilla;
         return true;
@@ -43,17 +42,12 @@ void Mapa::actualizar_mapa(Casillero* casilla,  int fila, int columna){
 
 
 void Mapa :: mostrar(){
-    //cout << "____________________________________________________"<<endl;
     for(int i = 0 ; i < this->filas ; i++){
         for(int j = 0; j < this->columnas ; j++){
             mapa[i][j]->mostrar();
-            //cout << "|";
         }
         cout << endl;
-        //cout << "_________________________________________________"<<endl;
-    }
-     
-    
+    }  
 }
 Mapa ::~Mapa(){
     for(int i = 0 ; i < this->filas ; i++){

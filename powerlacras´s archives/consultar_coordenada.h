@@ -1,11 +1,7 @@
 #ifndef CONSULTAR_COORDENADA_H
 #define CONSULTAR_COORDENADA_H
 #include "constantes.h"
-#include "vector.h"
-#include "edificios.h"
-#include "mapa.h"
-#include "material.h"
-#include "ubicaciones.h"
+#include "opciones.h"
 
 
 class Consultar_coordenada{

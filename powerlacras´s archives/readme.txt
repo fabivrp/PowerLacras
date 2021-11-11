@@ -1,0 +1,4 @@
+Buenas los archivos de edificios , materiales y ubicaciones tienen que estar en minuscula,
+los .txt tienen que estar donde este ubicado el ejecutable
+Para copilar seria g++ -Wall -Werror -Wconversion main.cpp mapa.cpp casilleroc.cpp casilleroi.cpp casillerot.cpp parser.cpp leer_archivos.cpp casillero.cpp ubicaciones.cpp juego.cpp cargar_archivos.cpp parsere.cpp aserradero.cpp mina.cpp escuela.cpp fabrica.cpp obelisco.cpp planta_electrica.cpp edificios.cpp material.cpp opciones.cpp construir_edificio.cpp listar_edificios_construidos.cpp listar_materiales.cpp listar_edificios.cpp consultar_coordenada.cpp recolectar_recursos.cpp lluvia_recursos.cpp demoler_edificio.cpp inicio.cpp guardar.cpp -o ejecutable
+Devuelta perdon la tardanza :(

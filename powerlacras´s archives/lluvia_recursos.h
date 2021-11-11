@@ -1,8 +1,7 @@
 #ifndef LLUVIA_RECURSOS_H
 #define LLUVIA_RECURSOS_H
-//#include "opciones.h"
+
 #include "constantes.h"
-#include "prueba2.h"
 #include "colors.h"
 #include <iomanip>
 #include "casillerot.h"

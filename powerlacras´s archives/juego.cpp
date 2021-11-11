@@ -120,7 +120,6 @@ void Juego :: menu(){
 
     do{
         opcion = procesar_opcion();
-        //imprimir_menu();
 
     } while (opcion < 10 || opcion > 10);
     
