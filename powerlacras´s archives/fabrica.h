@@ -8,16 +8,19 @@ class Fabrica : public Edificios {
 public:
     Fabrica(string nombre ,int pidra,int madera, int metal, int cant_max_construidos);
 
-    
+    /*
+    *PRE:
+    *POST: Devuelve el tipo de elemento que produce la fábrica
+    */
+    const string tipo_produccion();
 
     /*
     *PRE:
-    *POST:
+    *POST: muestra por pantalla el tipo de edificio que es
     */
-    const string tipo_produccion();
-    //~mina();
     void imprimir_mensaje();
 };
+    //~mina();
 
 
 
