@@ -15,15 +15,22 @@ const int ESPACIO_BRIDA_MATERIALES = 16;
 const int ESPACIO_UNIDADES_CONSTRUIDAS = 16;
 const int ESPACIO_UNIDADES_DISPONIBLES = 16;
 
+const int MAX_METAL = 4;
+const int MIN_METAL = 2;
 const int MAX_PIEDRA = 2;
 const int MIN_PIEDRA = 1;
 const int MAX_MADERA = 1;
 const int MIN_MADERA = 0;
-const int MAX_METAL = 4;
-const int MIN_METAL = 2;
 
 const int MIN_FILAS = 0;
 const int MIN_COLUMNAS = 0;
+
+const int PRODUCCION_ESCUELA = 0;
+const int PRODUCCION_OBELISCO = 0;
+const int PRODUCCION_PLANTA = 0;
+const int PRODUCCION_ASERRADERO = 0;
+const int PRODUCCION_MINA = 0;
+const int PRODUCCION_FABRICA = 40;
 
 const char PLANTA_ELECTRICA = 'P';
 const char ESCUELA = 'E';

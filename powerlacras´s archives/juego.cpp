@@ -124,6 +124,7 @@ int Juego :: procesar_opcion(){
 
 }
 
+ /*
 bool Juego :: hay_edificio(int fila, int columna){
     return ((mapa->consultar_tipo(fila, columna) == ESCUELA) 
             || (mapa->consultar_tipo(fila, columna) == OBELISCO)
@@ -181,8 +182,9 @@ void Juego :: demoler_edificio(){
        
     }
 }
+ */
 
-void Juego :: menu(){
+void Juego :: chequear_respuesta(){
     
     int opcion;
     do{

@@ -95,18 +95,7 @@ private:
     */
     string extraer_coordenadas (string nombre);
 
-    /*
-    *PRE:
-    *POST:
-    */
-    void describir_contenido(char tipo_casilla);
-
-
-    /*
-    *PRE:
-    *POST:
-    */
-    int casillas_disponibles();
+    
     
     /*
     *PRE:
@@ -114,11 +103,6 @@ private:
     */
     int numero_aleatorio(int limite_inferior, int limite_superior);
     
-    /*
-    *PRE:
-    *POST:
-    */
-    bool casilla_disponible(Coordenada coordenada);
     
     /*
     *PRE:
@@ -137,23 +121,7 @@ private:
     *POST:
     */
     void colocar_material(int cantidad_material, char tipo);
-    
-    /*
-    *PRE:
-    *POST:
-    */
-    bool hay_edificio (int fila, int columna);
-    
-    /*
-    *PRE:
-    *POST:
-    */
-    void obtener_datos(int& piedra, int& madera, int& metal, int fila, int columna);
-    /*
-    *PRE:
-    *POST:
-    */
-    void regresar_material(string tipo, int cant_material);
+   
 
 
 

@@ -12,15 +12,13 @@ private:
     int cant_piedra,cant_madera,cant_metal;
     
 public:
-    /*
-    *PRE:
-    *POST:
-    */
+   
     Demoler_edificio(Vector <Edificios> *vector_edificio,Vector <Ubicaciones> *vector_ubicaciones,Vector <Material> *vector_materiales ,Mapa *mapa);
     
     /*
     *PRE:
-    *POST:
+    *POST:En el caso de que la casilla esté ocupada con un edificio, reestablece la casilla a tipo
+    *terreno y devuelve la mitad de los materiales usado para la construccion del mismo al stock
     */
     void accion();
 

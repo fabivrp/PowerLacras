@@ -10,13 +10,13 @@ public:
 
     /*
     *PRE:
-    *POST:
+    *POST:Devuelve la cantidad de elementos que produce la fábrica
     */
     int cuanto_produce();
 
     /*
     *PRE:
-    *POST:
+    *POST: Devuelve el tipo de elemento que produce la fábrica
     */
     const string tipo_produccion();
     //~mina();

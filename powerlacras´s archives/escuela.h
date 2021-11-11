@@ -10,13 +10,13 @@ public:
 
     /*
     *PRE:
-    *POST:
+    *POST:Devuelve 0 ya que el tipo escuela no produce materiales
     */
     int cuanto_produce();
 
     /*
     *PRE:
-    *POST:
+    *POST:Devuelve " " ya que el tipo escuela no produce materiales
     */
     const string tipo_produccion();
     //~mina();
