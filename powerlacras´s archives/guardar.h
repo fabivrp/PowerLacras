@@ -13,7 +13,7 @@ private:
     Vector <Ubicaciones> vector_ubicaciones_aux;
     Vector <Edificios> vector_edificios_aux;
     Vector <Material> vector_materiales_aux;
-    Mapa mapa_aux;
+    Mapa *mapa_aux;
 
     
 public:
@@ -23,6 +23,7 @@ public:
     void guardar_edificios();
     void guardar_ubicaciones();
     void guardar_materiales();
+    void guardar_todo();
 
     
 };
